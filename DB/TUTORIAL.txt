@@ -1,0 +1,6 @@
+1 - Criar entidade UEntidade (geralmente nome da tabela) herdar de UEntidade
+2 - Criar URepositorio
+3 - criar URegraCRUD
+
+comandos git 
+http://rogerdudler.github.io/git-guide/index.pt_BR.html

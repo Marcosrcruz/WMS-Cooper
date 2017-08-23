@@ -29,6 +29,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
-  Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
+  // Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
   Application.Run;
 end.

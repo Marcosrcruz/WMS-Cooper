@@ -17,7 +17,11 @@ uses
   uPais in 'Modelo\Persistencia\uPais.pas',
   URegraCRUDPais in 'Modelo\Regra\URegraCRUDPais.pas',
   URepositorioPais in 'Modelo\Persistencia\URepositorioPais.pas',
-  UFrmCadastroPais in 'VisaoControle\UFrmCadastroPais.pas' {FrmCadastroPais};
+  UFrmCadastroPais in 'VisaoControle\UFrmCadastroPais.pas' {FrmCadastroPais},
+  UEstado in 'Modelo\Persistencia\UEstado.pas',
+  URepositorioEstado in 'Modelo\Persistencia\URepositorioEstado.pas',
+  URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas',
+  UFrmCadastroEstado in 'VisaoControle\UFrmCadastroEstado.pas' {FrmCadastroEstado};
 
 {$R *.res}
 
@@ -25,5 +29,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
+  Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
   Application.Run;
 end.

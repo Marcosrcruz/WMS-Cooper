@@ -14,9 +14,11 @@ type
     miSair: TMenuItem;
     sbPrincipal: TStatusBar;
     Pais1: TMenuItem;
+    Estado1: TMenuItem;
     procedure miSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Pais1Click(Sender: TObject);
+    procedure Estado1Click(Sender: TObject);
   private
     { Private declaration }
   public
@@ -30,7 +32,7 @@ implementation
 
 uses
     UDM
-  , DB, UFrmCadastroPais
+  , DB, UFrmCadastroPais, UFrmCadastroEstado
   ;
 
 {$R *.dfm}
@@ -43,6 +45,11 @@ end;
 procedure TFrmPrincipal.Pais1Click(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroPais, FrmCadastroPais);
+end;
+
+procedure TFrmPrincipal.Estado1Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
 end;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);

@@ -34,6 +34,10 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Pais'
       OnClick = Pais1Click
     end
+    object Estado1: TMenuItem
+      Caption = 'Estado'
+      OnClick = Estado1Click
+    end
     object miSair: TMenuItem
       Caption = '&Sair'
       OnClick = miSairClick

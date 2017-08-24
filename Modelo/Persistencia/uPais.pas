@@ -18,7 +18,7 @@ const
 
   VW_PAIS      = 'VW_PAIS';
   VW_PAIS_NOME = 'Nome';
-  VW_PAIS_ID   = 'Cód.';
+  VW_PAIS_ID   = 'Cod.';
 
 resourcestring
   STR_PAIS = 'Pais';

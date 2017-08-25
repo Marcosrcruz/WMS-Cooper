@@ -21,7 +21,11 @@ uses
   UEstado in 'Modelo\Persistencia\UEstado.pas',
   URepositorioEstado in 'Modelo\Persistencia\URepositorioEstado.pas',
   URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas',
-  UFrmCadastroEstado in 'VisaoControle\UFrmCadastroEstado.pas' {FrmCadastroEstado};
+  UFrmCadastroEstado in 'VisaoControle\UFrmCadastroEstado.pas' {FrmCadastroEstado},
+  UCidade in 'Modelo\Persistencia\UCidade.pas',
+  URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
+  URegraCRUDCidade in 'Modelo\Regra\URegraCRUDCidade.pas',
+  UUnidadeMedida in 'Modelo\Persistencia\UUnidadeMedida.pas';
 
 {$R *.res}
 
@@ -29,6 +33,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
-  // Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
+  //Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
   Application.Run;
 end.

@@ -10,15 +10,39 @@ uses
 
 type
   TFrmPrincipal = class(TForm)
-    mmPrincipal: TMainMenu;
-    miSair: TMenuItem;
     sbPrincipal: TStatusBar;
-    Pais1: TMenuItem;
-    Estado1: TMenuItem;
+    mmPrincipal: TMainMenu;
+    MiCadastro: TMenuItem;
+    MiDeposito: TMenuItem;
+    MiEmpresa: TMenuItem;
+    MiFilial: TMenuItem;
+    MiMatriz: TMenuItem;
+    MiLocalidades: TMenuItem;
+    MiCidade: TMenuItem;
+    MiEstado: TMenuItem;
+    MiPais: TMenuItem;
+    MiPessoas: TMenuItem;
+    MiProdutos: TMenuItem;
+    MiFamiliaProduto: TMenuItem;
+    MiGrupoProduto: TMenuItem;
+    MiProduto: TMenuItem;
+    MiUnidadeMedida: TMenuItem;
+    MiUsuarios: TMenuItem;
+    MiEstoque: TMenuItem;
+    MiMovimentacaoEntrada: TMenuItem;
+    MiMovimentacaoSaida: TMenuItem;
+    MiRelatorios: TMenuItem;
+    MiMovimentacoes: TMenuItem;
+    MiMovimentacaoPorDataEntrada: TMenuItem;
+    MiMovimentacaoPorDeposito: TMenuItem;
+    MiMovimentacaoLote: TMenuItem;
+    MiMovimentacaoValidade: TMenuItem;
+    MiRequisicoes: TMenuItem;
+    MiSair: TMenuItem;
     procedure miSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Pais1Click(Sender: TObject);
-    procedure Estado1Click(Sender: TObject);
+    procedure MiEstadoClick(Sender: TObject);
+    procedure MiPaisClick(Sender: TObject);
   private
     { Private declaration }
   public
@@ -37,19 +61,19 @@ uses
 
 {$R *.dfm}
 
-procedure TFrmPrincipal.miSairClick(Sender: TObject);
+procedure TFrmPrincipal.MiEstadoClick(Sender: TObject);
 begin
-  Close;
+  Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
 end;
 
-procedure TFrmPrincipal.Pais1Click(Sender: TObject);
+procedure TFrmPrincipal.MiPaisClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroPais, FrmCadastroPais);
 end;
 
-procedure TFrmPrincipal.Estado1Click(Sender: TObject);
+procedure TFrmPrincipal.miSairClick(Sender: TObject);
 begin
-  Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
+  Close;
 end;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);

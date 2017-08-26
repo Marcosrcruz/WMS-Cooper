@@ -30,15 +30,87 @@ object FrmPrincipal: TFrmPrincipal
   object mmPrincipal: TMainMenu
     Left = 640
     Top = 8
-    object Pais1: TMenuItem
-      Caption = 'Pais'
-      OnClick = Pais1Click
+    object MiCadastro: TMenuItem
+      Caption = '&Cadastros'
+      object MiDeposito: TMenuItem
+        Caption = '&Dep'#243'sito'
+      end
+      object MiEmpresa: TMenuItem
+        Caption = '&Empresa'
+        object MiFilial: TMenuItem
+          Caption = '&Filial'
+        end
+        object MiMatriz: TMenuItem
+          Caption = '&Matriz'
+        end
+      end
+      object MiLocalidades: TMenuItem
+        Caption = '&Localidades'
+        object MiCidade: TMenuItem
+          Caption = '&Cidade'
+        end
+        object MiEstado: TMenuItem
+          Caption = '&Estado'
+          OnClick = MiEstadoClick
+        end
+        object MiPais: TMenuItem
+          Caption = '&Pais'
+          OnClick = MiPaisClick
+        end
+      end
+      object MiPessoas: TMenuItem
+        Caption = '&Pessoas'
+      end
+      object MiProdutos: TMenuItem
+        Caption = 'P&rodutos'
+        object MiFamiliaProduto: TMenuItem
+          Caption = '&Fam'#237'lia de Produto'
+        end
+        object MiGrupoProduto: TMenuItem
+          Caption = '&Grupo de Produto'
+        end
+        object MiProduto: TMenuItem
+          Caption = 'P&roduto'
+        end
+      end
+      object MiUnidadeMedida: TMenuItem
+        Caption = '&Unidade de Medida'
+      end
+      object MiUsuarios: TMenuItem
+        Caption = 'U&su'#225'rios'
+      end
     end
-    object Estado1: TMenuItem
-      Caption = 'Estado'
-      OnClick = Estado1Click
+    object MiEstoque: TMenuItem
+      Caption = 'E&stoque'
+      object MiMovimentacaoEntrada: TMenuItem
+        Caption = '&Entrada'
+      end
+      object MiMovimentacaoSaida: TMenuItem
+        Caption = '&Sa'#237'da'
+      end
     end
-    object miSair: TMenuItem
+    object MiRelatorios: TMenuItem
+      Caption = '&Relat'#243'rios'
+      object MiMovimentacoes: TMenuItem
+        Caption = '&Movimenta'#231#245'es'
+        object MiMovimentacaoPorDataEntrada: TMenuItem
+          Caption = '&Por Data de Entrada'
+        end
+        object MiMovimentacaoPorDeposito: TMenuItem
+          Caption = 'Por &Dep'#243'sito'
+        end
+        object MiMovimentacaoLote: TMenuItem
+          Caption = 'Por &Lote'
+        end
+        object MiMovimentacaoValidade: TMenuItem
+          Caption = 'Por &Validade'
+        end
+      end
+      object MiRequisicoes: TMenuItem
+        Caption = '&Requisi'#231#245'es'
+      end
+    end
+    object MiSair: TMenuItem
       Caption = '&Sair'
       OnClick = miSairClick
     end

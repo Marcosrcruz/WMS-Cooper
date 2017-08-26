@@ -1,7 +1,7 @@
 object FrmPrincipal: TFrmPrincipal
   Left = 245
   Top = 191
-  Caption = 'Bootstrap'
+  Caption = 'WMS-Supermarket'
   ClientHeight = 345
   ClientWidth = 739
   Color = clBtnFace

@@ -29,7 +29,9 @@ object dmProway: TdmProway
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      'Database=localhost:T:\Documentos\WMS-Cooper\DB\SUPERMARKET.FDB'
+      
+        'Database=localhost:T:\Documentos\Banco de dados\WMS-Cooper\DB\SU' +
+        'PERMARKET.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'

@@ -6,6 +6,7 @@ uses
     UEntidade,
     UCidade,
     UEstado,
+    UCidade,
     UPais
   ;
 
@@ -29,6 +30,7 @@ type
 
   const
     TBL_MATRIZ            = 'EMPRESA';
+    FLD_MATRIZ_CODIGO     = 'CODIGO';
     FLD_MATRIZ_NOME       = 'NOME';
     FLD_MATRIZ_CNPJ       = 'CNPJ';
     FLD_MATRIZ_IE         = 'IE';
@@ -42,6 +44,7 @@ type
 
 
     VW_MATRIZ            = 'EMPRESA';
+    VW_MATRIZ_CODIGO     = 'CODIGO';
     VW_MATRIZ_NOME       = 'NOME';
     VW_MATRIZ_CNPJ       = 'CNPJ';
     VW_MATRIZ_IE         = 'IE';
@@ -68,17 +71,14 @@ uses
 
 constructor TEmpresaMatriz.Create;
 begin
-  PAIS      := TPAIS.Create;
-  ESTADO    := TESTADO.Create;
-  MUNICIPIO := TCIDADE.Create;
+  TEmpresaMatriz := TEmpresaMatriz.Create;
 end;
 
 destructor TEmpresaMatriz.Destroy;
 begin
-  FreeAndNil(MUNICIPIO);
-  FreeAndNil(ESTADO);
-  FreeAndNil(PAIS);
+  FreeAndNil(TEmpresaMatriz);
   inherited;
 end;
 
 end.
+

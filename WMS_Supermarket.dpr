@@ -25,7 +25,8 @@ uses
   UCidade in 'Modelo\Persistencia\UCidade.pas',
   URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
   URegraCRUDCidade in 'Modelo\Regra\URegraCRUDCidade.pas',
-  UUnidadeMedida in 'Modelo\Persistencia\UUnidadeMedida.pas';
+  UUnidadeMedida in 'Modelo\Persistencia\UUnidadeMedida.pas',
+  UEmpresaMatriz in 'Modelo\Persistencia\UEmpresaMatriz.pas';
 
 {$R *.res}
 

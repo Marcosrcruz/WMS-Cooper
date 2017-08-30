@@ -1,6 +1,7 @@
 unit URegraCRUDCidade;
 
 interface
+
 uses
     URegraCRUD
   , URepositorioDB
@@ -15,11 +16,13 @@ uses
   end;
 
 implementation
+
 { TRegraCRUDCidade }
+
 constructor TRegraCRUDCidade.Create;
 begin
   inherited;
-  FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioEstado.Create);
+  FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioCidade.Create);
 end;
 
 

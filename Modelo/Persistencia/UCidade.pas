@@ -8,7 +8,7 @@ uses
   ;
 
 type
-  TESTADO = class(TENTIDADE)
+  TCIDADE = class(TENTIDADE)
   public
     NOME : String;
     ESTADO : TESTADO;
@@ -18,15 +18,16 @@ type
   end;
 
   const
-    TBL_CIDADE        = 'CIDADE';
-    FLD_CIDADE_NOME    = 'NOME';
+    TBL_CIDADE           = 'CIDADE';
+    FLD_CIDADE_NOME      = 'NOME';
     FLD_CIDADE_ID_ESTADO = 'ID_ESTADO';
 
-    VW_CIDADE          = 'VW_CIDADE';
-    VW_CIDADE_NOME     = 'Nome';
-    VW_CIDADE_ID       = 'Cód.';
+    VW_CIDADE            = 'VW_CIDADE';
+    VW_CIDADE_NOME       = 'Nome';
+    VW_CIDADE_ID         = 'Cod.';
+
   resourcestring
-    STR_CIDADE       = 'CIDADE';
+    STR_CIDADE = 'CIDADE';
 
 implementation
 
@@ -35,17 +36,15 @@ uses
   , Dialogs
   ;
 
-{ TESTADO }
+{ TCIDADE }
 
-{ TESTADO }
-
-constructor TESTADO.Create;
+constructor TCIDADE.Create;
 begin
   inherited;
    ESTADO := TESTADO.Create;
 end;
 
-destructor TESTADO.Destroy;
+destructor TCIDADE.Destroy;
 begin
    FreeAndNil(ESTADO);
   inherited;

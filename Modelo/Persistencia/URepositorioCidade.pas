@@ -12,7 +12,7 @@ uses
   ;
 
 type
-  TRepositorioEstado = class(TRepositorioDB<TESTADO>)
+  TRepositorioCidade = class(TRepositorioDB<TCIDADE>)
   private
     FRepositorioEstado: TRepositorioEstado;
 
@@ -20,8 +20,8 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    procedure AtribuiDBParaEntidade(const coCidade: TESTADO); override;
-    procedure AtribuiEntidadeParaDB(const coCidade: TESTADO;
+    procedure AtribuiDBParaEntidade(const coCidade: TCIDADE); override;
+    procedure AtribuiEntidadeParaDB(const coCidade: TCIDADE;
                                     const coSQLQuery: TSQLQuery); override;
   end;
 
@@ -34,7 +34,7 @@ uses
 
 { TRepositorioEstado }
 
-procedure TRepositorioEstado.AtribuiDBParaEntidade(const coCIDADE: TESTADO);
+procedure TRepositorioCidade.AtribuiDBParaEntidade(const coCIDADE: TCIDADE);
 begin
   inherited;
   with dmProway.SQLSelect do
@@ -45,25 +45,25 @@ begin
   end;
 end;
 
-procedure TRepositorioEstado.AtribuiEntidadeParaDB(const coCIDADE: TESTADO;
+procedure TRepositorioCidade.AtribuiEntidadeParaDB(const coCIDADE: TCIDADE;
   const coSQLQuery: TSQLQuery);
 begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_CIDADE_NOME).AsString     := coCIDADE.NOME;
+    ParamByName(FLD_CIDADE_NOME).AsString       := coCIDADE.NOME;
     ParamByName(FLD_CIDADE_ID_ESTADO).AsInteger := coCIDADE.ESTADO.ID;
   end;
 
 end;
 
-constructor TRepositorioEstado.Create;
+constructor TRepositorioCidade.Create;
 begin
-  inherited Create(TESTADO, TBL_ESTADO, FLD_ENTIDADE_ID, STR_ESTADO);
+  inherited Create(TCIDADE, TBL_CIDADE, FLD_ENTIDADE_ID, STR_CIDADE);
   FRepositorioEstado := TRepositorioEstado.Create;
 end;
 
-destructor TRepositorioEstado.Destroy;
+destructor TRepositorioCidade.Destroy;
 begin
   FreeAndNil(FRepositorioEstado);
   inherited;

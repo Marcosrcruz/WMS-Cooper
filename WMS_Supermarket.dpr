@@ -72,14 +72,5 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
-  Application.CreateForm(TFrmCRUD1, FrmCRUD1);
-  Application.CreateForm(TFrmCRUD2, FrmCRUD2);
-  Application.CreateForm(TFrmCRUD3, FrmCRUD3);
-  Application.CreateForm(TFrmCRUD4, FrmCRUD4);
-  Application.CreateForm(TFrmCRUD5, FrmCRUD5);
-  Application.CreateForm(TFrmCRUD6, FrmCRUD6);
-  Application.CreateForm(TFrmCRUD7, FrmCRUD7);
-  Application.CreateForm(TFrmCRUD8, FrmCRUD8);
-  Application.CreateForm(TFrmCRUD9, FrmCRUD9);
   Application.Run;
 end.

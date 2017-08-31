@@ -10,18 +10,14 @@ uses
   URepositorioEstado,
   URepositorioPais,
     SqlExpr
-
   ;
 
 type
-
   TRepositorioEmpresaMatriz = class (TrepositorioDB<TEmpresaMatriz>)
-
   private
-    FRepositorio
-
-
 
   end;
+
+implementation
 
 end.

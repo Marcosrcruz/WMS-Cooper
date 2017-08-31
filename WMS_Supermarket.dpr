@@ -27,7 +27,10 @@ uses
   URegraCRUDCidade in 'Modelo\Regra\URegraCRUDCidade.pas',
   UUnidadeMedida in 'Modelo\Persistencia\UUnidadeMedida.pas',
   UEmpresaMatriz in 'Modelo\Persistencia\UEmpresaMatriz.pas',
-  UFrmCadastroCidade in 'VisaoControle\UFrmCadastroCidade.pas' {FrmCadastroCidade};
+  UFrmCadastroCidade in 'VisaoControle\UFrmCadastroCidade.pas' {FrmCadastroCidade},
+  URepositorioEmpresaMatriz in 'Modelo\Persistencia\URepositorioEmpresaMatriz.pas',
+  URegraCRUDEmpresaMatriz in 'Modelo\Regra\URegraCRUDEmpresaMatriz.pas',
+  UFrmCadastroEmpresaMatriz in 'VisaoControle\UFrmCadastroEmpresaMatriz.pas' {FrmCRUD1};
 
 {$R *.res}
 
@@ -35,5 +38,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
+  Application.CreateForm(TFrmCRUD1, FrmCRUD1);
   Application.Run;
 end.

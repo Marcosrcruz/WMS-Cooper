@@ -29,9 +29,7 @@ object dmProway: TdmProway
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      
-        'Database=localhost:T:\Documentos\Banco de dados\WMS-Cooper\DB\SU' +
-        'PERMARKET.FDB'
+      'Database=localhost:T:\Documentos\WMS-Cooper\DB\SUPERMARKET.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
@@ -48,7 +46,6 @@ object dmProway: TdmProway
       'ServerCharSet='
       'Trim Char=False')
     VendorLib = 'fbclient.dll'
-    Connected = True
     Left = 32
     Top = 24
   end

@@ -17,8 +17,8 @@ const
   FLD_PAIS_NOME = 'NOME';
 
   VW_PAIS      = 'VW_PAIS';
-  VW_PAIS_NOME = 'Nome';
-  VW_PAIS_ID   = 'Cod.';
+  VW_PAIS_NOME = 'NOME';
+  VW_PAIS_ID   = 'COD';
 
 resourcestring
   STR_PAIS = 'Pais';

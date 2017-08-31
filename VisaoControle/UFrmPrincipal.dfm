@@ -48,6 +48,7 @@ object FrmPrincipal: TFrmPrincipal
         Caption = '&Localidades'
         object MiCidade: TMenuItem
           Caption = '&Cidade'
+          OnClick = MiCidadeClick
         end
         object MiEstado: TMenuItem
           Caption = '&Estado'

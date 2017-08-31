@@ -6,21 +6,20 @@ uses
     UEntidade,
     UCidade,
     UEstado,
-    UCidade,
     UPais
   ;
 
 type
   TEmpresaMatriz = class(TENTIDADE)
   public
-    CODIGO     : integer;
+    CODIGO     : Integer;
     NOME       : String;
-    CNPJ       : integer;
+    CNPJ       : Integer;
     IE         : integer;
     LOGRADOURO : String;
-    NUMERO     : integer;
+    NUMERO     : Integer;
     BAIRRO     : String;
-    MUNICIPIO  : TCIDADE;
+    CIDADE     : TCIDADE;
     ESTADO     : TESTADO;
     PAIS       : TPAIS;
 
@@ -71,12 +70,16 @@ uses
 
 constructor TEmpresaMatriz.Create;
 begin
-  TEmpresaMatriz := TEmpresaMatriz.Create;
+   CIDADE := TCIDADE.Create();
+   ESTADO := TESTADO.Create();
+   PAIS   := TPAIS.Create();
 end;
 
 destructor TEmpresaMatriz.Destroy;
 begin
-  FreeAndNil(TEmpresaMatriz);
+  FreeAndNil(CIDADE);
+  FreeAndNil(ESTADO);
+  FreeAndNil(PAIS);
   inherited;
 end;
 

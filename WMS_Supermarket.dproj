@@ -96,6 +96,9 @@
 			<DCCReference Include="Modelo\Regra\URegraCRUDCidade.pas"/>
 			<DCCReference Include="Modelo\Persistencia\UUnidadeMedida.pas"/>
 			<DCCReference Include="Modelo\Persistencia\UEmpresaMatriz.pas"/>
+			<DCCReference Include="VisaoControle\UFrmCadastroCidade.pas">
+				<Form>FrmCadastroCidade</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

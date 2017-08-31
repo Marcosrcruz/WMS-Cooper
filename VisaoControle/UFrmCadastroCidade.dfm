@@ -1,51 +1,20 @@
-inherited FrmCadastroEstado: TFrmCadastroEstado
-  Caption = 'FrmCadastroEstado'
-  ClientHeight = 382
-  ClientWidth = 639
-  ExplicitWidth = 655
-  ExplicitHeight = 421
+inherited FrmCadastroCidade: TFrmCadastroCidade
+  Caption = 'Cadastro de Cidade'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlCabecalho: TPanel
-    Width = 639
-    ExplicitWidth = 120
+    ExplicitTop = -6
     inherited lbCabecalho: TLabel
-      Width = 191
-      Caption = 'CADASTRO DE ESTADO'
-      ExplicitWidth = 191
-    end
-  end
-  inherited gbLocalizar: TGroupBox
-    Width = 639
-    ExplicitWidth = 120
-  end
-  inherited pnlBotoes: TPanel
-    Top = 341
-    Width = 639
-    ExplicitTop = 339
-    ExplicitWidth = 120
-    inherited btnLimpar: TBitBtn
-      Left = 404
-      ExplicitLeft = -115
-    end
-    inherited btnExcluir: TBitBtn
-      Left = 287
-      ExplicitLeft = -232
-    end
-    inherited btnGravar: TBitBtn
-      Left = 170
-      ExplicitLeft = -349
-    end
-    inherited btnSair: TBitBtn
-      Left = 521
-      ExplicitLeft = 2
+      Width = 188
+      Caption = 'CADASTRO DE CIDADE'
+      ExplicitWidth = 188
     end
   end
   object gbInformacoes: TGroupBox [3]
     Left = 0
     Top = 86
-    Width = 639
-    Height = 255
+    Width = 635
+    Height = 252
     Align = alClient
     Caption = ' Informa'#231#245'es '
     Font.Charset = DEFAULT_CHARSET
@@ -57,12 +26,12 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
     TabOrder = 3
     ExplicitTop = 84
     object lbCodigoPais: TLabel
-      Left = 45
+      Left = 31
       Top = 77
-      Width = 55
+      Width = 69
       Height = 13
       Alignment = taRightJustify
-      Caption = 'C'#243'digo Pa'#237's'
+      Caption = 'C'#243'digo Estado'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -11
@@ -95,7 +64,7 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
       ParentFont = False
       TabOrder = 0
     end
-    object btnLocalizarPais: TButton
+    object btnLocalizarEstado: TButton
       Left = 227
       Top = 74
       Width = 30
@@ -110,11 +79,11 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
       ParentFont = False
       TabOrder = 2
       TabStop = False
-      OnClick = btnLocalizarPaisClick
+      OnClick = btnLocalizarEstadoClick
     end
-    object edPais: TEdit
-      Left = 104
-      Top = 74
+    object edEstado: TEdit
+      Left = 106
+      Top = 73
       Width = 121
       Height = 21
       Color = clInfoBk
@@ -126,16 +95,16 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
       NumbersOnly = True
       ParentFont = False
       TabOrder = 1
-      OnExit = edPaisExit
+      OnExit = edEstadoExit
     end
-    object stNomePais: TStaticText
+    object stNomeEstado: TStaticText
       Left = 260
       Top = 74
       Width = 217
       Height = 19
       AutoSize = False
       BorderStyle = sbsSingle
-      Caption = 'stNomePais'
+      Caption = 'stNomeEstado'
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite

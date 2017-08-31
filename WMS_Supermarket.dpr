@@ -26,7 +26,8 @@ uses
   URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
   URegraCRUDCidade in 'Modelo\Regra\URegraCRUDCidade.pas',
   UUnidadeMedida in 'Modelo\Persistencia\UUnidadeMedida.pas',
-  UEmpresaMatriz in 'Modelo\Persistencia\UEmpresaMatriz.pas';
+  UEmpresaMatriz in 'Modelo\Persistencia\UEmpresaMatriz.pas',
+  UFrmCadastroCidade in 'VisaoControle\UFrmCadastroCidade.pas' {FrmCadastroCidade};
 
 {$R *.res}
 
@@ -34,6 +35,5 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
-  //Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
   Application.Run;
 end.

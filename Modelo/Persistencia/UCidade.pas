@@ -24,7 +24,7 @@ type
 
     VW_CIDADE            = 'VW_CIDADE';
     VW_CIDADE_NOME       = 'Nome';
-    VW_CIDADE_ID         = 'Cod.';
+    VW_CIDADE_ID         = 'Cod';
 
   resourcestring
     STR_CIDADE = 'CIDADE';

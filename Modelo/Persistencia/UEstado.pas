@@ -24,7 +24,7 @@ type
 
     VW_ESTADO          = 'VW_ESTADO';
     VW_ESTADO_NOME     = 'Nome';
-    VW_ESTADO_ID       = 'Cód.';
+    VW_ESTADO_ID       = 'Cod';
   resourcestring
     STR_ESTADO         = 'Estado';
 

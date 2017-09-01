@@ -64,7 +64,11 @@ uses
   UUSuario in 'Modelo\Persistencia\UUSuario.pas',
   URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
   URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas',
-  UFrmCadastroUsuario in 'VisaoControle\UFrmCadastroUsuario.pas' {FrmCRUD9};
+  UFrmCadastroUsuario in 'VisaoControle\UFrmCadastroUsuario.pas' {FrmCRUD9},
+  UFamiliaProduto in 'Modelo\Persistencia\UFamiliaProduto.pas',
+  URepositorioFamiliaProduto in 'Modelo\Persistencia\URepositorioFamiliaProduto.pas',
+  URegraCRUDFamiliaProduto in 'Modelo\Regra\URegraCRUDFamiliaProduto.pas',
+  UFrmCadastroFamiliaProduto in 'VisaoControle\UFrmCadastroFamiliaProduto.pas' {FrmCRUD10};
 
 {$R *.res}
 
@@ -72,5 +76,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
+  Application.CreateForm(TFrmCRUD10, FrmCRUD10);
   Application.Run;
 end.

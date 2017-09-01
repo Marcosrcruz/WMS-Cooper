@@ -76,6 +76,5 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmProway, dmProway);
-  Application.CreateForm(TFrmCRUD10, FrmCRUD10);
   Application.Run;
 end.

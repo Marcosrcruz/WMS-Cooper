@@ -5,3 +5,6 @@ __history
 dunit.ini
 *.local
 *.FDB
+WMS_Supermarket.dproj.local
+WMS_Supermarket.identcache
+WMS_Supermarket.res

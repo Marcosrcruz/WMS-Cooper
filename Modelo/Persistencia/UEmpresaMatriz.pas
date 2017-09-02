@@ -22,6 +22,7 @@ type
     CIDADE     : TCIDADE;
     ESTADO     : TESTADO;
     PAIS       : TPAIS;
+    TELEFONE   : String;
 
     constructor Create; override;
     destructor Destroy; override;

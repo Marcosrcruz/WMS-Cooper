@@ -7,12 +7,18 @@ USES
   UEntidade,
   URepositorioDB,
   SqlExpr,
-  UGrupoProduto;
+  UGrupoProduto,
+  URepositorioFamiliaProduto
+  ;
 
 type
   TRepositorioGRUPOPRODUTO = class (TRepositorioDB<TGrupoProduto>)
-    public
-      constructor create;
+  private
+    FRepositorioFamiliaProduto : TRepositorioFAMILIAPRODUTO;
+
+  public
+
+  constructor create;
   procedure AtribuiDBParaEntidade(const coGrupoProduto : TGrupoProduto); override;
   procedure AtribuiEntidadeParaDB(const coGrupoProduto : TGrupoProduto;
                                   const coSQLQuery : TSQLQuery); override;
@@ -31,8 +37,9 @@ begin
   inherited;
   with dmProway.SQLSelect do
   begin
-    coGrupoProduto.NOMEFAMILIA := FieldByName(FLD_GrupoProduto_NOMEGRUPO).AsString;
-    coGrupoProduto.CODIGO := FieldByName(FLD_GrupoProduto_ID_GRUPOPRODUTO).AsString;
+    coGrupoProduto.NOMEGRUPO := FieldByName(FLD_GrupoProduto_NOMEGRUPO).AsString;
+    coGrupoProduto.FAMILIA_PRODUTO := TFamiliaProduto(
+        FRepositorioFamiliaProduto.Retorna(FieldByName(FLD_GRUPOPRODUTO_ID_FAMILIA_PRODUTO).AsInteger));
   end;
 end;
 
@@ -42,8 +49,8 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_GrupoProduto_NOMEGRUPO).AsString := coGrupoProduto.NOMEFAMILIA;
-    ParamByName(FLD_GrupoProduto_ID_GRUPOPRODUTO).AsString := coGrupoProduto.CODIGO;
+    ParamByName(FLD_GrupoProduto_NOMEGRUPO).AsString := coGrupoProduto.NOMEGRUPO;
+    ParamByName(FLD_GRUPOPRODUTO_ID_FAMILIA_PRODUTO).AsInteger := coGrupoProduto.FAMILIA_PRODUTO.ID;
   end;
 end;
 

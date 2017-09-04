@@ -27,7 +27,7 @@ uses
 procedure TRepositorioFamiliaProduto.AtribuiDBParaEntidade(const coFamiliaProduto: TFamiliaProduto);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coFamiliaProduto.NOMEFAMILIA := FieldByName(FLD_FamiliaProduto_NOMEFAMILIA).AsString;
   end;

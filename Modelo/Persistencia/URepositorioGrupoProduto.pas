@@ -35,7 +35,7 @@ uses
 procedure TRepositorioGrupoProduto.AtribuiDBParaEntidade(const coGrupoProduto: TGrupoProduto);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coGrupoProduto.NOMEGRUPO := FieldByName(FLD_GrupoProduto_NOMEGRUPO).AsString;
     coGrupoProduto.FAMILIA_PRODUTO := TFamiliaProduto(

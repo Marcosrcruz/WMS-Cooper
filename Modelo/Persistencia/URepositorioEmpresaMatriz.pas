@@ -44,7 +44,7 @@ implementation
 procedure TRepositorioEmpresaMatriz.AtribuiDBParaEntidade(const coEmpresaMatriz: TEmpresaMatriz);
 begin
   inherited;
-    with dmProway.SQLSelect do
+    with FSQLSelect do
   begin
     coEmpresaMatriz.NOME := FieldByName(FLD_Matriz_NOME).AsString;
     coEmpresaMatriz.PAIS := TPAIS(

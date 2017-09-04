@@ -37,7 +37,7 @@ uses
 procedure TRepositorioEstado.AtribuiDBParaEntidade(const coESTADO: TESTADO);
 begin
   inherited;
-  with dmProway.SQLSelect do
+  with FSQLSelect do
   begin
     coESTADO.NOME := FieldByName(FLD_ESTADO_NOME).AsString;
     coESTADO.PAIS := TPAIS(

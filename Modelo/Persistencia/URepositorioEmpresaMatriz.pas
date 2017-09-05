@@ -1,4 +1,4 @@
-unit URepositorioEmpresaMatriz;
+  unit URepositorioEmpresaMatriz;
 
 interface
 
@@ -41,7 +41,7 @@ implementation
 
 { TRepositorioEmpresaMatriz }
 
-procedure TRepositorioEmpresaMatriz.AtribuiDBParaEntidade(const coEmpresaMatriz: TEmpresaMatriz);
+procedure TRepositorioEmpresaMatriz.AtribuiDBParaEntidade  (const coEmpresaMatriz: TEmpresaMatriz);
 begin
   inherited;
     with FSQLSelect do

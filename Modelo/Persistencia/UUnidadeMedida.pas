@@ -2,21 +2,19 @@ unit UUnidadeMedida;
 interface
 uses
     UEntidade
-  ;
+    ;
  type
-  TESTADO = class(TENTIDADE)
+  TUNIDADEMEDIDA = class(TENTIDADE)
   public
-    NOME         : String;
-    UNIDADEMEDIDA: TESTADO;
+    DESCRICAO : String;
+    SIGLA     : String;
 
-    constructor Create; override;
-    destructor Destroy; override;
   end;
 
   const
-    TBL_CIDADE        = 'CIDADE';
-    FLD_CIDADE_NOME    = 'NOME';
-    FLD_CIDADE_ID_UNIDADEMEDIDAO = 'ID_UNIDADEMEDIDA';
+    TBL_UNIADEMEDIDA             = 'UNIDADE_MEDIDA';
+    FLD_UNIDADEMEDIDA_DESCRICAO  = 'DESCRICAO';
+    FLD_UNIDADEMEDIDA_SIGLA      = 'SIGLA';
 
     VW_CIDADE          = 'VW_UNIDADEMEDIDA';
     VW_CIDADE_NOME     = 'Nome';
@@ -26,26 +24,7 @@ uses
 
 implementation
 
-uses
-    SysUtils
-  , Dialogs
-  ;
-
 { TESTADO }
-
-{ TESTADO }
-
-constructor TESTADO.Create;
-begin
-  inherited;
-   UNIDADEMEDIDA := TESTADO.Create;
-end;
-
-destructor TESTADO.Destroy;
-begin
-   FreeAndNil(UNIDADEMEDIDA);
-  inherited;
-end;
 
 
 end.

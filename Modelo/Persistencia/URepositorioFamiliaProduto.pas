@@ -29,7 +29,8 @@ begin
   inherited;
   with FSQLSelect do
   begin
-    coFamiliaProduto.NOMEFAMILIA := FieldByName(FLD_FamiliaProduto_NOMEFAMILIA).AsString;
+    coFamiliaProduto.NOMEFAMILIA := FieldByName(FLD_FAMILIAPRODUTO_NOMEFAMILIA).AsString;
+    coFamiliaProduto.CODIGO      := FieldByName(FLD_FAMILIAPRODUTO_CODIGO).AsInteger;
   end;
 end;
 
@@ -39,7 +40,8 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_FamiliaProduto_NOMEFAMILIA).AsString := coFamiliaProduto.NOMEFAMILIA;
+    ParamByName(FLD_FAMILIAPRODUTO_NOMEFAMILIA).AsString := coFamiliaProduto.NOMEFAMILIA;
+    ParamByName(FLD_FAMILIAPRODUTO_CODIGO).AsInteger     := coFamiliaProduto.CODIGO;
   end;
 end;
 

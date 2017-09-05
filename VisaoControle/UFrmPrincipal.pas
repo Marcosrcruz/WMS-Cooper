@@ -44,6 +44,7 @@ type
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
     procedure MiCidadeClick(Sender: TObject);
+    procedure MiFamiliaProdutoClick(Sender: TObject);
   private
     { Private declaration }
   public
@@ -57,7 +58,7 @@ implementation
 
 uses
     UDM
-  , DB, UFrmCadastroPais, UFrmCadastroEstado, UFrmCadastroCidade
+  , DB, UFrmCadastroPais, UFrmCadastroEstado, UFrmCadastroCidade, UFrmCadastroFamiliaProduto
   ;
 
 {$R *.dfm}
@@ -70,6 +71,11 @@ end;
 procedure TFrmPrincipal.MiEstadoClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroEstado, FrmCadastroEstado);
+end;
+
+procedure TFrmPrincipal.MiFamiliaProdutoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroFamiliaProduto, FrmCadastroFamiliaProduto);
 end;
 
 procedure TFrmPrincipal.MiPaisClick(Sender: TObject);

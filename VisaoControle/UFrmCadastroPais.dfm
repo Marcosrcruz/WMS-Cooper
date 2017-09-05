@@ -8,32 +8,32 @@ inherited FrmCadastroPais: TFrmCadastroPais
   TextHeight = 13
   inherited pnlCabecalho: TPanel
     Width = 630
-    ExplicitWidth = 120
+    ExplicitWidth = 630
   end
   inherited gbLocalizar: TGroupBox
     Width = 630
-    ExplicitWidth = 120
+    ExplicitWidth = 630
   end
   inherited pnlBotoes: TPanel
     Top = 401
     Width = 630
-    ExplicitTop = -41
-    ExplicitWidth = 120
+    ExplicitTop = 401
+    ExplicitWidth = 630
     inherited btnLimpar: TBitBtn
       Left = 395
-      ExplicitLeft = -115
+      ExplicitLeft = 395
     end
     inherited btnExcluir: TBitBtn
       Left = 278
-      ExplicitLeft = -232
+      ExplicitLeft = 278
     end
     inherited btnGravar: TBitBtn
       Left = 161
-      ExplicitLeft = -349
+      ExplicitLeft = 161
     end
     inherited btnSair: TBitBtn
       Left = 512
-      ExplicitLeft = 2
+      ExplicitLeft = 512
     end
   end
   object gbInformacoes: TGroupBox [3]
@@ -44,8 +44,7 @@ inherited FrmCadastroPais: TFrmCadastroPais
     Align = alClient
     Caption = 'Informa'#231#245'es'
     TabOrder = 3
-    ExplicitWidth = 120
-    ExplicitHeight = 252
+    ExplicitTop = 84
     object edNome: TLabeledEdit
       Left = 104
       Top = 56

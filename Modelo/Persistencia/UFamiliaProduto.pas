@@ -1,16 +1,16 @@
 unit UFamiliaProduto;
 
 interface
+
 Uses
   UEntidade
-
-;
+ ;
 
 type
   TFamiliaProduto = class(TEntidade)
     public
-      NOMEFAMILIA: STRING;
-      CODIGO: INTEGER;
+      NOMEFAMILIA: string;
+      CODIGO     : Integer;
     end;
 
  const

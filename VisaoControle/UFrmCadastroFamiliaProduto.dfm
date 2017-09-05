@@ -1,13 +1,14 @@
 inherited FrmCadastroFamiliaProduto: TFrmCadastroFamiliaProduto
   Caption = 'Cadastro Familia Produto'
-  ClientWidth = 637
-  ExplicitWidth = 653
-  ExplicitHeight = 418
+  ClientHeight = 378
+  ClientWidth = 638
+  ExplicitWidth = 654
+  ExplicitHeight = 417
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlCabecalho: TPanel
-    Width = 637
-    ExplicitWidth = 120
+    Width = 638
+    ExplicitWidth = 637
     inherited lbCabecalho: TLabel
       Width = 308
       Caption = 'CADASTRO DE FAMILIA DE PRODUTO'
@@ -15,41 +16,41 @@ inherited FrmCadastroFamiliaProduto: TFrmCadastroFamiliaProduto
     end
   end
   inherited gbLocalizar: TGroupBox
-    Width = 637
-    ExplicitWidth = 120
+    Width = 638
+    ExplicitWidth = 637
   end
   inherited pnlBotoes: TPanel
-    Width = 637
+    Top = 337
+    Width = 638
     ExplicitTop = -41
-    ExplicitWidth = 120
+    ExplicitWidth = 637
     inherited btnLimpar: TBitBtn
-      Left = 402
-      ExplicitLeft = -115
+      Left = 403
+      ExplicitLeft = 402
     end
     inherited btnExcluir: TBitBtn
-      Left = 285
-      ExplicitLeft = -232
+      Left = 286
+      ExplicitLeft = 285
     end
     inherited btnGravar: TBitBtn
-      Left = 168
-      ExplicitLeft = -349
+      Left = 169
+      ExplicitLeft = 168
     end
     inherited btnSair: TBitBtn
-      Left = 519
-      ExplicitLeft = 2
+      Left = 520
+      ExplicitLeft = 519
     end
   end
   object gbInformacoes: TGroupBox [3]
     Left = 0
     Top = 86
-    Width = 637
-    Height = 252
+    Width = 638
+    Height = 251
     Align = alClient
     Caption = 'Informa'#231#245'es'
     TabOrder = 3
-    ExplicitTop = 64
-    ExplicitWidth = 630
-    ExplicitHeight = 315
+    ExplicitWidth = 637
+    ExplicitHeight = 252
     object edNomeFamilia: TLabeledEdit
       Left = 104
       Top = 56

@@ -78,13 +78,15 @@ end;
 procedure TFrmCadastroFamiliaProduto.PreencheEntidade;
 begin
   inherited;
-  //
+  FFAMILIAPRODUTO.NOMEFAMILIA := edNomeFamilia.Text;
+  FFAMILIAPRODUTO.CODIGO      := StrToInt(edCodigoFamilia.Text);
 end;
 
 procedure TFrmCadastroFamiliaProduto.PreencheFormulario;
 begin
   inherited;
-  //
+  edNomeFamilia.Text := FFAMILIAPRODUTO.NOMEFAMILIA;
+  edCodigoFamilia.Text := IntToStr(FFAMILIAPRODUTO.CODIGO)
 end;
 
 end.

@@ -26,8 +26,6 @@ object FrmPrincipal: TFrmPrincipal
       item
         Width = 50
       end>
-    ExplicitTop = 326
-    ExplicitWidth = 739
   end
   object mmPrincipal: TMainMenu
     Left = 344
@@ -68,6 +66,7 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'P&rodutos'
         object MiFamiliaProduto: TMenuItem
           Caption = '&Fam'#237'lia de Produto'
+          OnClick = MiFamiliaProdutoClick
         end
         object MiGrupoProduto: TMenuItem
           Caption = '&Grupo de Produto'

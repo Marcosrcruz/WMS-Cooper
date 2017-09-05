@@ -68,7 +68,7 @@ uses
   UFamiliaProduto in 'Modelo\Persistencia\UFamiliaProduto.pas',
   URepositorioFamiliaProduto in 'Modelo\Persistencia\URepositorioFamiliaProduto.pas',
   URegraCRUDFamiliaProduto in 'Modelo\Regra\URegraCRUDFamiliaProduto.pas',
-  UFrmCadastroFamiliaProduto in 'VisaoControle\UFrmCadastroFamiliaProduto.pas' {FrmCRUD10};
+  UFrmCadastroFamiliaProduto in 'VisaoControle\UFrmCadastroFamiliaProduto.pas' {FrmCadastroFamiliaProduto};
 
 {$R *.res}
 

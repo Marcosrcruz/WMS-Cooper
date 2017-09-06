@@ -19,6 +19,7 @@ type
   FLD_FAMILIAPRODUTO_CODIGO      = 'CODIGO';
 
   VW_FAMILIAPRODUTO              = 'VW_FAMILIA_PRODUTO';
+  VW_NOMEFAMILIA_ID              = 'COD';
   VW_NOMEFAMILIA                 = 'Nome';
   VW_CODIGO                      = 'Codigo';
 

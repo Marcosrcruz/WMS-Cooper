@@ -8,7 +8,7 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
   TextHeight = 13
   inherited pnlCabecalho: TPanel
     Width = 639
-    ExplicitWidth = 120
+    ExplicitWidth = 639
     inherited lbCabecalho: TLabel
       Width = 191
       Caption = 'CADASTRO DE ESTADO'
@@ -17,28 +17,28 @@ inherited FrmCadastroEstado: TFrmCadastroEstado
   end
   inherited gbLocalizar: TGroupBox
     Width = 639
-    ExplicitWidth = 120
+    ExplicitWidth = 639
   end
   inherited pnlBotoes: TPanel
     Top = 341
     Width = 639
-    ExplicitTop = 339
-    ExplicitWidth = 120
+    ExplicitTop = 341
+    ExplicitWidth = 639
     inherited btnLimpar: TBitBtn
       Left = 404
-      ExplicitLeft = -115
+      ExplicitLeft = 404
     end
     inherited btnExcluir: TBitBtn
       Left = 287
-      ExplicitLeft = -232
+      ExplicitLeft = 287
     end
     inherited btnGravar: TBitBtn
       Left = 170
-      ExplicitLeft = -349
+      ExplicitLeft = 170
     end
     inherited btnSair: TBitBtn
       Left = 521
-      ExplicitLeft = 2
+      ExplicitLeft = 521
     end
   end
   object gbInformacoes: TGroupBox [3]

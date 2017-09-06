@@ -11,16 +11,16 @@ uses
 type
    TPESSOA = class(TENTIDADE)
   public
-    NOME : String;
-    UPESSOAS : TPessoa;
+    NOME     : String;
+    CODIGO   : Integer;
 
     constructor Create; override;
     destructor Destroy; override;
   end;
 
   const
-    TBL_Pessoa         = 'Pessoa';
-    FLD_Pessoa_NOME    = 'NOME';
+    TBL_Pessoa            = 'Pessoa';
+    FLD_Pessoa_NOME       = 'NOME';
     FLD_PESSOA_ID_PESSOAS = 'ID_PESSOAS';
 
     VW_CIDADE          = 'VW_CIDADE';
@@ -35,20 +35,17 @@ uses
     SysUtils
   , Dialogs
   ;
-
-{ TESTADO }
-
-{ TESTADO }
+{ TPESSOA }
 
 constructor TPESSOA.Create;
 begin
   inherited;
-   UPESSOAS := TPESSOA.Create;
+
 end;
 
 destructor TPESSOA.Destroy;
 begin
-   FreeAndNil(UPESSOAS);
+
   inherited;
 end;
 

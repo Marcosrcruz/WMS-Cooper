@@ -1,4 +1,4 @@
-unit URepositorioFilial;
+    unit URepositorioFilial;
 
 interface
 
@@ -46,9 +46,6 @@ implementation
    SysUtils
   ;
 
-  { TRepositórioEmpresaMatriz }
-
-
 { TRepositorioFilial }
 
 procedure TRepositorioFilial.AtribuiDBParaEntidade(const coFilial: TFILIAL);
@@ -79,17 +76,42 @@ procedure TRepositorioFilial.AtribuiEntidadeParaDB(const coFilial: TFILIAL;
   const coSQlQuery: TSQLQuery);
 begin
   inherited;
+    with coSQLQuery do
+    begin
+      ParamByName(FLD_FILIAL_CODIGO).AsInteger    := coFilial.CODIGO;
+      ParamByName(FLD_FILIAL_NOME).AsString       := coFilial.NOME;
+      ParamByName(FLD_FILIAL_CNPJ).AsInteger      := coFilial.CNPJ;
+      ParamByName(FLD_FILIAL_IE).AsInteger        := coFilial.IE;
+      ParamByName(FLD_FILIAL_TELEFONE).AsString   := coFilial.TELEFONE;
+      ParamByName(FLD_FILIAL_LOGRADOURO).AsString := coFilial.LOGRADOURO;
+      ParamByName(FLD_FILIAL_NUMERO).AsInteger    := coFilial.NUMERO;
+      ParamByName(FLD_FILIAL_BAIRR0).AsString     := coFilial.BAIRRO;
+      ParamByName(FLD_FILIAL_CIDADE).AsInteger    := coFilial.CIDADE.ID;
+      ParamByName(FLD_FILIAL_ESTADO).AsInteger    := coFilial.ESTADO.ID;
+      ParamByName(FLD_FILIAL_PAIS).AsInteger      := coFilial.PAIS.ID;
+      ParamByName(FLD_FILIAL_EMPRESA).AsInteger   := coFilial.EMPRESA.ID;
+
+
+    end;
 
 end;
 
 constructor TRepositorioFilial.Create;
-begin
+  begin
+    inherited Create (TFILIAL, TBL_FILIAL, FLD_ENTIDADE_ID, STR_EMPRESAMATRIZ);
+              FRepositorioCidade        := TRepositorioCidade.Create;
+              FRepositorioEstado        := TRepositorioEstado.Create;
+              FRepositorioPais          := TRepositorioPais.Create;
+              FRepositorioEmpresaMatriz := TRepositorioEmpresaMatriz.Create;
 
-end;
+  end;
 
 destructor TRepositorioFilial.Destroy;
 begin
-
+      FreeAndNil(FRepositorioCidade);
+      FreeAndNil(FRepositorioEstado);
+      FreeAndNil(FRepositorioPais);
+      FreeAndNil(FRepositorioEmpresaMatriz);
   inherited;
 end;
 

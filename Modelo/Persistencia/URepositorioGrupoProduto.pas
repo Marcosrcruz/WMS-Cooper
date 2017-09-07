@@ -18,7 +18,8 @@ type
 
   public
 
-  constructor create;
+  constructor Create;
+  destructor Destroy; override;
   procedure AtribuiDBParaEntidade(const coGrupoProduto : TGrupoProduto); override;
   procedure AtribuiEntidadeParaDB(const coGrupoProduto : TGrupoProduto;
                                   const coSQLQuery : TSQLQuery); override;
@@ -30,6 +31,7 @@ implementation
 
 uses
   UDM
+  , SysUtils
   ;
 
 procedure TRepositorioGrupoProduto.AtribuiDBParaEntidade(const coGrupoProduto: TGrupoProduto);
@@ -57,7 +59,14 @@ end;
 constructor TRepositorioGrupoProduto.Create;
 begin
   inherited Create(TGrupoProduto, TBL_GrupoProduto, FLD_ENTIDADE_ID, STR_GrupoProduto);
+  FRepositorioFamiliaProduto := TRepositorioFAMILIAPRODUTO.Create;
 end;
 
+
+destructor TRepositorioGRUPOPRODUTO.Destroy;
+begin
+  FreeAndNil(FRepositorioFamiliaProduto);
+  inherited;
+end;
 
 end.

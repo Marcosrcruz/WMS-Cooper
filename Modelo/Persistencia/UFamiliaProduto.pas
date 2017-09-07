@@ -19,9 +19,9 @@ type
   FLD_FAMILIAPRODUTO_CODIGO      = 'CODIGO';
 
   VW_FAMILIAPRODUTO              = 'VW_FAMILIA_PRODUTO';
-  VW_NOMEFAMILIA_ID              = 'COD';
-  VW_NOMEFAMILIA                 = 'Nome';
-  VW_CODIGO                      = 'Codigo';
+  VW_FAMILIAPRODUTO_ID           = 'COD';
+  VW_FAMILIAPRODUTO_NOMEFAMILIA  = 'NOME';
+  VW_FAMILIAPRODUTO_CODIGO       = 'CODIGO';
 
 resourcestring
 

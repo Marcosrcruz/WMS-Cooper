@@ -20,7 +20,7 @@ type
  const
   TBL_GRUPOPRODUTO                    = 'GRUPO_PRODUTO';
   FLD_GRUPOPRODUTO_NOMEGRUPO          = 'NOMEGRUPO';
-  FLD_GRUPOPRODUTO_ID_FAMILIA_PRODUTO = 'ID_FAMILIA_PRODUTO';
+  FLD_GRUPOPRODUTO_ID_FAMILIA_PRODUTO = 'ID_FAMILIAPRODUTO';
 
   VW_GRUPOPRODUTO      = 'VW_GRUPO_PRODUTO';
   VW_NOMEGRUPO         = 'COD';
@@ -28,7 +28,7 @@ type
 
 resourcestring
 
-  STR_GRUPOPRODUTO   = 'Grupo Produto';
+  STR_GRUPOPRODUTO   = 'Grupo de Produto';
 
 implementation
 

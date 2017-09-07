@@ -2,8 +2,8 @@ object FrmPrincipal: TFrmPrincipal
   Left = 245
   Top = 191
   Caption = 'WMS-Supermarket'
-  ClientHeight = 310
-  ClientWidth = 502
+  ClientHeight = 427
+  ClientWidth = 866
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,13 +19,15 @@ object FrmPrincipal: TFrmPrincipal
   TextHeight = 13
   object sbPrincipal: TStatusBar
     Left = 0
-    Top = 291
-    Width = 502
+    Top = 408
+    Width = 866
     Height = 19
     Panels = <
       item
         Width = 50
       end>
+    ExplicitTop = 291
+    ExplicitWidth = 502
   end
   object mmPrincipal: TMainMenu
     Left = 344
@@ -70,6 +72,7 @@ object FrmPrincipal: TFrmPrincipal
         end
         object MiGrupoProduto: TMenuItem
           Caption = '&Grupo de Produto'
+          OnClick = MiGrupoProdutoClick
         end
         object MiProduto: TMenuItem
           Caption = 'P&roduto'

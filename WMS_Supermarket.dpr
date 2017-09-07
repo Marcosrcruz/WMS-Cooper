@@ -49,7 +49,7 @@ uses
   UGrupoProduto in 'Modelo\Persistencia\UGrupoProduto.pas',
   URepositorioGrupoProduto in 'Modelo\Persistencia\URepositorioGrupoProduto.pas',
   URegraCRUDGrupoProduto in 'Modelo\Regra\URegraCRUDGrupoProduto.pas',
-  UFrmCadastroGrupoProduto in 'VisaoControle\UFrmCadastroGrupoProduto.pas' {FrmCRUD6},
+  UFrmCadastroGrupoProduto in 'VisaoControle\UFrmCadastroGrupoProduto.pas' {FrmCadastroGrupoProduto},
   UMovimentacaoEstoque in 'Modelo\Persistencia\UMovimentacaoEstoque.pas',
   URepositorioMovimentacaoEstoque in 'Modelo\Persistencia\URepositorioMovimentacaoEstoque.pas',
   URegraCRUDMovimentacaoEstoque in 'Modelo\Regra\URegraCRUDMovimentacaoEstoque.pas',

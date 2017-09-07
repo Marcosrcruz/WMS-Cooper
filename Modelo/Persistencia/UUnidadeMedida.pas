@@ -16,11 +16,13 @@ uses
     FLD_UNIDADEMEDIDA_DESCRICAO  = 'DESCRICAO';
     FLD_UNIDADEMEDIDA_SIGLA      = 'SIGLA';
 
-    VW_CIDADE          = 'VW_UNIDADEMEDIDA';
-    VW_CIDADE_NOME     = 'Nome';
-    VW_CIDADE_ID       = 'Cód.';
+    VW_UNIDADEMEDIDA           = 'VW_UNIDADE_MEDIDA';
+    VW_UNIDADEMEDIDA_ID        = 'COD';
+    VW_UNIDADEMEDIDA_DESCRICAO = 'DESCRICAO';
+    VW_UNIDADEMEDIDA_SIGLA     = 'SIGLA';
+
   resourcestring
-    STR_CIDADE       = 'CIDADE';
+    STR_UNIDADEMEDIDA       = 'Unidade de Medida';
 
 implementation
 

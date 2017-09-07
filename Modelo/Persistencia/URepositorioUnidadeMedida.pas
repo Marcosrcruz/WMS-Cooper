@@ -11,12 +11,9 @@ uses
 
   type
   TRepositorioUnidadeMedida = class(TRepositorioDB<TUNIDADEMEDIDA >)
-   private
-    FRepositorioUnidadeMedida: TRepositorioUnidadeMedida;
 
   public
     constructor Create;
-    destructor Destroy; override;
 
     procedure AtribuiDBParaEntidade(const coUnidadeMedida : TUNIDADEMEDIDA ); override;
     procedure AtribuiEntidadeParaDB(const coUnidadeMedida : TUNIDADEMEDIDA ;
@@ -57,14 +54,7 @@ end;
 
 constructor TRepositorioUnidadeMedida.Create;
 begin
-  inherited Create(TUNIDADEMEDIDA, TBL_UNIADEMEDIDA, FLD_ENTIDADE_ID, STR_CIDADE);
-  FRepositorioUnidadeMedida := TRepositorioUnidadeMedida.Create;
-end;
-
-destructor TRepositorioUnidadeMedida.Destroy;
-begin
-  FreeAndNil(FRepositorioUnidadeMedida);
-  inherited;
+  inherited Create(TUNIDADEMEDIDA, TBL_UNIADEMEDIDA, FLD_ENTIDADE_ID, STR_UNIDADEMEDIDA);
 end;
 
 end.

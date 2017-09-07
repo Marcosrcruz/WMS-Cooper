@@ -44,6 +44,14 @@ const
   FLD_FILIAL_PAIS       = 'ID_PAIS';
   FLD_FILIAL_EMPRESA    = 'ID_EMPRESA';
 
+  VW_FILIAL             = 'VW_FILIAL';
+  VW_FILIAL_ID          = 'COD';
+  VW_FILIAL_NOME        = 'NOME';
+  VW_FILIAL_CNPJ        = 'CNPJ';
+  VW_FILIAL_IE          = 'IE';
+  VW_FILIAL_LOGRADOURO  = 'LOGRADOURO';
+  VW_FILIAL_CIDADE      = 'CIDADE';
+
   resourcestring
     STR_FILIAL = 'Filial';
 

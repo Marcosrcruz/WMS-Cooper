@@ -60,7 +60,7 @@ uses
   UProduto in 'Modelo\Persistencia\UProduto.pas',
   URepositorioProduto in 'Modelo\Persistencia\URepositorioProduto.pas',
   URegraCRUDProduto in 'Modelo\Regra\URegraCRUDProduto.pas',
-  UFrmCadastroProduto in 'VisaoControle\UFrmCadastroProduto.pas' {FrmCRUD8},
+  UFrmCadastroProduto in 'VisaoControle\UFrmCadastroProduto.pas' {FrmCadastroProduto},
   UUSuario in 'Modelo\Persistencia\UUSuario.pas',
   URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
   URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas',

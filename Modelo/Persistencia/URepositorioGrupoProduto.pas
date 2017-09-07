@@ -2,13 +2,13 @@ unit URepositorioGrupoProduto;
 
 interface
 
-USES
-  UFamiliaProduto,
-  UEntidade,
-  URepositorioDB,
-  SqlExpr,
-  UGrupoProduto,
-  URepositorioFamiliaProduto
+uses
+    UGrupoProduto
+  , UFamiliaProduto
+  , UEntidade
+  , URepositorioDB
+  , SqlExpr
+  , URepositorioFamiliaProduto
   ;
 
 type
@@ -17,15 +17,14 @@ type
     FRepositorioFamiliaProduto : TRepositorioFAMILIAPRODUTO;
 
   public
+    constructor Create;
+    destructor Destroy; override;
 
-  constructor Create;
-  destructor Destroy; override;
-  procedure AtribuiDBParaEntidade(const coGrupoProduto : TGrupoProduto); override;
-  procedure AtribuiEntidadeParaDB(const coGrupoProduto : TGrupoProduto;
-                                  const coSQLQuery : TSQLQuery); override;
+    procedure AtribuiDBParaEntidade(const coGrupoProduto : TGrupoProduto); override;
+    procedure AtribuiEntidadeParaDB(const coGrupoProduto : TGrupoProduto;
+                                    const coSQLQuery : TSQLQuery); override;
 
   end;
-
 
 implementation
 
@@ -33,6 +32,8 @@ uses
   UDM
   , SysUtils
   ;
+
+{ TRepositoriogrupoProduto }
 
 procedure TRepositorioGrupoProduto.AtribuiDBParaEntidade(const coGrupoProduto: TGrupoProduto);
 begin

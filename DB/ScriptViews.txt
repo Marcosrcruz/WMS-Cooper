@@ -1,0 +1,83 @@
+CREATE VIEW "VW_UNIDADE_MEDIDA" (COD, DESCRICAO, SIGLA) AS
+select id as "Cod."
+     , DESCRICAO_um as "Descricao"
+     , SIGLA AS "Sigla"
+  from unidade_medida;
+--------------------------------------------
+
+CREATE VIEW "VW_PRODUTO" (COD, CODIGO, DESCRICAO, FILIAL) AS
+select a.id as "Cod."
+	 , A.CODIGO as "Codigo"
+     , A.DESCRICAO as "Descricao"
+     , B.NOME AS "Filial"
+
+  from PRODUTO A JOIN FILIAL B ON B.ID = A.ID_FILIAL
+-------------------------------------------
+CREATE VIEW "VW_PESSOA" (COD, NOME, CPF_CNPJ, TELEFONE) AS
+select CODIGO as "Cod."
+     , NOME as "Nome"
+     , CNPJ_CPF AS "CP/FNPJ"
+     , TELEFONE AS "Telefone"
+  from pessoa
+-------------------------------------------
+CREATE VIEW "VW_GRUPO_PRODUTO" (COD, NOME) AS
+select id as "Cod."
+     , nomeGRUPO as "Nome"
+  from GRUPO_PRODUTO
+-------------------------------------------
+CREATE VIEW "VW_FILIAL" (COD, CODIGO, NOME, CNPJ, IE, LOGRADOURO, CIDADE) AS
+select a.id as "Cod."
+	 , a.codigo as "Codigo"
+     , a.nome as "Nome"
+     , a.CNPJ as "CNPJ"
+     , a.IE as "Inscricao Estadual"
+     , a.Logradouro as "Logradouro"
+     , b.nome as "Cidade"
+  from FILIAL a
+       inner join cidade b on b.id = a.id_municipio
+------------------------------------------
+CREATE VIEW "VW_EMPRESA" (COD, NOME, NOME, CNPJ, IE, LOGRADOURO, CIDADE, CIDADE) AS
+select a.codigo as "Cod."
+     , a.nome as "Nome"
+     , a.CNPJ as "CNPJ"
+     , a.IE as "Inscricao Estadual"
+     , a.Logradouro as "Logradouro"
+     , b.nome as "Cidade"
+  from empresa a
+       inner join cidade b on b.id = a.id_municipio;
+-------------------------------------------
+CREATE VIEW "VW_DEPOSITO" (COD, DESCRICAO, CODIGO) AS
+select id as "Cod."
+     , descricao as "Descricao"
+     , codigo as "Cod."
+  from deposito
+-------------------------------------------
+CREATE VIEW "VW_CIDADE" (COD, NOME) AS
+select id as "Cod."
+     , nome as "Nome"
+  from cidade
+-------------------------------------------
+CREATE VIEW "VW_PAIS" (COD, NOME) AS
+select id as "Cod."
+     , nome as "Nome"
+  from pais
+------------------------------------------
+CREATE VIEW "VW_FAMILIA_PRODUTO" (COD, NOME_FAMILIA, CODIGO) AS
+select ID AS "Cod."
+	 , nomefamilia as "Nome Familia"
+     , codigo as "Codigo"
+  from familia_produto;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

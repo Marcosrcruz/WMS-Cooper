@@ -33,7 +33,7 @@ uses
   UFrmCadastroEmpresaMatriz in 'VisaoControle\UFrmCadastroEmpresaMatriz.pas' {FrmCRUD1},
   URepositorioUnidadeMedida in 'Modelo\Persistencia\URepositorioUnidadeMedida.pas',
   URegraCRUDUnidadeMedida in 'Modelo\Regra\URegraCRUDUnidadeMedida.pas',
-  UCadastroUnidadeMedida in 'VisaoControle\UCadastroUnidadeMedida.pas' {FrmCRUD2},
+  UCadastroUnidadeMedida in 'VisaoControle\UCadastroUnidadeMedida.pas' {FrmCadastroUnidadeMedida},
   UDeposito in 'Modelo\Persistencia\UDeposito.pas',
   URepositorioDeposito in 'Modelo\Persistencia\URepositorioDeposito.pas',
   URegraCRUDDeposito in 'Modelo\Regra\URegraCRUDDeposito.pas',

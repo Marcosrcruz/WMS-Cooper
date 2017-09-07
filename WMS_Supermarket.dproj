@@ -122,7 +122,7 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioUnidadeMedida.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDUnidadeMedida.pas"/>
 			<DCCReference Include="VisaoControle\UCadastroUnidadeMedida.pas">
-				<Form>FrmCRUD2</Form>
+				<Form>FrmCadastroUnidadeMedida</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\UDeposito.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioDeposito.pas"/>

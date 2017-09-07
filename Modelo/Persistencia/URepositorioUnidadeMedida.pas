@@ -36,7 +36,7 @@ begin
   inherited;
   with FSQLSelect do
   begin
-    coUnidadeMedida.DESCRICAO := ParamByName(FLD_UNIDADEMEDIDA_DESCRICAO).AsString;
+    coUnidadeMedida.DESCRICAO := FieldByName(FLD_UNIDADEMEDIDA_DESCRICAO).AsString;
     coUnidadeMedida.SIGLA := FieldByName(FLD_UNIDADEMEDIDA_SIGLA).AsString;
   end;
 end;

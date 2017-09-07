@@ -8,7 +8,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   TextHeight = 13
   inherited pnlCabecalho: TPanel
     Width = 652
-    ExplicitWidth = 120
+    ExplicitWidth = 652
     inherited lbCabecalho: TLabel
       Width = 206
       Caption = 'CADASTRO DE PRODUTO'
@@ -17,7 +17,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   inherited gbLocalizar: TGroupBox
     Width = 652
-    ExplicitWidth = 120
+    ExplicitWidth = 652
     inherited lbCodigo: TLabel
       Left = 105
       ExplicitLeft = 105
@@ -38,23 +38,23 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   inherited pnlBotoes: TPanel
     Top = 400
     Width = 652
-    ExplicitTop = -41
-    ExplicitWidth = 120
+    ExplicitTop = 400
+    ExplicitWidth = 652
     inherited btnLimpar: TBitBtn
       Left = 417
-      ExplicitLeft = -115
+      ExplicitLeft = 417
     end
     inherited btnExcluir: TBitBtn
       Left = 300
-      ExplicitLeft = -232
+      ExplicitLeft = 300
     end
     inherited btnGravar: TBitBtn
       Left = 183
-      ExplicitLeft = -349
+      ExplicitLeft = 183
     end
     inherited btnSair: TBitBtn
       Left = 534
-      ExplicitLeft = 2
+      ExplicitLeft = 534
     end
   end
   object gbInformacoes: TGroupBox [3]
@@ -71,7 +71,6 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 84
     object lbCodigoUnidMedida: TLabel
       Left = 50
       Top = 101

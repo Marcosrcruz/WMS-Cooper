@@ -233,7 +233,7 @@ procedure TFrmCadastroProduto.HabilitaCampos(
   const ceTipoOperacaoUsuario: TTipoOperacaoUsuario);
 begin
   inherited;
-
+  gbInformacoes.Enabled := FTipoOperacaoUsuario In [touInsercao, touAtualizacao];
 end;
 
 procedure TFrmCadastroProduto.Inicializa;

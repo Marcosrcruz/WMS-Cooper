@@ -45,7 +45,7 @@ uses
   UFilial in 'Modelo\Persistencia\UFilial.pas',
   URepositorioFilial in 'Modelo\Persistencia\URepositorioFilial.pas',
   URegraCRUDFilial in 'Modelo\Regra\URegraCRUDFilial.pas',
-  UFrmCadastroFilial in 'VisaoControle\UFrmCadastroFilial.pas' {FrmCRUD5},
+  UFrmCadastroFilial in 'VisaoControle\UFrmCadastroFilial.pas' {FrmCadastroFilial},
   UGrupoProduto in 'Modelo\Persistencia\UGrupoProduto.pas',
   URepositorioGrupoProduto in 'Modelo\Persistencia\URepositorioGrupoProduto.pas',
   URegraCRUDGrupoProduto in 'Modelo\Regra\URegraCRUDGrupoProduto.pas',

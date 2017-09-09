@@ -49,6 +49,7 @@ type
     procedure MiProdutoClick(Sender: TObject);
     procedure MiUnidadeMedidaClick(Sender: TObject);
     procedure MiMatrizClick(Sender: TObject);
+    procedure MiFilialClick(Sender: TObject);
   private
     { Private declaration }
   public
@@ -71,6 +72,7 @@ uses
   , UFrmCadastroProduto
   , UCadastroUnidadeMedida
   , UFrmCadastroEmpresaMatriz
+  , UFrmCadastroFilial
   ;
 
 {$R *.dfm}
@@ -88,6 +90,11 @@ end;
 procedure TFrmPrincipal.MiFamiliaProdutoClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroFamiliaProduto, FrmCadastroFamiliaProduto);
+end;
+
+procedure TFrmPrincipal.MiFilialClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroFilial, FrmCadastroFilial);
 end;
 
 procedure TFrmPrincipal.MiGrupoProdutoClick(Sender: TObject);

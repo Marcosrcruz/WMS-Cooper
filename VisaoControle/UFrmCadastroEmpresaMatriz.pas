@@ -183,9 +183,9 @@ begin
   edBairro.Text            := FEMPRESA.BAIRRO;
   edCidade.Text            := IntToStr(FEMPRESA.CIDADE.ID);
   edEstado.Text            := IntToStr(FEMPRESA.ESTADO.ID);
-  edPais                   := IntToStr(FEMPRESA.PAIS.ID);
+  edPais.Text              := IntToStr(FEMPRESA.PAIS.ID);
   stNomeCidade.Caption     := FEMPRESA.CIDADE.NOME;
-  stNomeEstado.Caption     := FEMPRESA.ESTADO.ID;
+  stNomeEstado.Caption     := FEMPRESA.ESTADO.NOME;
   stNomePais.Caption       := FEMPRESA.PAIS.NOME;
 end;
 end.

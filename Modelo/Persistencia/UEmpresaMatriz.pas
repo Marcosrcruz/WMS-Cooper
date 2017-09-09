@@ -43,7 +43,7 @@ type
     FLD_MATRIZ_TELEFONE   = 'TELEFONE';
 
 
-    VW_MATRIZ            = 'EMPRESA';
+    VW_MATRIZ            = 'VW_EMPRESA';
     VW_MATRIZ_ID         = 'COD';
     VW_MATRIZ_NOME       = 'NOME';
     VW_MATRIZ_CNPJ       = 'CNPJ';

@@ -39,6 +39,7 @@ object FrmPrincipal: TFrmPrincipal
         Caption = '&Empresa'
         object MiFilial: TMenuItem
           Caption = '&Filial'
+          OnClick = MiFilialClick
         end
         object MiMatriz: TMenuItem
           Caption = '&Matriz'

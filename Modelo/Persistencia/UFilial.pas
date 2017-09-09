@@ -14,7 +14,7 @@ type TFILIAL = class(TENTIDADE)
   public
     CODIGO     : Integer;
     NOME       : string;
-    CNPJ       : Integer;
+    CNPJ       : string;
     IE         : Integer;
     TELEFONE   : string;
     LOGRADOURO : string;

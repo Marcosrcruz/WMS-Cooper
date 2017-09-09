@@ -1,4 +1,4 @@
-    unit URepositorioFilial;
+unit URepositorioFilial;
 
 interface
 
@@ -14,7 +14,7 @@ uses
   UEstado,
   UCidade,
   UEmpresaMatriz,
-      SqlExpr
+  SqlExpr
    ;
 
  type
@@ -22,9 +22,9 @@ uses
    TRepositorioFilial = class (TRepositorioDB<TFilial>)
  private
     FRepositorioEmpresaMatriz : TRepositorioEmpresaMatriz;
-    FRepositorioCidade : TRepositorioCidade;
-    FRepositorioEstado : TRepositorioEstado;
-    FRepositorioPais   : TRepositorioPais;
+    FRepositorioCidade        : TRepositorioCidade;
+    FRepositorioEstado        : TRepositorioEstado;
+    FRepositorioPais          : TRepositorioPais;
 
  public
 
@@ -33,15 +33,13 @@ uses
 
     procedure  AtribuiDBParaEntidade (const coFilial : TFILIAL); override;
     procedure  AtribuiEntidadeParaDB (const coFilial : TFILIAL;
-
                                       const coSQlQuery : TSQLQuery); override;
 
    end;
 
-
 implementation
 
-  uses
+uses
    UDM,
    SysUtils
   ;
@@ -55,7 +53,7 @@ begin
    begin
      coFilial.CODIGO     := FieldByName(FLD_FILIAL_CODIGO).Asinteger;
      coFilial.NOME       := FieldByName(FLD_FILIAL_NOME).Asstring;
-     coFilial.CNPJ       := FieldByName(FLD_FILIAL_CNPJ).AsInteger;
+     coFilial.CNPJ       := FieldByName(FLD_FILIAL_CNPJ).AsString;
      coFilial.IE         := FieldByName(FLD_FILIAL_IE).AsInteger;
      coFilial.TELEFONE   := FieldByName(FLD_FILIAL_TELEFONE).AsString;
      coFilial.LOGRADOURO := FieldByName(FLD_FILIAL_LOGRADOURO).AsString;
@@ -67,7 +65,8 @@ begin
        FRepositorioEstado.Retorna (FieldByName (FLD_FILIAL_ESTADO).Asinteger));
      coFilial.PAIS       := TPAIS (
        FRepositorioPais.Retorna (FieldByName (FLD_FILIAL_PAIS).AsInteger));
-     coFilial.EMPRESA    := TEmpresaMatriz(FRepositorioEmpresaMatriz.Retorna(FieldByname(FLD_FILIAL_EMPRESA).Asinteger));
+     coFilial.EMPRESA    := TEmpresaMatriz(
+       FRepositorioEmpresaMatriz.Retorna(FieldByname(FLD_FILIAL_EMPRESA).Asinteger));
  end;
 
 end;
@@ -80,7 +79,7 @@ begin
     begin
       ParamByName(FLD_FILIAL_CODIGO).AsInteger    := coFilial.CODIGO;
       ParamByName(FLD_FILIAL_NOME).AsString       := coFilial.NOME;
-      ParamByName(FLD_FILIAL_CNPJ).AsInteger      := coFilial.CNPJ;
+      ParamByName(FLD_FILIAL_CNPJ).AsString       := coFilial.CNPJ;
       ParamByName(FLD_FILIAL_IE).AsInteger        := coFilial.IE;
       ParamByName(FLD_FILIAL_TELEFONE).AsString   := coFilial.TELEFONE;
       ParamByName(FLD_FILIAL_LOGRADOURO).AsString := coFilial.LOGRADOURO;

@@ -140,7 +140,7 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioFilial.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDFilial.pas"/>
 			<DCCReference Include="VisaoControle\UFrmCadastroFilial.pas">
-				<Form>FrmCRUD5</Form>
+				<Form>FrmCadastroFilial</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\UGrupoProduto.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioGrupoProduto.pas"/>

@@ -1,20 +1,51 @@
 inherited FrmCadastroCidade: TFrmCadastroCidade
   Caption = 'Cadastro de Cidade'
+  ClientHeight = 398
+  ClientWidth = 653
+  ExplicitWidth = 669
+  ExplicitHeight = 437
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlCabecalho: TPanel
-    ExplicitTop = -6
+    Width = 653
+    ExplicitWidth = 120
     inherited lbCabecalho: TLabel
       Width = 188
       Caption = 'CADASTRO DE CIDADE'
       ExplicitWidth = 188
     end
   end
+  inherited gbLocalizar: TGroupBox
+    Width = 653
+    ExplicitWidth = 120
+  end
+  inherited pnlBotoes: TPanel
+    Top = 357
+    Width = 653
+    ExplicitTop = -41
+    ExplicitWidth = 120
+    inherited btnLimpar: TBitBtn
+      Left = 418
+      ExplicitLeft = -115
+    end
+    inherited btnExcluir: TBitBtn
+      Left = 301
+      ExplicitLeft = -232
+    end
+    inherited btnGravar: TBitBtn
+      Left = 184
+      ExplicitLeft = -349
+    end
+    inherited btnSair: TBitBtn
+      Left = 535
+      ExplicitLeft = 2
+    end
+  end
   object gbInformacoes: TGroupBox [3]
     Left = 0
     Top = 86
-    Width = 635
-    Height = 252
+    Width = 653
+    Height = 271
     Align = alClient
     Caption = ' Informa'#231#245'es '
     Font.Charset = DEFAULT_CHARSET
@@ -24,7 +55,8 @@ inherited FrmCadastroCidade: TFrmCadastroCidade
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 84
+    ExplicitWidth = 120
+    ExplicitHeight = 252
     object lbCodigoPais: TLabel
       Left = 31
       Top = 77

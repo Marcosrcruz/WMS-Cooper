@@ -4,7 +4,7 @@ object FrmCRUD: TFrmCRUD
   Caption = 'Cadastro de'
   ClientHeight = 379
   ClientWidth = 635
-  Color = clSilver
+  Color = 16575431
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -27,12 +27,13 @@ object FrmCRUD: TFrmCRUD
     Width = 635
     Height = 28
     Align = alTop
-    Color = clGray
+    Color = 16701086
     Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    ParentBackground = False
     ParentFont = False
     TabOrder = 0
     object lbCabecalho: TLabel
@@ -56,12 +57,15 @@ object FrmCRUD: TFrmCRUD
     Height = 58
     Align = alTop
     Caption = ' Localizar '
+    Color = 16701863
     Ctl3D = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
     ParentCtl3D = False
     ParentFont = False
     TabOrder = 1

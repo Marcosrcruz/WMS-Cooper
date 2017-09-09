@@ -9,6 +9,11 @@ inherited FrmCadastroPais: TFrmCadastroPais
   inherited pnlCabecalho: TPanel
     Width = 630
     ExplicitWidth = 630
+    inherited lbCabecalho: TLabel
+      Width = 164
+      Caption = 'CADASTRO DE PA'#205'S'
+      ExplicitWidth = 164
+    end
   end
   inherited gbLocalizar: TGroupBox
     Width = 630
@@ -44,15 +49,29 @@ inherited FrmCadastroPais: TFrmCadastroPais
     Align = alClient
     Caption = 'Informa'#231#245'es'
     TabOrder = 3
-    ExplicitTop = 84
     object edNome: TLabeledEdit
       Left = 104
-      Top = 56
-      Width = 121
+      Top = 64
+      Width = 369
       Height = 21
+      Color = clInfoBk
       EditLabel.Width = 27
       EditLabel.Height = 13
       EditLabel.Caption = 'Nome'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -11
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      LabelPosition = lpLeft
+      MaxLength = 60
+      ParentFont = False
       TabOrder = 0
     end
   end

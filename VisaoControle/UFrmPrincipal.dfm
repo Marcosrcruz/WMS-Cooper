@@ -42,6 +42,7 @@ object FrmPrincipal: TFrmPrincipal
         end
         object MiMatriz: TMenuItem
           Caption = '&Matriz'
+          OnClick = MiMatrizClick
         end
       end
       object MiLocalidades: TMenuItem

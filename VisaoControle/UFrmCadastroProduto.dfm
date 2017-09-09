@@ -71,6 +71,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    ExplicitTop = 84
     object lbCodigoUnidMedida: TLabel
       Left = 50
       Top = 101

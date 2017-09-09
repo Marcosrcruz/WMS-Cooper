@@ -30,7 +30,7 @@ uses
   UFrmCadastroCidade in 'VisaoControle\UFrmCadastroCidade.pas' {FrmCadastroCidade},
   URepositorioEmpresaMatriz in 'Modelo\Persistencia\URepositorioEmpresaMatriz.pas',
   URegraCRUDEmpresaMatriz in 'Modelo\Regra\URegraCRUDEmpresaMatriz.pas',
-  UFrmCadastroEmpresaMatriz in 'VisaoControle\UFrmCadastroEmpresaMatriz.pas' {FrmCRUD1},
+  UFrmCadastroEmpresaMatriz in 'VisaoControle\UFrmCadastroEmpresaMatriz.pas' {FrmCadastroEmpresa},
   URepositorioUnidadeMedida in 'Modelo\Persistencia\URepositorioUnidadeMedida.pas',
   URegraCRUDUnidadeMedida in 'Modelo\Regra\URegraCRUDUnidadeMedida.pas',
   UCadastroUnidadeMedida in 'VisaoControle\UCadastroUnidadeMedida.pas' {FrmCadastroUnidadeMedida},

@@ -14,7 +14,7 @@ type
   public
     CODIGO     : Integer;
     NOME       : String;
-    CNPJ       : Integer;
+    CNPJ       : string;
     IE         : integer;
     LOGRADOURO : String;
     NUMERO     : Integer;
@@ -44,17 +44,12 @@ type
 
 
     VW_MATRIZ            = 'EMPRESA';
-    VW_MATRIZ_CODIGO     = 'CODIGO';
+    VW_MATRIZ_ID         = 'COD';
     VW_MATRIZ_NOME       = 'NOME';
     VW_MATRIZ_CNPJ       = 'CNPJ';
     VW_MATRIZ_IE         = 'IE';
     VW_MATRIZ_LOGRADOURO = 'LOGRADOURO';
-    VW_MATRIZ_NUMERO     = 'NUMERO';
-    VW_MATRIZ_BAIRRO     = 'BAIRRO';
-    VW_MATRIZ_MUNICIPIO  = 'MUNICIPIO';
-    VW_MATRIZ_ESTADO     = 'ESTADO';
-    VW_MATRIZ_PAIS       = 'PAIS';
-    VW_MATRIZ_TELEFONE   = 'TELEFONE';
+    VW_MATRIZ_CIDADE     = 'CIDADE';
 
     resourcestring
 
@@ -71,9 +66,9 @@ uses
 
 constructor TEmpresaMatriz.Create;
 begin
-   CIDADE := TCIDADE.Create();
-   ESTADO := TESTADO.Create();
-   PAIS   := TPAIS.Create();
+   CIDADE := TCIDADE.Create;
+   ESTADO := TESTADO.Create;
+   PAIS   := TPAIS.Create;
 end;
 
 destructor TEmpresaMatriz.Destroy;

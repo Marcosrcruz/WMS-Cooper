@@ -1,4 +1,4 @@
-  unit URegraCRUDEmpresaMatriz;
+unit URegraCRUDEmpresaMatriz;
 
 interface
 
@@ -14,7 +14,6 @@ uses
 
    public
      constructor create; override;
-
    end;
 
 implementation
@@ -26,8 +25,4 @@ constructor TregraCRUDEEmpresaMatriz.Create;
     inherited;
     FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioEmpresaMatriz.Create);
   end;
-
-
-
-
 end.

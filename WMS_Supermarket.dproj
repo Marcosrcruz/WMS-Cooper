@@ -117,7 +117,7 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioEmpresaMatriz.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDEmpresaMatriz.pas"/>
 			<DCCReference Include="VisaoControle\UFrmCadastroEmpresaMatriz.pas">
-				<Form>FrmCRUD1</Form>
+				<Form>FrmCadastroEmpresa</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\URepositorioUnidadeMedida.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDUnidadeMedida.pas"/>

@@ -16,7 +16,6 @@ uses
 type
   TFrmCadastroEmpresa = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
-    edCodigoEmpresa: TLabeledEdit;
     edNome: TLabeledEdit;
     edInscricaoEstadual: TLabeledEdit;
     Endereço: TGroupBox;
@@ -29,14 +28,6 @@ type
     edCidade: TEdit;
     btnLocalizarCidade: TButton;
     stNomeCidade: TStaticText;
-    stNomeEstado: TStaticText;
-    stNomePais: TStaticText;
-    btnLocalizarPais: TButton;
-    btnLocalizarEstado: TButton;
-    edEstado: TEdit;
-    edPais: TEdit;
-    lblNomeEstado: TLabel;
-    lblPais: TLabel;
     procedure btnLocalizarCidadeClick(Sender: TObject);
     procedure edCidadeExit(Sender: TObject);
 
@@ -100,15 +91,8 @@ begin
       FEMPRESA.CIDADE := TCIDADE(
               FRegraCRUDCidade.Retorna(StrToIntDef(edCidade.Text, 0)));
 
-      FEMPRESA.ESTADO := FEMPRESA.CIDADE.ESTADO;
-      FEMPRESA.PAIS   := FEMPRESA.ESTADO.PAIS;
-
-      edEstado.Text        := IntToStr(FEMPRESA.ESTADO.ID);
-      edPais.Text          := IntToStr(FEMPRESA.PAIS.ID);
-
       stNomeCidade.Caption := FEMPRESA.CIDADE.NOME;
-      stNomeEstado.Caption := FEMPRESA.ESTADO.NOME;
-      stNomePais.Caption   := FEMPRESA.PAIS.NOME;
+
     except
       on E: Exception do
         begin
@@ -154,13 +138,12 @@ end;
 procedure TFrmCadastroEmpresa.PosicionaCursorPrimeiroCampo;
 begin
   inherited;
-  edCodigoEmpresa.SetFocus;
+  edNome.SetFocus;
 end;
 
 procedure TFrmCadastroEmpresa.PreencheEntidade;
 begin
   inherited;
-  FEMPRESA.CODIGO     := StrToIntDef(edCodigoEmpresa.Text, 0);
   FEMPRESA.NOME       := edNome.Text;
   FEMPRESA.IE         := StrToIntDef(edInscricaoEstadual.Text, 0);
   FEMPRESA.CNPJ       := edCnpj.Text;
@@ -173,7 +156,6 @@ end;
 procedure TFrmCadastroEmpresa.PreencheFormulario;
 begin
   inherited;
-  edCodigoEmpresa.Text     := IntToStr(FEMPRESA.CODIGO);
   edNome.Text              := FEMPRESA.NOME;
   edInscricaoEstadual.Text := IntToStr(FEMPRESA.IE);
   edCnpj.Text              := FEMPRESA.CNPJ;
@@ -182,10 +164,7 @@ begin
   edNumero.Text            := IntToStr(FEMPRESA.NUMERO);
   edBairro.Text            := FEMPRESA.BAIRRO;
   edCidade.Text            := IntToStr(FEMPRESA.CIDADE.ID);
-  edEstado.Text            := IntToStr(FEMPRESA.ESTADO.ID);
-  edPais.Text              := IntToStr(FEMPRESA.PAIS.ID);
   stNomeCidade.Caption     := FEMPRESA.CIDADE.NOME;
-  stNomeEstado.Caption     := FEMPRESA.ESTADO.NOME;
-  stNomePais.Caption       := FEMPRESA.PAIS.NOME;
+
 end;
 end.

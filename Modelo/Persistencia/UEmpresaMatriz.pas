@@ -4,15 +4,12 @@ interface
 
 uses
     UEntidade,
-    UCidade,
-    UEstado,
-    UPais
+    UCidade
   ;
 
 type
   TEmpresaMatriz = class(TENTIDADE)
   public
-    CODIGO     : Integer;
     NOME       : String;
     CNPJ       : string;
     IE         : integer;
@@ -20,8 +17,6 @@ type
     NUMERO     : Integer;
     BAIRRO     : String;
     CIDADE     : TCIDADE;
-    ESTADO     : TESTADO;
-    PAIS       : TPAIS;
     TELEFONE   : String;
 
     constructor Create; override;
@@ -30,7 +25,6 @@ type
 
   const
     TBL_MATRIZ            = 'EMPRESA';
-    FLD_MATRIZ_CODIGO     = 'CODIGO';
     FLD_MATRIZ_NOME       = 'NOME';
     FLD_MATRIZ_CNPJ       = 'CNPJ';
     FLD_MATRIZ_IE         = 'IE';
@@ -38,8 +32,6 @@ type
     FLD_MATRIZ_NUMERO     = 'NUMERO';
     FLD_MATRIZ_BAIRRO     = 'BAIRRO';
     FLD_MATRIZ_MUNICIPIO  = 'ID_MUNICIPIO';
-    FLD_MATRIZ_ESTADO     = 'ID_ESTADO';
-    FLD_MATRIZ_PAIS       = 'ID_PAIS';
     FLD_MATRIZ_TELEFONE   = 'TELEFONE';
 
 
@@ -67,15 +59,12 @@ uses
 constructor TEmpresaMatriz.Create;
 begin
    CIDADE := TCIDADE.Create;
-   ESTADO := TESTADO.Create;
-   PAIS   := TPAIS.Create;
 end;
 
 destructor TEmpresaMatriz.Destroy;
 begin
-  FreeAndNil(CIDADE);
-  FreeAndNil(ESTADO);
-  FreeAndNil(PAIS);
+  if Assigned(CIDADE) then
+    FreeAndNil(CIDADE);
   inherited;
 end;
 

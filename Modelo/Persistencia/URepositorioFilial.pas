@@ -51,7 +51,6 @@ begin
   inherited;
        with FSQLSelect do
    begin
-     coFilial.CODIGO     := FieldByName(FLD_FILIAL_CODIGO).Asinteger;
      coFilial.NOME       := FieldByName(FLD_FILIAL_NOME).Asstring;
      coFilial.CNPJ       := FieldByName(FLD_FILIAL_CNPJ).AsString;
      coFilial.IE         := FieldByName(FLD_FILIAL_IE).AsInteger;
@@ -61,10 +60,6 @@ begin
      coFilial.BAIRRO     := FieldByName(FLD_FILIAL_BAIRR0).AsString;
      coFilial.CIDADE     := TCIDADE(
        FRepositorioCidade.Retorna (FieldByName (FLD_FILIAL_CIDADE).AsInteger));
-     coFilial.ESTADO     := TESTADO(
-       FRepositorioEstado.Retorna (FieldByName (FLD_FILIAL_ESTADO).Asinteger));
-     coFilial.PAIS       := TPAIS (
-       FRepositorioPais.Retorna (FieldByName (FLD_FILIAL_PAIS).AsInteger));
      coFilial.EMPRESA    := TEmpresaMatriz(
        FRepositorioEmpresaMatriz.Retorna(FieldByname(FLD_FILIAL_EMPRESA).Asinteger));
  end;
@@ -77,7 +72,7 @@ begin
   inherited;
     with coSQLQuery do
     begin
-      ParamByName(FLD_FILIAL_CODIGO).AsInteger    := coFilial.CODIGO;
+
       ParamByName(FLD_FILIAL_NOME).AsString       := coFilial.NOME;
       ParamByName(FLD_FILIAL_CNPJ).AsString       := coFilial.CNPJ;
       ParamByName(FLD_FILIAL_IE).AsInteger        := coFilial.IE;
@@ -86,8 +81,6 @@ begin
       ParamByName(FLD_FILIAL_NUMERO).AsInteger    := coFilial.NUMERO;
       ParamByName(FLD_FILIAL_BAIRR0).AsString     := coFilial.BAIRRO;
       ParamByName(FLD_FILIAL_CIDADE).AsInteger    := coFilial.CIDADE.ID;
-      ParamByName(FLD_FILIAL_ESTADO).AsInteger    := coFilial.ESTADO.ID;
-      ParamByName(FLD_FILIAL_PAIS).AsInteger      := coFilial.PAIS.ID;
       ParamByName(FLD_FILIAL_EMPRESA).AsInteger   := coFilial.EMPRESA.ID;
 
 

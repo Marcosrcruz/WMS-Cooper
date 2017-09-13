@@ -17,25 +17,16 @@ uses
 type
   TFrmCadastroFilial = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
-    edCodigoFilial: TLabeledEdit;
     edNome: TLabeledEdit;
     edInscricaoEstadual: TLabeledEdit;
     Endereço: TGroupBox;
     lblCidade: TLabel;
-    lblNomeEstado: TLabel;
-    lblPais: TLabel;
     edLogradouro: TLabeledEdit;
     edNumero: TLabeledEdit;
     edBairro: TLabeledEdit;
     edCidade: TEdit;
     btnLocalizarCidade: TButton;
     stNomeCidade: TStaticText;
-    stNomeEstado: TStaticText;
-    stNomePais: TStaticText;
-    btnLocalizarPais: TButton;
-    btnLocalizarEstado: TButton;
-    edEstado: TEdit;
-    edPais: TEdit;
     edCnpj: TLabeledEdit;
     edTelefone: TLabeledEdit;
     edEmpresaMatriz: TEdit;
@@ -122,15 +113,7 @@ begin
       FFILIAL.CIDADE := TCIDADE(
               FRegraCRUDCidade.Retorna(StrToIntDef(edCidade.Text, 0)));
 
-      FFILIAL.ESTADO := FFILIAL.CIDADE.ESTADO;
-      FFILIAL.PAIS   := FFILIAL.ESTADO.PAIS;
-
-      edEstado.Text        := IntToStr(FFILIAL.ESTADO.ID);
-      edPais.Text          := IntToStr(FFILIAL.PAIS.ID);
-
       stNomeCidade.Caption := FFILIAL.CIDADE.NOME;
-      stNomeEstado.Caption := FFILIAL.ESTADO.NOME;
-      stNomePais.Caption   := FFILIAL.PAIS.NOME;
     except
       on E: Exception do
         begin
@@ -204,7 +187,6 @@ end;
 procedure TFrmCadastroFilial.PreencheEntidade;
 begin
   inherited;
-  FFILIAL.CODIGO     := StrToIntDef(edCodigoFilial.Text, 0);
   FFILIAL.NOME       := edNome.Text;
   FFILIAL.IE         := StrToIntDef(edInscricaoEstadual.Text, 0);
   FFILIAL.CNPJ       := edCnpj.Text;
@@ -217,7 +199,6 @@ end;
 procedure TFrmCadastroFilial.PreencheFormulario;
 begin
   inherited;
-  edCodigoFilial.Text      := IntToStr(FFILIAL.CODIGO);
   edNome.Text              := FFILIAL.NOME;
   edInscricaoEstadual.Text := IntToStr(FFILIAL.IE);
   edCnpj.Text              := FFILIAL.CNPJ;
@@ -226,13 +207,9 @@ begin
   edNumero.Text            := IntToStr(FFILIAL.NUMERO);
   edBairro.Text            := FFILIAL.BAIRRO;
   edCidade.Text            := IntToStr(FFILIAL.CIDADE.ID);
-  edEstado.Text            := IntToStr(FFILIAL.ESTADO.ID);
-  edPais.Text              := IntToStr(FFILIAL.PAIS.ID);
   edEmpresaMatriz.Text     := IntToStr(FFILIAL.EMPRESA.ID);
 
   stNomeCidade.Caption     := FFILIAL.CIDADE.NOME;
-  stNomeEstado.Caption     := FFILIAL.ESTADO.NOME;
-  stNomePais.Caption       := FFILIAL.PAIS.NOME;
   stNomeEmpresa.Caption    := FFILIAL.EMPRESA.NOME;
 end;
 

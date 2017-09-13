@@ -46,7 +46,9 @@ end;
 
 destructor TCIDADE.Destroy;
 begin
-   FreeAndNil(ESTADO);
+  if Assigned(ESTADO) then
+    FreeAndNil(ESTADO);
+
   inherited;
 end;
 

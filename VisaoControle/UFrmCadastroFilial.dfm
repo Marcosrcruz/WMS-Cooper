@@ -8,7 +8,7 @@
   TextHeight = 13
   inherited pnlCabecalho: TPanel
     Width = 994
-    ExplicitWidth = 649
+    ExplicitWidth = 994
     inherited lbCabecalho: TLabel
       Width = 177
       Caption = 'CADASTRO DE FILIAL'
@@ -17,7 +17,7 @@
   end
   inherited gbLocalizar: TGroupBox
     Width = 994
-    ExplicitWidth = 649
+    ExplicitWidth = 994
     inherited lbCodigo: TLabel
       Left = 105
       ExplicitLeft = 105
@@ -34,23 +34,23 @@
   inherited pnlBotoes: TPanel
     Top = 508
     Width = 994
-    ExplicitTop = 346
-    ExplicitWidth = 649
+    ExplicitTop = 508
+    ExplicitWidth = 994
     inherited btnLimpar: TBitBtn
       Left = 759
-      ExplicitLeft = 414
+      ExplicitLeft = 759
     end
     inherited btnExcluir: TBitBtn
       Left = 642
-      ExplicitLeft = 297
+      ExplicitLeft = 642
     end
     inherited btnGravar: TBitBtn
       Left = 525
-      ExplicitLeft = 180
+      ExplicitLeft = 525
     end
     inherited btnSair: TBitBtn
       Left = 876
-      ExplicitLeft = 531
+      ExplicitLeft = 876
     end
   end
   object gbInformacoes: TGroupBox [3]
@@ -68,11 +68,9 @@
     ParentFont = False
     TabOrder = 3
     ExplicitTop = 84
-    ExplicitWidth = 652
-    ExplicitHeight = 314
     object lblEmpresa: TLabel
       Left = 97
-      Top = 261
+      Top = 221
       Width = 41
       Height = 13
       Alignment = taRightJustify
@@ -84,34 +82,9 @@
       Font.Style = []
       ParentFont = False
     end
-    object edCodigoFilial: TLabeledEdit
-      Left = 144
-      Top = 56
-      Width = 376
-      Height = 21
-      Color = clInfoBk
-      EditLabel.Width = 33
-      EditLabel.Height = 13
-      EditLabel.Caption = 'C'#243'digo'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -11
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 60
-      ParentFont = False
-      TabOrder = 0
-    end
     object edNome: TLabeledEdit
       Left = 144
-      Top = 96
+      Top = 56
       Width = 376
       Height = 21
       Color = clInfoBk
@@ -132,11 +105,11 @@
       LabelPosition = lpLeft
       MaxLength = 60
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
     end
     object edInscricaoEstadual: TLabeledEdit
       Left = 144
-      Top = 136
+      Top = 96
       Width = 376
       Height = 21
       Color = clInfoBk
@@ -157,7 +130,7 @@
       LabelPosition = lpLeft
       MaxLength = 60
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
     end
     object Endereço: TGroupBox
       Left = 536
@@ -165,7 +138,7 @@
       Width = 433
       Height = 297
       Caption = 'Endere'#231'o'
-      TabOrder = 3
+      TabOrder = 6
       object lblCidade: TLabel
         Left = 57
         Top = 181
@@ -173,34 +146,6 @@
         Height = 13
         Alignment = taRightJustify
         Caption = 'Cidade'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object lblNomeEstado: TLabel
-        Left = 57
-        Top = 229
-        Width = 33
-        Height = 13
-        Alignment = taRightJustify
-        Caption = 'Estado'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object lblPais: TLabel
-        Left = 71
-        Top = 260
-        Width = 19
-        Height = 13
-        Alignment = taRightJustify
-        Caption = 'Pa'#237's'
         Font.Charset = ANSI_CHARSET
         Font.Color = clBlack
         Font.Height = -11
@@ -334,108 +279,10 @@
         TabOrder = 5
         Transparent = False
       end
-      object stNomeEstado: TStaticText
-        Left = 204
-        Top = 218
-        Width = 217
-        Height = 19
-        AutoSize = False
-        BorderStyle = sbsSingle
-        Color = clGray
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        TabOrder = 6
-        Transparent = False
-      end
-      object stNomePais: TStaticText
-        Left = 204
-        Top = 257
-        Width = 217
-        Height = 19
-        AutoSize = False
-        BorderStyle = sbsSingle
-        Color = clGray
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        TabOrder = 7
-        Transparent = False
-      end
-      object btnLocalizarPais: TButton
-        Left = 168
-        Top = 258
-        Width = 30
-        Height = 19
-        Cursor = crHandPoint
-        Caption = '...'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 8
-        TabStop = False
-      end
-      object btnLocalizarEstado: TButton
-        Left = 168
-        Top = 218
-        Width = 30
-        Height = 19
-        Cursor = crHandPoint
-        Caption = '...'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 9
-        TabStop = False
-      end
-      object edEstado: TEdit
-        Left = 101
-        Top = 218
-        Width = 61
-        Height = 21
-        Color = clInfoBk
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        NumbersOnly = True
-        ParentFont = False
-        TabOrder = 10
-      end
-      object edPais: TEdit
-        Left = 101
-        Top = 259
-        Width = 61
-        Height = 21
-        Color = clInfoBk
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        NumbersOnly = True
-        ParentFont = False
-        TabOrder = 11
-      end
     end
     object edCnpj: TLabeledEdit
       Left = 144
-      Top = 176
+      Top = 136
       Width = 376
       Height = 21
       Color = clInfoBk
@@ -456,11 +303,11 @@
       LabelPosition = lpLeft
       MaxLength = 60
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 2
     end
     object edTelefone: TLabeledEdit
       Left = 144
-      Top = 216
+      Top = 176
       Width = 376
       Height = 21
       Color = clInfoBk
@@ -481,11 +328,11 @@
       LabelPosition = lpLeft
       MaxLength = 60
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 3
     end
     object edEmpresaMatriz: TEdit
       Left = 144
-      Top = 258
+      Top = 218
       Width = 65
       Height = 21
       Color = clInfoBk
@@ -496,12 +343,12 @@
       Font.Style = []
       NumbersOnly = True
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 4
       OnExit = edEmpresaMatrizExit
     end
     object btnLocalizarEmpresa: TButton
       Left = 215
-      Top = 259
+      Top = 219
       Width = 30
       Height = 19
       Cursor = crHandPoint
@@ -512,13 +359,13 @@
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 5
       TabStop = False
       OnClick = btnLocalizarEmpresaClick
     end
     object stNomeEmpresa: TStaticText
       Left = 251
-      Top = 259
+      Top = 219
       Width = 269
       Height = 19
       AutoSize = False
@@ -531,7 +378,7 @@
       Font.Style = []
       ParentColor = False
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 7
       Transparent = False
     end
   end

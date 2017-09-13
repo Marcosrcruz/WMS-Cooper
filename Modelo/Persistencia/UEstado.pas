@@ -44,7 +44,9 @@ end;
 
 destructor TESTADO.Destroy;
 begin
-  FreeAndNil(PAIS);
+  if Assigned(PAIS) then
+    FreeAndNil(PAIS);
+
   inherited;
 end;
 

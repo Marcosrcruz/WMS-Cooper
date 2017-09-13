@@ -31,6 +31,10 @@ resourcestring
   //Pais
   STR_PAIS_NOME_NAO_INFORMADO     = 'Nome do país é obrigatório';
 
+  //Deposito
+  STR_DEPOSITO_DESCRICAO_NAO_INFORMADO = 'Nome do depósito é obrigatório';
+
+
 implementation
 
 end.

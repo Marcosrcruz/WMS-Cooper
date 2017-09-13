@@ -20,7 +20,6 @@ end;
 
   const
    TBL_DEPOSITO               =    'DEPOSITO';
-   FLD_DEPOSITO_CODIGO        =    'CODIGO';
    FLD_DEPOSITO_DESCRICAO     =    'DESCRICAO';
    FLD_DEPOSITO_FILIAL_ID     =    'ID_FILIAL';
 

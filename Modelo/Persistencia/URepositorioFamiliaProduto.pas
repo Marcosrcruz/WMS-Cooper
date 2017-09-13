@@ -30,7 +30,7 @@ begin
   with FSQLSelect do
   begin
     coFamiliaProduto.NOMEFAMILIA := FieldByName(FLD_FAMILIAPRODUTO_NOMEFAMILIA).AsString;
-    coFamiliaProduto.CODIGO      := FieldByName(FLD_FAMILIAPRODUTO_CODIGO).AsInteger;
+
   end;
 end;
 
@@ -41,7 +41,7 @@ begin
   with coSQLQuery do
   begin
     ParamByName(FLD_FAMILIAPRODUTO_NOMEFAMILIA).AsString := coFamiliaProduto.NOMEFAMILIA;
-    ParamByName(FLD_FAMILIAPRODUTO_CODIGO).AsInteger     := coFamiliaProduto.CODIGO;
+
   end;
 end;
 

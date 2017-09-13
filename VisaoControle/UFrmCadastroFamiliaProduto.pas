@@ -58,13 +58,11 @@ begin
 
   AdicionaOpcaoPesquisa(TOpcaoPesquisa.Create
     .DefineVisao(VW_FAMILIAPRODUTO)
-    .DefineNomeCampoRetorno(VW_FAMILIAPRODUTO_CODIGO)
     .AdicionaFiltro(VW_FAMILIAPRODUTO_NOMEFAMILIA)
     .DefineNomePesquisa(STR_FAMILIAPRODUTO));
 
   AdicionaOpcaoPesquisa(TOpcaoPesquisa.Create
     .DefineVisao(VW_FAMILIAPRODUTO)
-    .DefineNomeCampoRetorno(VW_FAMILIAPRODUTO_CODIGO)
     .AdicionaFiltro(VW_FAMILIAPRODUTO_NOMEFAMILIA)
     .DefineNomePesquisa('Pesquisa X'));
 end;

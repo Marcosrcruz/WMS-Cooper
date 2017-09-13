@@ -13,7 +13,6 @@ type
    TPESSOA = class(TENTIDADE)
   public
     NOME       : String;
-    CODIGO     : Integer;
     LOGRADOURO : string;
     NUMERO     : Integer;
     BAIRRO     : string;
@@ -29,7 +28,6 @@ type
   const
     TBL_PESSOA            = 'PESSOA';
     FLD_PESSOA_NOME       = 'NOME';
-    FLD_PESSOA_CODIGO     = 'CODIGO';
     FLD_PESSOA_LOGRADOURO = 'LOGRADOURO';
     FLD_PESSOA_NUMERO     = 'NUMERO';
     FLD_PESSOA_BAIRRO     = 'BAIRRO';

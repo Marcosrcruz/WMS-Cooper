@@ -45,8 +45,7 @@ procedure TRepositorioDeposito.AtribuiDBParaEntidade(const coDeposito: TDEPOSITO
      inherited;
        with FSQLSelect do
     begin
-      coDeposito.CODIGO     := FieldByName(FLD_DEPOSITO_CODIGO).AsInteger;
-      coDeposito.DESCRICAO  := FieldByName(FLD_DEPOSITO_DESCRICAO).AsString;
+     coDeposito.DESCRICAO  := FieldByName(FLD_DEPOSITO_DESCRICAO).AsString;
       coDeposito.FILIAL     := TFILIAL (
         FRepositorioFilial.Retorna( FieldByName( FLD_DEPOSITO_FILIAL_ID).AsInteger));
     end;
@@ -58,7 +57,6 @@ procedure TRepositorioDeposito.AtribuiEntidadeParaDB(const coDeposito: TDEPOSITO
      inherited;
        with coSQLQuery do
      begin
-       ParamByName(FLD_DEPOSITO_CODIGO).AsInteger    := coDeposito.CODIGO;
        ParamByName(FLD_DEPOSITO_DESCRICAO).AsString  := coDeposito.DESCRICAO;
        ParambyName(FLD_DEPOSITO_FILIAL_ID).AsInteger := coDeposito.FILIAL.ID;
 

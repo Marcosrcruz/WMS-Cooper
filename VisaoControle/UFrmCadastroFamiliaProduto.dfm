@@ -74,30 +74,5 @@ inherited FrmCadastroFamiliaProduto: TFrmCadastroFamiliaProduto
       ParentFont = False
       TabOrder = 0
     end
-    object edCodigoFamilia: TLabeledEdit
-      Left = 104
-      Top = 99
-      Width = 153
-      Height = 21
-      Color = clInfoBk
-      EditLabel.Width = 33
-      EditLabel.Height = 13
-      EditLabel.Caption = 'C'#243'digo'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -11
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 60
-      ParentFont = False
-      TabOrder = 1
-    end
   end
 end

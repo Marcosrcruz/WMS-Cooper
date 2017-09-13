@@ -14,7 +14,6 @@ type
   TFrmCadastroFamiliaProduto = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
     edNomeFamilia: TLabeledEdit;
-    edCodigoFamilia: TLabeledEdit;
   private
     { Private declarations }
     FFAMILIAPRODUTO : TFamiliaProduto;
@@ -77,14 +76,12 @@ procedure TFrmCadastroFamiliaProduto.PreencheEntidade;
 begin
   inherited;
   FFAMILIAPRODUTO.NOMEFAMILIA := edNomeFamilia.Text;
-  FFAMILIAPRODUTO.CODIGO      := StrToInt(edCodigoFamilia.Text);
 end;
 
 procedure TFrmCadastroFamiliaProduto.PreencheFormulario;
 begin
   inherited;
   edNomeFamilia.Text := FFAMILIAPRODUTO.NOMEFAMILIA;
-  edCodigoFamilia.Text := IntToStr(FFAMILIAPRODUTO.CODIGO)
 end;
 
 end.

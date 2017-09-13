@@ -71,7 +71,6 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 84
     object lbCodigoUnidMedida: TLabel
       Left = 50
       Top = 101
@@ -86,23 +85,9 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       ParentFont = False
     end
-    object lblFamiliaProduto: TLabel
-      Left = 27
-      Top = 140
-      Width = 111
-      Height = 13
-      Alignment = taRightJustify
-      Caption = 'C'#243'digo Fami'#237'lia Produto'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label2: TLabel
       Left = 32
-      Top = 182
+      Top = 142
       Width = 106
       Height = 13
       Alignment = taRightJustify
@@ -116,7 +101,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     end
     object lblFilial: TLabel
       Left = 82
-      Top = 226
+      Top = 186
       Width = 56
       Height = 13
       Alignment = taRightJustify
@@ -127,31 +112,6 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-    end
-    object edCodigoProduto: TLabeledEdit
-      Left = 144
-      Top = 24
-      Width = 376
-      Height = 21
-      Color = clInfoBk
-      EditLabel.Width = 33
-      EditLabel.Height = 13
-      EditLabel.Caption = 'C'#243'digo'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -11
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 60
-      ParentFont = False
-      TabOrder = 0
     end
     object btnLocalizarUnidadeMedida: TButton
       Left = 267
@@ -166,7 +126,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
       TabStop = False
       OnClick = btnLocalizarUnidadeMedidaClick
     end
@@ -183,7 +143,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       NumbersOnly = True
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       OnExit = edUnidadeMedidaExit
     end
     object stNomeUnidadeMedida: TStaticText
@@ -201,12 +161,12 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       ParentColor = False
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       Transparent = False
     end
     object edDescricao: TLabeledEdit
       Left = 144
-      Top = 64
+      Top = 56
       Width = 376
       Height = 21
       Color = clInfoBk
@@ -227,63 +187,12 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       LabelPosition = lpLeft
       MaxLength = 60
       ParentFont = False
-      TabOrder = 4
-    end
-    object edFamiliaProduto: TEdit
-      Left = 144
-      Top = 137
-      Width = 121
-      Height = 21
-      Color = clInfoBk
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      NumbersOnly = True
-      ParentFont = False
-      TabOrder = 5
-      OnExit = edFamiliaProdutoExit
-    end
-    object btnLocalizarFamiliaProduto: TButton
-      Left = 267
-      Top = 138
-      Width = 30
-      Height = 19
-      Cursor = crHandPoint
-      Caption = '...'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 6
-      TabStop = False
-      OnClick = btnLocalizarFamiliaProdutoClick
-    end
-    object stNomeFamProd: TStaticText
-      Left = 303
-      Top = 137
-      Width = 217
-      Height = 19
-      AutoSize = False
-      BorderStyle = sbsSingle
-      Color = clGray
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentFont = False
-      TabOrder = 7
-      Transparent = False
+      TabOrder = 3
     end
   end
   object edFilial: TEdit [4]
     Left = 144
-    Top = 309
+    Top = 269
     Width = 121
     Height = 21
     Color = clInfoBk
@@ -299,7 +208,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   object btnLocalizarFilial: TButton [5]
     Left = 267
-    Top = 310
+    Top = 270
     Width = 30
     Height = 19
     Cursor = crHandPoint
@@ -316,7 +225,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   object stNomeFilial: TStaticText [6]
     Left = 303
-    Top = 309
+    Top = 269
     Width = 217
     Height = 19
     AutoSize = False
@@ -334,7 +243,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   object edGrupoProduto: TEdit [7]
     Left = 144
-    Top = 265
+    Top = 225
     Width = 121
     Height = 21
     Color = clInfoBk
@@ -350,7 +259,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   object btnLocalizarGrupoProduto: TButton [8]
     Left = 267
-    Top = 266
+    Top = 226
     Width = 30
     Height = 19
     Cursor = crHandPoint
@@ -367,7 +276,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
   end
   object stNomeGrupoProduto: TStaticText [9]
     Left = 303
-    Top = 265
+    Top = 225
     Width = 217
     Height = 19
     AutoSize = False

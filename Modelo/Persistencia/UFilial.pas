@@ -43,6 +43,7 @@ const
   VW_FILIAL_IE          = 'IE';
   VW_FILIAL_LOGRADOURO  = 'LOGRADOURO';
   VW_FILIAL_CIDADE      = 'CIDADE';
+  VW_FILIAL_EMPRESA     = 'EMPRESA';
 
   resourcestring
     STR_FILIAL = 'Filial';

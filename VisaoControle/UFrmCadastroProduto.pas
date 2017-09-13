@@ -18,15 +18,10 @@ type
   TFrmCadastroProduto = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
     lbCodigoUnidMedida: TLabel;
-    edCodigoProduto: TLabeledEdit;
     btnLocalizarUnidadeMedida: TButton;
     edUnidadeMedida: TEdit;
     stNomeUnidadeMedida: TStaticText;
     edDescricao: TLabeledEdit;
-    lblFamiliaProduto: TLabel;
-    edFamiliaProduto: TEdit;
-    btnLocalizarFamiliaProduto: TButton;
-    stNomeFamProd: TStaticText;
     edFilial: TEdit;
     btnLocalizarFilial: TButton;
     stNomeFilial: TStaticText;
@@ -37,8 +32,6 @@ type
     lblFilial: TLabel;
     procedure btnLocalizarUnidadeMedidaClick(Sender: TObject);
     procedure edUnidadeMedidaExit(Sender: TObject);
-    procedure btnLocalizarFamiliaProdutoClick(Sender: TObject);
-    procedure edFamiliaProdutoExit(Sender: TObject);
     procedure btnLocalizarGrupoProdutoClick(Sender: TObject);
     procedure edGrupoProdutoExit(Sender: TObject);
     procedure btnLocalizarFilialClick(Sender: TObject);
@@ -84,20 +77,6 @@ uses
 
 {$R *.dfm}
 
-procedure TFrmCadastroProduto.btnLocalizarFamiliaProdutoClick(Sender: TObject);
-begin
-  inherited;
-  edFamiliaProduto.Text := TfrmPesquisa.MostrarPesquisa(TOpcaoPesquisa
-    .Create
-    .DefineVisao(VW_FAMILIAPRODUTO)
-    .DefineNomeCampoRetorno(VW_FAMILIAPRODUTO_ID)
-    .DefineNomePesquisa(STR_FAMILIAPRODUTO)
-    .AdicionaFiltro(VW_FAMILIAPRODUTO_NOMEFAMILIA));
-
-  if Trim(edFamiliaProduto.Text) <> EmptyStr then
-    edFamiliaProduto.OnExit(btnLocalizarFamiliaProduto);
-end;
-
 procedure TFrmCadastroProduto.btnLocalizarFilialClick(Sender: TObject);
 begin
   inherited;
@@ -138,26 +117,6 @@ begin
 
   if Trim(edUnidadeMedida.Text) <> EmptyStr then
     edUnidadeMedida.OnExit(btnLocalizarUnidadeMedida);
-end;
-
-procedure TFrmCadastroProduto.edFamiliaProdutoExit(Sender: TObject);
-begin
-  inherited;
-  stNomeFamProd.Caption := EmptyStr;
-  if Trim(edFamiliaProduto.Text) <> EmptyStr then
-    try
-      FRegraCRUDFamiliaProduto.ValidaExistencia(StrToIntDef(edFamiliaProduto.Text, 0));
-      FPRODUTO.FAMILIAPRODUTO := TFamiliaProduto(
-        FRegraCRUDFamiliaProduto.Retorna(StrToIntDef(edFamiliaProduto.Text, 0)));
-
-      stNomeFamProd.Caption := FPRODUTO.FAMILIAPRODUTO.NOMEFAMILIA;
-    except
-      on E: Exception do
-        begin
-          TDialogo.Excecao(E);
-          edFamiliaProduto.SetFocus;
-        end;
-    end;
 end;
 
 procedure TFrmCadastroProduto.edFilialExit(Sender: TObject);
@@ -258,25 +217,21 @@ end;
 procedure TFrmCadastroProduto.PosicionaCursorPrimeiroCampo;
 begin
   inherited;
-  edCodigoProduto.SetFocus;
+  edDescricao.SetFocus;
 end;
 
 procedure TFrmCadastroProduto.PreencheEntidade;
 begin
   inherited;
-  FPRODUTO.CODIGO := StrToIntDef(edCodigoProduto.Text, 0);
   FPRODUTO.DESCRICAO := edDescricao.Text;
 end;
 
 procedure TFrmCadastroProduto.PreencheFormulario;
 begin
   inherited;
-  edCodigoProduto.Text        := IntToStr(FPRODUTO.CODIGO);
   edDescricao.Text            := FPRODUTO.DESCRICAO;
   edUnidadeMedida.Text        := IntToStr(FPRODUTO.UNIDADEMEDIDA.ID);
   stNomeUnidadeMedida.Caption := FPRODUTO.UNIDADEMEDIDA.SIGLA;
-  edFamiliaProduto.Text       := IntToStr(FPRODUTO.FAMILIAPRODUTO.ID);
-  stNomeFamProd.Caption       := FPRODUTO.FAMILIAPRODUTO.NOMEFAMILIA;
   edFilial.Text               := IntToStr(FPRODUTO.FILIAL.ID);
   stNomeFilial.Caption        := FPRODUTO.FILIAL.NOME;
   edGrupoProduto.Text         := IntToStr(FPRODUTO.GRUPOPRODUTO.ID);

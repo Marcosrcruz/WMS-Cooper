@@ -48,14 +48,11 @@ begin
   inherited;
   with FSQLSelect do
   begin
-    coPRODUTO.CODIGO := FieldByName(FLD_PRODUTO_CODIGO).AsInteger;
     coPRODUTO.DESCRICAO := FieldByName(FLD_PRODUTO_DESCRICAO).AsString;
     coPRODUTO.UNIDADEMEDIDA := TUNIDADEMEDIDA(
         FRepositorioUnidadeMedida.Retorna(FieldByName(FLD_PRODUTO_UNIDADE_MEDIDA).AsInteger));
     coPRODUTO.GRUPOPRODUTO := TGRUPOPRODUTO(
         FRepositorioGrupoProduto.Retorna(FieldByName(FLD_PRODUTO_GRUPO_PRODUTO).AsInteger));
-    coPRODUTO.FAMILIAPRODUTO := TFAMILIAPRODUTO(
-        FRepositorioFamiliaProduto.Retorna(FieldByName(FLD_PRODUTO_FAMILIA_PRODUTO).AsInteger));
     coPRODUTO.FILIAL := TFILIAL(
         FRepositorioFilial.Retorna(FieldByName(FLD_PRODUTO_FILIAL).AsInteger));
   end;
@@ -67,11 +64,9 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_PRODUTO_CODIGO).AsInteger          := coPRODUTO.CODIGO;
     ParamByName(FLD_PRODUTO_DESCRICAO).AsString        := coPRODUTO. DESCRICAO;
     ParamByName(FLD_PRODUTO_UNIDADE_MEDIDA).AsInteger  := coPRODUTO.UNIDADEMEDIDA.ID;
     ParamByName(FLD_PRODUTO_GRUPO_PRODUTO).AsInteger   := coPRODUTO.GRUPOPRODUTO.ID;
-    ParamByName(FLD_PRODUTO_FAMILIA_PRODUTO).AsInteger := coPRODUTO.FAMILIAPRODUTO.ID;
     ParamByName(FLD_PRODUTO_FILIAL).AsInteger          := coPRODUTO.FILIAL.ID;
   end;
 end;

@@ -10,7 +10,6 @@ type
   TFamiliaProduto = class(TEntidade)
     public
       NOMEFAMILIA: string;
-      CODIGO     : Integer;
     end;
 
  const

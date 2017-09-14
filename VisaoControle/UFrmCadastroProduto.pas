@@ -22,20 +22,14 @@ type
     edUnidadeMedida: TEdit;
     stNomeUnidadeMedida: TStaticText;
     edDescricao: TLabeledEdit;
-    edFilial: TEdit;
-    btnLocalizarFilial: TButton;
-    stNomeFilial: TStaticText;
     edGrupoProduto: TEdit;
     btnLocalizarGrupoProduto: TButton;
     stNomeGrupoProduto: TStaticText;
     Label2: TLabel;
-    lblFilial: TLabel;
     procedure btnLocalizarUnidadeMedidaClick(Sender: TObject);
     procedure edUnidadeMedidaExit(Sender: TObject);
     procedure btnLocalizarGrupoProdutoClick(Sender: TObject);
     procedure edGrupoProdutoExit(Sender: TObject);
-    procedure btnLocalizarFilialClick(Sender: TObject);
-    procedure edFilialExit(Sender: TObject);
 
   protected
     FPRODUTO: TPRODUTO;
@@ -71,25 +65,10 @@ uses
   , UUnidadeMedida
   , UGrupoProduto
   , UFamiliaProduto
-  , UFilial
   , UDialogo
   ;
 
 {$R *.dfm}
-
-procedure TFrmCadastroProduto.btnLocalizarFilialClick(Sender: TObject);
-begin
-  inherited;
-  edFilial.Text := TfrmPesquisa.MostrarPesquisa(TOpcaoPesquisa
-    .Create
-    .DefineVisao(VW_FILIAL)
-    .DefineNomeCampoRetorno(VW_FILIAL_ID)
-    .DefineNomePesquisa(STR_FILIAL)
-    .AdicionaFiltro(VW_FILIAL_NOME));
-
-  if Trim(edFilial.Text) <> EmptyStr then
-    edFilial.OnExit(btnLocalizarFilial);
-end;
 
 procedure TFrmCadastroProduto.btnLocalizarGrupoProdutoClick(Sender: TObject);
 begin
@@ -117,26 +96,6 @@ begin
 
   if Trim(edUnidadeMedida.Text) <> EmptyStr then
     edUnidadeMedida.OnExit(btnLocalizarUnidadeMedida);
-end;
-
-procedure TFrmCadastroProduto.edFilialExit(Sender: TObject);
-begin
-  inherited;
-  stNomeFilial.Caption := EmptyStr;
-  if Trim(edFilial.Text) <> EmptyStr then
-    try
-      FRegraCRUDFilial.ValidaExistencia(StrToIntDef(edFilial.Text, 0));
-      FPRODUTO.FILIAL := TFILIAL(
-        FRegraCRUDFilial.Retorna(StrToIntDef(edFilial.Text, 0)));
-
-      stNomeFilial.Caption := FPRODUTO.FILIAL.NOME;
-    except
-      on E: Exception do
-        begin
-          TDialogo.Excecao(E);
-          edFilial.SetFocus;
-        end;
-    end;
 end;
 
 procedure TFrmCadastroProduto.edGrupoProdutoExit(Sender: TObject);
@@ -232,8 +191,6 @@ begin
   edDescricao.Text            := FPRODUTO.DESCRICAO;
   edUnidadeMedida.Text        := IntToStr(FPRODUTO.UNIDADEMEDIDA.ID);
   stNomeUnidadeMedida.Caption := FPRODUTO.UNIDADEMEDIDA.SIGLA;
-  edFilial.Text               := IntToStr(FPRODUTO.FILIAL.ID);
-  stNomeFilial.Caption        := FPRODUTO.FILIAL.NOME;
   edGrupoProduto.Text         := IntToStr(FPRODUTO.GRUPOPRODUTO.ID);
   stNomeGrupoProduto.Caption  := FPRODUTO.GRUPOPRODUTO.NOMEGRUPO;
 end;

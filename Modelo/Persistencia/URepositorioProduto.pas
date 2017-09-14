@@ -10,8 +10,6 @@ uses
   , URepositorioGrupoProduto
   , UFamiliaProduto
   , URepositorioFamiliaProduto
-  , UFilial
-  , URepositorioFilial
   , UEntidade
   , URepositorioDB
   , SqlExpr
@@ -23,7 +21,6 @@ type
     FRepositorioUnidadeMedida : TRepositorioUnidadeMedida;
     FRepositorioGrupoProduto  : TRepositorioGRUPOPRODUTO;
     FRepositorioFamiliaProduto: TRepositorioFAMILIAPRODUTO;
-    FRepositorioFilial        : TRepositorioFilial;
 
   public
     constructor Create;
@@ -53,8 +50,6 @@ begin
         FRepositorioUnidadeMedida.Retorna(FieldByName(FLD_PRODUTO_UNIDADE_MEDIDA).AsInteger));
     coPRODUTO.GRUPOPRODUTO := TGRUPOPRODUTO(
         FRepositorioGrupoProduto.Retorna(FieldByName(FLD_PRODUTO_GRUPO_PRODUTO).AsInteger));
-    coPRODUTO.FILIAL := TFILIAL(
-        FRepositorioFilial.Retorna(FieldByName(FLD_PRODUTO_FILIAL).AsInteger));
   end;
 end;
 
@@ -67,7 +62,6 @@ begin
     ParamByName(FLD_PRODUTO_DESCRICAO).AsString        := coPRODUTO. DESCRICAO;
     ParamByName(FLD_PRODUTO_UNIDADE_MEDIDA).AsInteger  := coPRODUTO.UNIDADEMEDIDA.ID;
     ParamByName(FLD_PRODUTO_GRUPO_PRODUTO).AsInteger   := coPRODUTO.GRUPOPRODUTO.ID;
-    ParamByName(FLD_PRODUTO_FILIAL).AsInteger          := coPRODUTO.FILIAL.ID;
   end;
 end;
 
@@ -77,7 +71,6 @@ begin
   FRepositorioUnidadeMedida  := TRepositorioUnidadeMedida.Create;
   FRepositorioGrupoProduto   := TRepositorioGrupoProduto.Create;
   FRepositorioFamiliaProduto := TRepositorioFamiliaProduto.Create;
-  FRepositorioFilial         := TRepositorioFilial.Create;
 end;
 
 destructor TRepositorioProduto.Destroy;
@@ -85,7 +78,6 @@ begin
   FreeAndNil(FRepositorioUnidadeMedida);
   FreeAndNil(FRepositorioGrupoProduto);
   FreeAndNil(FRepositorioFamiliaProduto);
-  FreeAndNil(FRepositorioFilial);
   inherited;
 end;
 

@@ -99,20 +99,6 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       ParentFont = False
     end
-    object lblFilial: TLabel
-      Left = 82
-      Top = 186
-      Width = 56
-      Height = 13
-      Alignment = taRightJustify
-      Caption = 'C'#243'digo Filial'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-    end
     object btnLocalizarUnidadeMedida: TButton
       Left = 267
       Top = 99
@@ -190,9 +176,9 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       TabOrder = 3
     end
   end
-  object edFilial: TEdit [4]
+  object edGrupoProduto: TEdit [4]
     Left = 144
-    Top = 269
+    Top = 225
     Width = 121
     Height = 21
     Color = clInfoBk
@@ -204,11 +190,11 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     NumbersOnly = True
     ParentFont = False
     TabOrder = 4
-    OnExit = edFilialExit
+    OnExit = edGrupoProdutoExit
   end
-  object btnLocalizarFilial: TButton [5]
+  object btnLocalizarGrupoProduto: TButton [5]
     Left = 267
-    Top = 270
+    Top = 226
     Width = 30
     Height = 19
     Cursor = crHandPoint
@@ -221,11 +207,11 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     ParentFont = False
     TabOrder = 5
     TabStop = False
-    OnClick = btnLocalizarFilialClick
+    OnClick = btnLocalizarGrupoProdutoClick
   end
-  object stNomeFilial: TStaticText [6]
+  object stNomeGrupoProduto: TStaticText [6]
     Left = 303
-    Top = 269
+    Top = 225
     Width = 217
     Height = 19
     AutoSize = False
@@ -239,57 +225,6 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     ParentColor = False
     ParentFont = False
     TabOrder = 6
-    Transparent = False
-  end
-  object edGrupoProduto: TEdit [7]
-    Left = 144
-    Top = 225
-    Width = 121
-    Height = 21
-    Color = clInfoBk
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    NumbersOnly = True
-    ParentFont = False
-    TabOrder = 7
-    OnExit = edGrupoProdutoExit
-  end
-  object btnLocalizarGrupoProduto: TButton [8]
-    Left = 267
-    Top = 226
-    Width = 30
-    Height = 19
-    Cursor = crHandPoint
-    Caption = '...'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 8
-    TabStop = False
-    OnClick = btnLocalizarGrupoProdutoClick
-  end
-  object stNomeGrupoProduto: TStaticText [9]
-    Left = 303
-    Top = 225
-    Width = 217
-    Height = 19
-    AutoSize = False
-    BorderStyle = sbsSingle
-    Color = clGray
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentColor = False
-    ParentFont = False
-    TabOrder = 9
     Transparent = False
   end
 end

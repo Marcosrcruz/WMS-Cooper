@@ -5,13 +5,13 @@ interface
 uses
 
   UEntidade,
-  UFilial
+  UEmpresaMatriz
   ;
 type TDEPOSITO = class (TENTIDADE)
   public
     CODIGO     :  Integer;
     DESCRICAO  :  String;
-    FILIAL     :  TFILIAL;
+    FEMPRESA   :  TEmpresaMatriz;
 
     constructor Create;  override;
     destructor  Destroy; override;
@@ -21,7 +21,7 @@ end;
   const
    TBL_DEPOSITO               =    'DEPOSITO';
    FLD_DEPOSITO_DESCRICAO     =    'DESCRICAO';
-   FLD_DEPOSITO_FILIAL_ID     =    'ID_FILIAL';
+   FLD_DEPOSITO_EMPRESA_ID    =    'ID_EMPRESA';
 
    resourcestring
      STR_DEPOSITO             =    'Deposito';
@@ -38,12 +38,12 @@ implementation
 constructor TDEPOSITO.Create;
 begin
   inherited;
-   FILIAL := TFILIAL.Create;
+   FEMPRESA := TEmpresaMatriz.Create;
 end;
 
 destructor TDEPOSITO.Destroy;
   begin
-    FreeAndNil(FILIAL);
+    FreeAndNil(FEMPRESA);
     inherited;
   end;
 

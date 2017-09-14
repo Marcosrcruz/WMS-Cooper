@@ -3,9 +3,9 @@ unit URepositorioDeposito;
 interface
 
 uses
-  UFilial,
+  UEmpresaMatriz,
   UDeposito,
-  URepositorioFilial,
+  URepositorioEmpresaMatriz,
   UEntidade,
   URepositorioDB,
   SqlExpr
@@ -17,7 +17,7 @@ type
  TRepositorioDeposito = class (TrepositorioDB<TDEPOSITO>)
   private
 
-    FRepositorioFilial : TRepositorioFilial;
+    FRepositorioEmpresa : TRepositorioEmpresaMatriz;
   public
 
       constructor create;
@@ -46,8 +46,8 @@ procedure TRepositorioDeposito.AtribuiDBParaEntidade(const coDeposito: TDEPOSITO
        with FSQLSelect do
     begin
      coDeposito.DESCRICAO  := FieldByName(FLD_DEPOSITO_DESCRICAO).AsString;
-      coDeposito.FILIAL     := TFILIAL (
-        FRepositorioFilial.Retorna( FieldByName( FLD_DEPOSITO_FILIAL_ID).AsInteger));
+      coDeposito.FEMPRESA     := TEmpresaMatriz (
+        FRepositorioEmpresa.Retorna( FieldByName( FLD_DEPOSITO_EMPRESA_ID).AsInteger));
     end;
   end;
 
@@ -58,15 +58,15 @@ procedure TRepositorioDeposito.AtribuiEntidadeParaDB(const coDeposito: TDEPOSITO
        with coSQLQuery do
      begin
        ParamByName(FLD_DEPOSITO_DESCRICAO).AsString  := coDeposito.DESCRICAO;
-       ParambyName(FLD_DEPOSITO_FILIAL_ID).AsInteger := coDeposito.FILIAL.ID;
+       ParambyName(FLD_DEPOSITO_EMPRESA_ID).AsInteger := coDeposito.FEMPRESA.ID;
 
      end;
    end;
 
 constructor TRepositorioDeposito.create;
   begin
-    inherited Create (TDEPOSITO, TBL_DEPOSITO, FLD_ENTIDADE_ID, STR_FILIAL);
-              FRepositorioFilial  := TRepositorioFilial.Create;
+    inherited Create (TDEPOSITO, TBL_DEPOSITO, FLD_ENTIDADE_ID, STR_DEPOSITO);
+              FRepositorioEmpresa  := TRepositorioEmpresaMatriz.Create;
 
 
   end;
@@ -74,7 +74,7 @@ constructor TRepositorioDeposito.create;
 destructor TRepositorioDeposito.Destroy;
 
   begin
-   FreeAndNil(FRepositorioFilial);
+   FreeAndNil(FRepositorioEmpresa);
   inherited;
   end;
 

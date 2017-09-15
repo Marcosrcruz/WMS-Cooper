@@ -14,14 +14,11 @@ type
     mmPrincipal: TMainMenu;
     MiCadastro: TMenuItem;
     MiDeposito: TMenuItem;
-    MiEmpresa: TMenuItem;
-    MiFilial: TMenuItem;
     MiMatriz: TMenuItem;
     MiLocalidades: TMenuItem;
     MiCidade: TMenuItem;
     MiEstado: TMenuItem;
     MiPais: TMenuItem;
-    MiPessoas: TMenuItem;
     MiProdutos: TMenuItem;
     MiFamiliaProduto: TMenuItem;
     MiGrupoProduto: TMenuItem;

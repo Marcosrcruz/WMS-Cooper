@@ -35,16 +35,9 @@ object FrmPrincipal: TFrmPrincipal
       object MiDeposito: TMenuItem
         Caption = '&Dep'#243'sito'
       end
-      object MiEmpresa: TMenuItem
-        Caption = '&Empresa'
-        object MiFilial: TMenuItem
-          Caption = '&Filial'
-          OnClick = MiFilialClick
-        end
-        object MiMatriz: TMenuItem
-          Caption = '&Matriz'
-          OnClick = MiMatrizClick
-        end
+      object MiMatriz: TMenuItem
+        Caption = '&Empresas'
+        OnClick = MiMatrizClick
       end
       object MiLocalidades: TMenuItem
         Caption = '&Localidades'
@@ -60,9 +53,6 @@ object FrmPrincipal: TFrmPrincipal
           Caption = '&Pais'
           OnClick = MiPaisClick
         end
-      end
-      object MiPessoas: TMenuItem
-        Caption = '&Pessoas'
       end
       object MiProdutos: TMenuItem
         Caption = 'P&rodutos'

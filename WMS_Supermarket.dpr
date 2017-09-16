@@ -37,7 +37,7 @@ uses
   UDeposito in 'Modelo\Persistencia\UDeposito.pas',
   URepositorioDeposito in 'Modelo\Persistencia\URepositorioDeposito.pas',
   URegraCRUDDeposito in 'Modelo\Regra\URegraCRUDDeposito.pas',
-  UFrmCadastroDeposito in 'VisaoControle\UFrmCadastroDeposito.pas' {FrmCRUD3},
+  UFrmCadastroDeposito in 'VisaoControle\UFrmCadastroDeposito.pas' {FrmCadastroDeposito},
   UEntradaEstoque in 'Modelo\Persistencia\UEntradaEstoque.pas',
   URepositorioEntEstoque in 'Modelo\Persistencia\URepositorioEntEstoque.pas',
   URegraCRUDEntEstoque in 'Modelo\Regra\URegraCRUDEntEstoque.pas',

@@ -9,7 +9,6 @@ uses
   ;
 type TDEPOSITO = class (TENTIDADE)
   public
-    CODIGO     :  Integer;
     DESCRICAO  :  String;
     FEMPRESA   :  TEmpresaMatriz;
 
@@ -46,6 +45,4 @@ destructor TDEPOSITO.Destroy;
     FreeAndNil(FEMPRESA);
     inherited;
   end;
-
-
 end.

@@ -59,7 +59,6 @@ procedure TRepositorioDeposito.AtribuiEntidadeParaDB(const coDeposito: TDEPOSITO
      begin
        ParamByName(FLD_DEPOSITO_DESCRICAO).AsString  := coDeposito.DESCRICAO;
        ParambyName(FLD_DEPOSITO_EMPRESA_ID).AsInteger := coDeposito.FEMPRESA.ID;
-
      end;
    end;
 
@@ -67,18 +66,11 @@ constructor TRepositorioDeposito.create;
   begin
     inherited Create (TDEPOSITO, TBL_DEPOSITO, FLD_ENTIDADE_ID, STR_DEPOSITO);
               FRepositorioEmpresa  := TRepositorioEmpresaMatriz.Create;
-
-
   end;
 
 destructor TRepositorioDeposito.Destroy;
-
   begin
    FreeAndNil(FRepositorioEmpresa);
   inherited;
   end;
-
-
-
-
 end.

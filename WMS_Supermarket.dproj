@@ -117,7 +117,7 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioDeposito.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDDeposito.pas"/>
 			<DCCReference Include="VisaoControle\UFrmCadastroDeposito.pas">
-				<Form>FrmCRUD3</Form>
+				<Form>FrmCadastroDeposito</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\UEntradaEstoque.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioEntEstoque.pas"/>

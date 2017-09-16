@@ -34,6 +34,7 @@ object FrmPrincipal: TFrmPrincipal
       Caption = '&Cadastros'
       object MiDeposito: TMenuItem
         Caption = '&Dep'#243'sito'
+        OnClick = MiDepositoClick
       end
       object MiMatriz: TMenuItem
         Caption = '&Empresas'

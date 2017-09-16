@@ -47,6 +47,7 @@ type
     procedure MiUnidadeMedidaClick(Sender: TObject);
     procedure MiMatrizClick(Sender: TObject);
     procedure MiFilialClick(Sender: TObject);
+    procedure MiDepositoClick(Sender: TObject);
   private
     { Private declaration }
   public
@@ -70,6 +71,7 @@ uses
   , UCadastroUnidadeMedida
   , UFrmCadastroEmpresaMatriz
   , UFrmCadastroFilial
+  , UFrmCadastroDeposito
   ;
 
 {$R *.dfm}
@@ -77,6 +79,11 @@ uses
 procedure TFrmPrincipal.MiCidadeClick(Sender: TObject);
 begin
     Application.CreateForm(TFrmCadastroCidade, FrmCadastroCidade);
+end;
+
+procedure TFrmPrincipal.MiDepositoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroDeposito, FrmCadastroDeposito);
 end;
 
 procedure TFrmPrincipal.MiEstadoClick(Sender: TObject);

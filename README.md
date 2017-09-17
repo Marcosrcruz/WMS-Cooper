@@ -1,3 +1,4 @@
 # WMS-Supermarket
 Controlar data de validade do estoque.
-Teste push.
+
+Deve ser executado o sql default na pasta DB

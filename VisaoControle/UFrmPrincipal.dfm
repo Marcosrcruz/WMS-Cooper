@@ -24,6 +24,11 @@ object FrmPrincipal: TFrmPrincipal
     Height = 19
     Panels = <
       item
+        Text = 'Banco de dados:'
+        Width = 800
+      end
+      item
+        Text = 'Usu'#225'rio'
         Width = 50
       end>
   end
@@ -76,6 +81,7 @@ object FrmPrincipal: TFrmPrincipal
       end
       object MiUsuarios: TMenuItem
         Caption = 'U&su'#225'rios'
+        OnClick = MiUsuariosClick
       end
     end
     object MiEstoque: TMenuItem
@@ -110,7 +116,14 @@ object FrmPrincipal: TFrmPrincipal
     end
     object MiSair: TMenuItem
       Caption = '&Sair'
-      OnClick = miSairClick
+      object miLogoff: TMenuItem
+        Caption = 'Logoff'
+        OnClick = miLogoffClick
+      end
+      object EncerrarAplicao1: TMenuItem
+        Caption = 'Encerrar Aplica'#231#227'o'
+        OnClick = EncerrarAplicao1Click
+      end
     end
   end
 end

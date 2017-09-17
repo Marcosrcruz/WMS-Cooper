@@ -68,13 +68,35 @@ uses
   UFamiliaProduto in 'Modelo\Persistencia\UFamiliaProduto.pas',
   URepositorioFamiliaProduto in 'Modelo\Persistencia\URepositorioFamiliaProduto.pas',
   URegraCRUDFamiliaProduto in 'Modelo\Regra\URegraCRUDFamiliaProduto.pas',
-  UFrmCadastroFamiliaProduto in 'VisaoControle\UFrmCadastroFamiliaProduto.pas' {FrmCadastroFamiliaProduto};
+  UFrmCadastroFamiliaProduto in 'VisaoControle\UFrmCadastroFamiliaProduto.pas' {FrmCadastroFamiliaProduto},
+  UPapel in 'Modelo\Persistencia\UPapel.pas',
+  URepositorioPapel in 'Modelo\Persistencia\URepositorioPapel.pas',
+  URepositorioPapelPermissao in 'Modelo\Persistencia\URepositorioPapelPermissao.pas',
+  UUsuarioLogado in 'Modelo\UUsuarioLogado.pas',
+  UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin};
 
 {$R *.res}
 
 begin
+  {$DEFINE DESENV}
   Application.Initialize;
-  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TdmEntra21, dmEntra21);
+  {$IFDEF PROD}
+  FrmLogin := TFrmLogin.Create(nil);
+  if FrmLogin.ShowModal = mrYes then
+    begin
+      FreeAndNil(FrmLogin);
+      Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+      Application.Run;
+    end
+  else
+    begin
+      Application.Run;
+      Application.Terminate;
+    end;
+  {$ELSE}
+  TUsuarioLogado.Unico.RealizaLogin('admin', 'admin');
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
+  {$ENDIF}
 end.

@@ -1,53 +1,40 @@
-unit UUSuario;
+unit UUsuario;
 
 interface
 
 uses
     UEntidade
-   ,UPessoa
-   ;
-type
-   TUsuario = class(TENTIDADE)
-  public
-    USUARIO : String;
-    SENHA   : integer;
-    PESSOA  : TPESSOA;
+  , UUtilitarios
+  ;
 
-    constructor Create; override;
-    destructor Destroy; override;
+type
+  TUSUARIO = class(TENTIDADE)
+  public
+    LOGIN: String;
+    SENHA: String;
+    NOME: String;
+    PAPEL: TPapelUsuario;
+    PERMISSOES: TListaPermissoesUsuario;
   end;
 
-  const
-    TBL_Usuario            = 'USUARIO';
-    FLD_Usuario_NOME       = 'NOME';
-    FLD_Usuario_ID_Pessoa = 'ID_PESSOA';
+const
+  TBL_USUARIO           = 'USUARIO';
+  FLD_USUARIO_LOGIN     = 'LOGIN';
+  FLD_USUARIO_SENHA     = 'SENHA';
+  FLD_USUARIO_NOME      = 'NOME';
+  FLD_USUARIO_ID_PAPEL  = 'ID_PAPEL';
 
-    VW_CIDADE          = 'VW_CIDADE';
-    VW_CIDADE_NOME     = 'Nome';
-    VW_CIDADE_ID       = 'Cód.';
-  resourcestring
-    STR_USUARIO       = 'USUARIO';
+  VW_USUARIO       = 'VW_USUARIO';
+  VW_USUARIO_ID    = 'Cód.';
+  VW_USUARIO_LOGIN = 'Login';
+  VW_USUARIO_NOME  = 'Nome';
 
 
+resourcestring
+  STR_USUARIO = 'Usuário do Sistema';
 
 implementation
 
- uses
-  SysUtils
-  , Dialogs
-  ;
-{ TSuario }
-
-constructor TUSuario.Create;
-begin
-  inherited;
-    PESSOA := TPESSOA.Create;
-end;
-
-destructor TUSuario.Destroy;
-begin
-   PESSOA  := TPESSOA.Create;
-  inherited;
-end;
+{ TUSUARIO }
 
 end.

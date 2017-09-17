@@ -36,7 +36,8 @@ type
     MiMovimentacaoValidade: TMenuItem;
     MiRequisicoes: TMenuItem;
     MiSair: TMenuItem;
-    procedure miSairClick(Sender: TObject);
+    miLogoff: TMenuItem;
+    EncerrarAplicao1: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -48,8 +49,13 @@ type
     procedure MiMatrizClick(Sender: TObject);
     procedure MiFilialClick(Sender: TObject);
     procedure MiDepositoClick(Sender: TObject);
+    procedure MiUsuariosClick(Sender: TObject);
+    procedure miLogoffClick(Sender: TObject);
+    procedure EncerrarAplicao1Click(Sender: TObject);
   private
     { Private declaration }
+    procedure AtualizaUsuarioLogado;
+    procedure AtivaMenus;
   public
     { Public declarations }
   end;
@@ -72,6 +78,10 @@ uses
   , UFrmCadastroEmpresaMatriz
   , UFrmCadastroFilial
   , UFrmCadastroDeposito
+  , UFrmCadastroUsuario
+  , UUsuarioLogado
+  , UUtilitarios
+  , UFrmLogin
   ;
 
 {$R *.dfm}
@@ -106,6 +116,20 @@ begin
   Application.CreateForm(TFrmCadastroGrupoProduto, FrmCadastroGrupoProduto);
 end;
 
+procedure TFrmPrincipal.miLogoffClick(Sender: TObject);
+begin
+  TUsuarioLogado.Logoff;
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  if FrmLogin.ShowModal = mrYes then
+    begin
+      FreeAndNil(FrmLogin);
+      AtivaMenus;
+      AtualizaUsuarioLogado;
+    end
+  else
+    Close;
+end;
+
 procedure TFrmPrincipal.MiMatrizClick(Sender: TObject);
 begin
    Application.CreateForm(TFrmCadastroEmpresa, FrmCadastroEmpresa);
@@ -121,20 +145,43 @@ begin
   Application.CreateForm(TFrmCadastroProduto, FrmCadastroProduto);
 end;
 
-procedure TFrmPrincipal.miSairClick(Sender: TObject);
-begin
-  Close;
-end;
-
 procedure TFrmPrincipal.MiUnidadeMedidaClick(Sender: TObject);
 begin
    Application.CreateForm(TFrmCadastroUnidadeMedida, FrmCadastroUnidadeMedida);
+end;
+
+procedure TFrmPrincipal.MiUsuariosClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroUsuario, FrmCadastroUsuario);
+end;
+
+procedure TFrmPrincipal.AtivaMenus;
+begin
+  MiRelatorios.Visible := TUsuarioLogado.PossuiPapel(tpluGestor)
+                          or TUsuarioLogado.PossuiPapel(tpluAdministrador);
+  MiUsuarios.Visible   := TUsuarioLogado.PossuiPapel(tpluGestor)
+                          or TUsuarioLogado.PossuiPapel(tpluAdministrador);
+  MiMatriz.Visible     := TUsuarioLogado.PossuiPapel(tpluAdministrador);
+end;
+
+procedure TFrmPrincipal.AtualizaUsuarioLogado;
+begin
+    sbPrincipal.Panels[1].Text :=
+    'Usuário: ' + TUsuarioLogado.USUARIO.NOME;
+end;
+
+procedure TFrmPrincipal.EncerrarAplicao1Click(Sender: TObject);
+begin
+ Close;
 end;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
   sbPrincipal.Panels[0].Text :=
     'Banco de Dados: ' + dmEntra21.SQLConnection.Params.Values[CNT_DATA_BASE];
+
+    AtivaMenus;
+    AtualizaUsuarioLogado;
 end;
 
 end.

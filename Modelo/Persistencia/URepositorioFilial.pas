@@ -21,7 +21,7 @@ uses
 
    TRepositorioFilial = class (TRepositorioDB<TFilial>)
  private
-    FRepositorioEmpresaMatriz : TRepositorioEmpresaMatriz;
+    FRepositorioEmpresa : TRepositorioEmpresa;
     FRepositorioCidade        : TRepositorioCidade;
     FRepositorioEstado        : TRepositorioEstado;
     FRepositorioPais          : TRepositorioPais;
@@ -60,8 +60,8 @@ begin
      coFilial.BAIRRO     := FieldByName(FLD_FILIAL_BAIRR0).AsString;
      coFilial.CIDADE     := TCIDADE(
        FRepositorioCidade.Retorna (FieldByName (FLD_FILIAL_CIDADE).AsInteger));
-     coFilial.EMPRESA    := TEmpresaMatriz(
-       FRepositorioEmpresaMatriz.Retorna(FieldByname(FLD_FILIAL_EMPRESA).Asinteger));
+     coFilial.EMPRESA    := TEmpresa(
+       FRepositorioEmpresa.Retorna(FieldByname(FLD_FILIAL_EMPRESA).Asinteger));
  end;
 
 end;
@@ -94,7 +94,7 @@ constructor TRepositorioFilial.Create;
               FRepositorioCidade        := TRepositorioCidade.Create;
               FRepositorioEstado        := TRepositorioEstado.Create;
               FRepositorioPais          := TRepositorioPais.Create;
-              FRepositorioEmpresaMatriz := TRepositorioEmpresaMatriz.Create;
+              FRepositorioEmpresa := TRepositorioEmpresa.Create;
 
   end;
 
@@ -103,7 +103,7 @@ begin
       FreeAndNil(FRepositorioCidade);
       FreeAndNil(FRepositorioEstado);
       FreeAndNil(FRepositorioPais);
-      FreeAndNil(FRepositorioEmpresaMatriz);
+      FreeAndNil(FRepositorioEmpresa);
   inherited;
 end;
 

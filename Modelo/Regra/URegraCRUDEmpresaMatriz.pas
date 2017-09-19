@@ -23,6 +23,6 @@ implementation
 constructor TregraCRUDEEmpresaMatriz.Create;
   begin
     inherited;
-    FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioEmpresaMatriz.Create);
+    FRepositorioDB := TRepositorioDB<TENTIDADE>(TRepositorioEmpresa.Create);
   end;
 end.

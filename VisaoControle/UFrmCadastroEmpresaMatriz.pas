@@ -32,7 +32,7 @@ type
     procedure edCidadeExit(Sender: TObject);
 
   protected
-    FEMPRESA: TEmpresaMatriz;
+    FEMPRESA: TEmpresa;
 
     FRegraCRUDEmpresa : TregraCRUDEEmpresaMatriz;
     FRegraCRUDCidade  : TRegraCRUDCidade;
@@ -120,15 +120,15 @@ end;
 procedure TFrmCadastroEmpresa.Inicializa;
 begin
   inherited;
-  DefineEntidade(@FEMPRESA, TEmpresaMatriz);
+  DefineEntidade(@FEMPRESA, TEmpresa);
   DefineRegraCRUD(@FRegraCRUDEmpresa, TregraCRUDEEmpresaMatriz);
 
   AdicionaOpcaoPesquisa(TOpcaoPesquisa
     .Create
-    .AdicionaFiltro(FLD_MATRIZ_NOME)
+    .AdicionaFiltro(FLD_EMPRESA_NOME)
     .DefineNomeCampoRetorno(FLD_ENTIDADE_ID)
     .DefineNomePesquisa(STR_EMPRESAMATRIZ)
-    .DefineVisao(TBL_MATRIZ));
+    .DefineVisao(TBL_EMPRESA));
 
   FRegraCRUDCidade := TRegraCRUDCidade.Create;
   FRegraCRUDEstado := TRegraCRUDEstado.Create;

@@ -17,7 +17,7 @@ type
  TRepositorioDeposito = class (TrepositorioDB<TDEPOSITO>)
   private
 
-    FRepositorioEmpresa : TRepositorioEmpresaMatriz;
+    FRepositorioEmpresa : TRepositorioEmpresa;
   public
 
       constructor create;
@@ -46,7 +46,7 @@ procedure TRepositorioDeposito.AtribuiDBParaEntidade(const coDeposito: TDEPOSITO
        with FSQLSelect do
     begin
      coDeposito.DESCRICAO  := FieldByName(FLD_DEPOSITO_DESCRICAO).AsString;
-      coDeposito.FEMPRESA     := TEmpresaMatriz (
+      coDeposito.FEMPRESA     := TEmpresa (
         FRepositorioEmpresa.Retorna( FieldByName( FLD_DEPOSITO_EMPRESA_ID).AsInteger));
     end;
   end;
@@ -65,7 +65,7 @@ procedure TRepositorioDeposito.AtribuiEntidadeParaDB(const coDeposito: TDEPOSITO
 constructor TRepositorioDeposito.create;
   begin
     inherited Create (TDEPOSITO, TBL_DEPOSITO, FLD_ENTIDADE_ID, STR_DEPOSITO);
-              FRepositorioEmpresa  := TRepositorioEmpresaMatriz.Create;
+              FRepositorioEmpresa  := TRepositorioEmpresa.Create;
   end;
 
 destructor TRepositorioDeposito.Destroy;

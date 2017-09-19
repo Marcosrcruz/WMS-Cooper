@@ -18,7 +18,7 @@ type TFILIAL = class(TENTIDADE)
     NUMERO     : Integer;
     BAIRRO     : string;
     CIDADE     : TCIDADE;
-    EMPRESA    : TEMPRESAMATRIZ;
+    EMPRESA    : TEmpresa;
 
     constructor Create; override;
     destructor Destroy; override;
@@ -60,7 +60,7 @@ uses
 constructor TFILIAL.Create;
 begin
   inherited;
-  EMPRESA := TEmpresaMatriz.Create;
+  EMPRESA := TEmpresa.Create;
   CIDADE  := TCIDADE.Create;
 end;
 

@@ -10,7 +10,7 @@ uses
 type TDEPOSITO = class (TENTIDADE)
   public
     DESCRICAO  :  String;
-    FEMPRESA   :  TEmpresaMatriz;
+    FEMPRESA   :  TEmpresa;
 
     constructor Create;  override;
     destructor  Destroy; override;
@@ -37,7 +37,7 @@ implementation
 constructor TDEPOSITO.Create;
 begin
   inherited;
-   FEMPRESA := TEmpresaMatriz.Create;
+   FEMPRESA := TEmpresa.Create;
 end;
 
 destructor TDEPOSITO.Destroy;

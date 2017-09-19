@@ -59,10 +59,10 @@ begin
   inherited;
     edEmpresa.Text := TfrmPesquisa.MostrarPesquisa(TOpcaoPesquisa
     .Create
-    .DefineVisao(VW_MATRIZ)
-    .DefineNomeCampoRetorno(VW_MATRIZ_ID)
+    .DefineVisao(VW_EMPRESA)
+    .DefineNomeCampoRetorno(VW_EMPRESA_ID)
     .DefineNomePesquisa(STR_EMPRESAMATRIZ)
-    .AdicionaFiltro(VW_MATRIZ_NOME));
+    .AdicionaFiltro(VW_EMPRESA_NOME));
 
   if Trim(edEmpresa.Text) <> EmptyStr then
     edEmpresa.OnExit(btnLocalizarEmpresa);
@@ -75,7 +75,7 @@ begin
   if Trim(edEmpresa.Text) <> EmptyStr then
     try
       FRegraCRUDEmpresa.ValidaExistencia(StrToIntDef(edEmpresa.Text, 0));
-      FDEPOSITO.FEMPRESA := TEmpresaMatriz(
+      FDEPOSITO.FEMPRESA := TEmpresa(
         FRegraCRUDEmpresa.Retorna(StrToIntDef(edEmpresa.Text, 0)));
 
       stNomeEmpresa.Caption := FDEPOSITO.FEMPRESA.NOME;

@@ -28,11 +28,17 @@ type
     edCidade: TEdit;
     btnLocalizarCidade: TButton;
     stNomeCidade: TStaticText;
+    lbEmpresaMatriz: TLabel;
+    edEmpresaMatriz: TEdit;
+    btnLocalizarEmpresaMatriz: TButton;
+    stNomeEmpresaMatriz: TStaticText;
     procedure btnLocalizarCidadeClick(Sender: TObject);
     procedure edCidadeExit(Sender: TObject);
+    procedure btnLocalizarEmpresaMatrizClick(Sender: TObject);
+    procedure edEmpresaMatrizExit(Sender: TObject);
 
   protected
-    FEMPRESA: TEmpresa;
+    FEMPRESA       : TEmpresa;
 
     FRegraCRUDEmpresa : TregraCRUDEEmpresaMatriz;
     FRegraCRUDCidade  : TRegraCRUDCidade;
@@ -81,6 +87,20 @@ begin
     edCidade.OnExit(btnLocalizarCidade);
 end;
 
+procedure TFrmCadastroEmpresa.btnLocalizarEmpresaMatrizClick(Sender: TObject);
+begin
+  inherited;
+  edEmpresaMatriz.Text := TfrmPesquisa.MostrarPesquisa(TOpcaoPesquisa
+    .Create
+    .DefineVisao(VW_EMPRESA)
+    .DefineNomeCampoRetorno(VW_EMPRESA_ID)
+    .DefineNomePesquisa(STR_EMPRESAMATRIZ)
+    .AdicionaFiltro(VW_EMPRESA_NOME));
+
+  if Trim(edEmpresaMatriz.Text) <> EmptyStr then
+    edEmpresaMatriz.OnExit(btnLocalizarEmpresaMatriz);
+end;
+
 procedure TFrmCadastroEmpresa.edCidadeExit(Sender: TObject);
 begin
   inherited;
@@ -93,6 +113,29 @@ begin
 
       stNomeCidade.Caption := FEMPRESA.CIDADE.NOME;
 
+    except
+      on E: Exception do
+        begin
+          TDialogo.Excecao(E);
+          edCidade.SetFocus;
+        end;
+    end;
+end;
+
+procedure TFrmCadastroEmpresa.edEmpresaMatrizExit(Sender: TObject);
+var
+  loEMPRESA_MATRIZ: TEMPRESA;
+begin
+  inherited;
+  stNomeEmpresaMatriz.Caption := EmptyStr;
+  if Trim(edEmpresaMatriz.Text) <> EmptyStr then
+    try
+      FRegraCRUDEmpresa.ValidaExistencia(StrToIntDef(edEmpresaMatriz.Text, 0));
+      loEMPRESA_MATRIZ := TEMPRESA(
+              FRegraCRUDEmpresa.Retorna(StrToIntDef(edEmpresaMatriz.Text, 0)));
+
+      stNomeEmpresaMatriz.Caption := loEMPRESA_MATRIZ.NOME;
+      FEMPRESA.ID_EMPRESA_MATRIZ := loEMPRESA_MATRIZ.ID;
     except
       on E: Exception do
         begin
@@ -151,9 +194,12 @@ begin
   FEMPRESA.LOGRADOURO := edLogradouro.Text;
   FEMPRESA.NUMERO     := StrToIntDef(edNumero.Text, 0);
   FEMPRESA.BAIRRO     := edBairro.Text;
+  FEMPRESA.ID_EMPRESA_MATRIZ := StrToIntDef(edEmpresaMatriz.Text, -1);
 end;
 
 procedure TFrmCadastroEmpresa.PreencheFormulario;
+var
+  loEMPRESA_MATRIZ : TEmpresa;
 begin
   inherited;
   edNome.Text              := FEMPRESA.NOME;
@@ -165,6 +211,14 @@ begin
   edBairro.Text            := FEMPRESA.BAIRRO;
   edCidade.Text            := IntToStr(FEMPRESA.CIDADE.ID);
   stNomeCidade.Caption     := FEMPRESA.CIDADE.NOME;
+
+  if FEMPRESA.ID_EMPRESA_MATRIZ > 0 then
+  begin
+    loEMPRESA_MATRIZ := TEMPRESA(
+              FRegraCRUDEmpresa.Retorna(FEMPRESA.ID_EMPRESA_MATRIZ));
+    edEmpresaMatriz.Text := IntToStr(loEMPRESA_MATRIZ.ID);
+    stNomeEmpresaMatriz.Caption := loEMPRESA_MATRIZ.NOME;
+  end;
 
 end;
 end.

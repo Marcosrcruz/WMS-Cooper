@@ -19,8 +19,6 @@ type
   TRepositorioEmpresa = class (TrepositorioDB<TEmpresa>)
   private
     FRepositorioCidade  : TRepositorioCidade;
-    FRepositorioEstado  : TRepositorioEstado;
-    FRepositorioPais    : TRepositorioPais;
 
   public
 
@@ -55,6 +53,12 @@ begin
     coEmpresa.CIDADE     := TCIDADE(
                  FRepositorioCidade.Retorna (FieldByName (FLD_EMPRESA_MUNICIPIO).AsInteger));
     coEmpresa.TELEFONE   := FieldByName(FLD_EMPRESA_TELEFONE).AsString;
+
+    if (FieldByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsInteger) > 0 then
+      coEmpresa.ID_EMPRESA_MATRIZ := FieldByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsInteger
+    else
+      coEmpresa.ID_EMPRESA_MATRIZ := -1;
+
   end;
 end;
 
@@ -72,7 +76,9 @@ begin
     ParamByName(FLD_EMPRESA_BAIRRO).AsString             := coEmpresa.BAIRRO;
     ParamByName(FLD_EMPRESA_MUNICIPIO).AsInteger         := coEmpresa.CIDADE.ID;
     ParamByName(FLD_EMPRESA_TELEFONE).AsString           := coEmpresa.TELEFONE;
-    ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsString  := '';
+
+    if coEmpresa.ID_EMPRESA_MATRIZ > 0 then
+      ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsInteger := coEmpresa.ID_EMPRESA_MATRIZ;
   end;
 end;
 

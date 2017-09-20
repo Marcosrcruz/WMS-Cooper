@@ -2,7 +2,6 @@
   Caption = 'Cadastro de Empresa'
   ClientHeight = 501
   ClientWidth = 979
-  ExplicitTop = -6
   ExplicitWidth = 995
   ExplicitHeight = 540
   PixelsPerInch = 96
@@ -68,6 +67,21 @@
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    ExplicitTop = 84
+    object lbEmpresaMatriz: TLabel
+      Left = 65
+      Top = 221
+      Width = 73
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Empresa Matriz'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
     object edNome: TLabeledEdit
       Left = 144
       Top = 56
@@ -126,7 +140,7 @@
       Caption = 'Endere'#231'o'
       TabOrder = 4
       object lblCidade: TLabel
-        Left = 49
+        Left = 53
         Top = 173
         Width = 33
         Height = 13
@@ -315,6 +329,57 @@
       MaxLength = 60
       ParentFont = False
       TabOrder = 3
+    end
+    object edEmpresaMatriz: TEdit
+      Left = 144
+      Top = 218
+      Width = 61
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 5
+      OnExit = edEmpresaMatrizExit
+    end
+    object btnLocalizarEmpresaMatriz: TButton
+      Left = 211
+      Top = 219
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      TabStop = False
+      OnClick = btnLocalizarEmpresaMatrizClick
+    end
+    object stNomeEmpresaMatriz: TStaticText
+      Left = 247
+      Top = 218
+      Width = 273
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 7
+      Transparent = False
     end
   end
 end

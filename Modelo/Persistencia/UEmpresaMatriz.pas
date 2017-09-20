@@ -10,14 +10,15 @@ uses
 type
   TEmpresa = class(TENTIDADE)
   public
-    NOME           : String;
-    CNPJ           : string;
-    IE             : integer;
-    LOGRADOURO     : String;
-    NUMERO         : Integer;
-    BAIRRO         : String;
-    CIDADE         : TCIDADE;
-    TELEFONE       : String;
+    NOME             : String;
+    CNPJ             : string;
+    IE               : integer;
+    LOGRADOURO       : String;
+    NUMERO           : Integer;
+    BAIRRO           : String;
+    CIDADE           : TCIDADE;
+    TELEFONE         : String;
+    ID_EMPRESA_MATRIZ: Integer;
 
     constructor Create; override;
     destructor Destroy; override;

@@ -34,6 +34,7 @@ implementation
 
  uses
     UDM
+  , DB
   , SysUtils
   ;
 
@@ -68,17 +69,24 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_EMPRESA_NOME).AsString               := coEmpresa.NOME;
-    ParamByName(FLD_EMPRESA_CNPJ).AsString               := coEmpresa.CNPJ;
-    ParamByName(FLD_EMPRESA_IE).AsInteger                := coEmpresa.IE;
-    ParamByName(FLD_EMPRESA_LOGRADOURO).AsString         := coEmpresa.LOGRADOURO;
-    ParamByName(FLD_EMPRESA_NUMERO).AsInteger            := coEmpresa.NUMERO;
-    ParamByName(FLD_EMPRESA_BAIRRO).AsString             := coEmpresa.BAIRRO;
-    ParamByName(FLD_EMPRESA_MUNICIPIO).AsInteger         := coEmpresa.CIDADE.ID;
-    ParamByName(FLD_EMPRESA_TELEFONE).AsString           := coEmpresa.TELEFONE;
+    ParamByName(FLD_EMPRESA_NOME).AsString       := coEmpresa.NOME;
+    ParamByName(FLD_EMPRESA_CNPJ).AsString       := coEmpresa.CNPJ;
+    ParamByName(FLD_EMPRESA_IE).AsInteger        := coEmpresa.IE;
+    ParamByName(FLD_EMPRESA_LOGRADOURO).AsString := coEmpresa.LOGRADOURO;
+    ParamByName(FLD_EMPRESA_NUMERO).AsInteger    := coEmpresa.NUMERO;
+    ParamByName(FLD_EMPRESA_BAIRRO).AsString     := coEmpresa.BAIRRO;
+    ParamByName(FLD_EMPRESA_MUNICIPIO).AsInteger := coEmpresa.CIDADE.ID;
+    ParamByName(FLD_EMPRESA_TELEFONE).AsString   := coEmpresa.TELEFONE;
 
     if coEmpresa.ID_EMPRESA_MATRIZ > 0 then
-      ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsInteger := coEmpresa.ID_EMPRESA_MATRIZ;
+      ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).AsInteger := coEmpresa.ID_EMPRESA_MATRIZ
+    else
+      begin
+        ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).DataType := ftInteger;
+        ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).Bound    := True;
+        ParamByName(FLD_EMPRESA_EMPRESA_MATRIZ_ID).Clear;
+      end;
+
   end;
 end;
 

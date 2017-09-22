@@ -29,19 +29,38 @@ resourcestring
   STR_FINALIZAR                   = 'finalizar';
 
   //Pais
-  STR_PAIS_NOME_NAO_INFORMADO     = 'Nome do país é obrigatório';
+  STR_PAIS_NOME_NAO_INFORMADO     = 'Nome do País é obrigatório';
+
+  //Estado
+  STR_ESTADO_NOME_NAO_INFORMADO   = 'Nome do Estado é obrigatório';
+  STR_ESTADO_PAIS_NAO_INFORMADO   = 'O País é obrigatório';
+
+  //Cidade
+  STR_CIDADE_NOME_NAO_INFORMADO = 'O Nome da Cidade é obrigatório';
+  STR_CIDADE_ESTADO_NAO_INFORMADO = 'O Estado é obrigatório';
 
   //Deposito
-  STR_DEPOSITO_DESCRICAO_NAO_INFORMADO = 'Nome do depósito é obrigatório';
+  STR_DEPOSITO_DESCRICAO_NAO_INFORMADO = 'Descrição do depósito é obrigatório.';
+  STR_DEPOSITO_EMPRESA_NAO_INFORMADA   = 'Empresa do depósito é obrigatório.';
 
   //Usuario
   STR_SENHA_NAO_SEGURA           = 'Senha digitada não é segura, senha deve ter no mínimo %d caracteres';
-  STR_SENHAS_NAO_CONFEREM        = 'Senhas não conferem';
-  STR_USUARIO_NOME_NAO_INFORMADO = 'Nome do usuário não foi informado';
-  STR_SENHA_ATUAL_NAO_CONFERE    = 'Senha atual não confere';
+  STR_SENHAS_NAO_CONFEREM        = 'Senhas não conferem.';
+  STR_USUARIO_NOME_NAO_INFORMADO = 'Nome do usuário não foi informado.';
+  STR_SENHA_ATUAL_NAO_CONFERE    = 'Senha atual não confere.';
 
   //Login
-  STR_USUARIO_OU_SENHA_SAO_INVALIDOS = 'Usuário ou senha são inválidos';
+  STR_USUARIO_OU_SENHA_SAO_INVALIDOS = 'Usuário ou senha são inválidos.';
+
+  //Empresa
+  STR_EMPRESA_NOME_NAO_INFORMADO = 'O Nome da empresa é obrigatório.';
+  STR_EMPRESA_IE_INVÁLIDO_NULO   = 'Inscrição estadual nula ou inválida.';
+  STR_EMPRESA_LOGRADOURO_NAO_INFORMADO = 'O Logradouro é obrigatório.';
+  STR_EMPRESA_NUMERO_NAO_INFORMADO = 'O Número é obrigatório';
+  STR_EMPRESA_BAIRRO_NAO_INFORMADO = 'O Bairro é obrigatório';
+  STR_EMPRESA_CIDADE_NAO_INFORMADO = 'A Cidade é obrigatória.';
+  STR_EMPRESA_CNPJ_NAO_INFORMMADO = 'Informe um CNPJ válido.';
+  STR_EMPRESA_TELEFONE_NAO_INFORMADO = 'O telefone é obrigatório.';
 
 
 implementation

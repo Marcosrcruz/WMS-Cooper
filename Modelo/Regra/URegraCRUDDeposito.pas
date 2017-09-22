@@ -37,9 +37,11 @@ constructor TRegraCrudDeposito.Create;
 procedure TregraCRUDDEPOSITO.ValidaInsercao(const coENTIDADE: TENTIDADE);
 begin
   inherited;
-  if Trim(TDEPOSITO (coENTIDADE) .DESCRICAO) = EmptyStr then
+  if Trim(TDEPOSITO(coENTIDADE).DESCRICAO) = EmptyStr then
      raise EvalidacaoNegocio.Create(STR_DEPOSITO_DESCRICAO_NAO_INFORMADO);
 
+  if TDEPOSITO(coENTIDADE).FEMPRESA.ID <= 0 then
+     raise EValidacaoNegocio.Create(STR_DEPOSITO_EMPRESA_NAO_INFORMADA);
 end;
 
 end.

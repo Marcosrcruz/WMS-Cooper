@@ -11,7 +11,7 @@ uses
   , URegraCRUDUnidadeMedida
   , URegraCRUDGrupoProduto
   , URegraCRUDFamiliaProduto
-  , URegraCRUDFilial
+  , URegraCRUDMarca
   ;
 
 type
@@ -26,10 +26,19 @@ type
     btnLocalizarGrupoProduto: TButton;
     stNomeGrupoProduto: TStaticText;
     Label2: TLabel;
+    edTamanho: TLabeledEdit;
+    edQtdeMaxima: TLabeledEdit;
+    edQtdeMinima: TLabeledEdit;
+    edMarca: TEdit;
+    btnLocalizarMarca: TButton;
+    stNomeMarca: TStaticText;
+    Label1: TLabel;
     procedure btnLocalizarUnidadeMedidaClick(Sender: TObject);
     procedure edUnidadeMedidaExit(Sender: TObject);
     procedure btnLocalizarGrupoProdutoClick(Sender: TObject);
     procedure edGrupoProdutoExit(Sender: TObject);
+    procedure btnLocalizarMarcaClick(Sender: TObject);
+    procedure edMarcaExit(Sender: TObject);
 
   protected
     FPRODUTO: TPRODUTO;
@@ -38,7 +47,7 @@ type
     FregraCRUDUnidadeMedida  : TRegraCRUDUnidadeMedida;
     FRegraCRUDGrupoProduto   : TRegraCRUDGrupoProduto;
     FRegraCRUDFamiliaProduto : TRegraCRUDFamiliaProduto;
-    FRegraCRUDFilial         : TregraCRUDFILIAL;
+    FRegraCRUDMarca          : TRegraCRUDMarca;
 
     procedure Inicializa; override;
     procedure Finaliza; override;
@@ -65,6 +74,7 @@ uses
   , UUnidadeMedida
   , UGrupoProduto
   , UFamiliaProduto
+  , UMarca
   , UDialogo
   ;
 
@@ -82,6 +92,20 @@ begin
 
   if Trim(edGrupoProduto.Text) <> EmptyStr then
     edGrupoProduto.OnExit(btnLocalizarGrupoProduto);
+end;
+
+procedure TFrmCadastroProduto.btnLocalizarMarcaClick(Sender: TObject);
+begin
+  inherited;
+  edMarca.Text := TfrmPesquisa.MostrarPesquisa(TOpcaoPesquisa
+    .Create
+    .DefineVisao(VW_MARCA)
+    .DefineNomeCampoRetorno(VW_MARCA_ID)
+    .DefineNomePesquisa(STR_MARCA)
+    .AdicionaFiltro(VW_MARCA_NOME));
+
+  if Trim(edMarca.Text) <> EmptyStr then
+    edMarca.OnExit(btnLocalizarMarca);
 end;
 
 procedure TFrmCadastroProduto.btnLocalizarUnidadeMedidaClick(Sender: TObject);
@@ -118,6 +142,26 @@ begin
     end;
 end;
 
+procedure TFrmCadastroProduto.edMarcaExit(Sender: TObject);
+begin
+  inherited;
+  stNomeMarca.Caption := EmptyStr;
+  if Trim(edMarca.Text) <> EmptyStr then
+    try
+      FRegraCRUDMarca.ValidaExistencia(StrToIntDef(edMarca.Text, 0));
+      FPRODUTO.MARCA := TMarca(
+        FRegraCRUDMarca.Retorna(StrToIntDef(edMarca.Text, 0)));
+
+      stNomeMarca.Caption := FPRODUTO.MARCA.NOME;
+    except
+      on E: Exception do
+        begin
+          TDialogo.Excecao(E);
+          edMarca.SetFocus;
+        end;
+    end;
+end;
+
 procedure TFrmCadastroProduto.edUnidadeMedidaExit(Sender: TObject);
 begin
   stNomeUnidadeMedida.Caption := EmptyStr;
@@ -144,7 +188,7 @@ begin
   FreeAndNil(FregraCRUDUnidadeMedida);
   FreeAndNil(FRegraCRUDGrupoProduto);
   FreeAndNil(FRegraCRUDFamiliaProduto);
-  FreeAndNil(FRegraCRUDFilial);
+  FreeAndNil(FRegraCRUDMarca);
 end;
 
 procedure TFrmCadastroProduto.HabilitaCampos(
@@ -170,7 +214,7 @@ begin
   FregraCRUDUnidadeMedida  := TRegraCRUDUnidadeMedida.Create;
   FRegraCRUDGrupoProduto   := TRegraCRUDGrupoProduto.Create;
   FRegraCRUDFamiliaProduto := TRegraCRUDFamiliaProduto.Create;
-  FRegraCRUDFilial         := TregraCRUDFILIAL.Create;
+  FRegraCRUDMarca          := TRegraCRUDMarca.Create;
 end;
 
 procedure TFrmCadastroProduto.PosicionaCursorPrimeiroCampo;
@@ -193,6 +237,15 @@ begin
   stNomeUnidadeMedida.Caption := FPRODUTO.UNIDADEMEDIDA.SIGLA;
   edGrupoProduto.Text         := IntToStr(FPRODUTO.GRUPOPRODUTO.ID);
   stNomeGrupoProduto.Caption  := FPRODUTO.GRUPOPRODUTO.NOMEGRUPO;
+  edTamanho.Text              := IntToStr(FPRODUTO.TAMANHO);
+  edQtdeMinima.Text           := IntToStr(FPRODUTO.QUANTIDADE_MINIMA);
+  edQtdeMaxima.Text           := IntToStr(FPRODUTO.QUANTIDADE_MAXIMA);
+
+  if FPRODUTO.MARCA.ID > -1 then
+    begin
+      edMarca.Text := IntToStr(FPRODUTO.MARCA.ID);
+      stNomeMarca.Caption := FPRODUTO.MARCA.NOME;
+    end;
 end;
 
 end.

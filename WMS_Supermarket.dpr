@@ -69,7 +69,10 @@ uses
   URepositorioPapel in 'Modelo\Persistencia\URepositorioPapel.pas',
   URepositorioPapelPermissao in 'Modelo\Persistencia\URepositorioPapelPermissao.pas',
   UUsuarioLogado in 'Modelo\UUsuarioLogado.pas',
-  UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin};
+  UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin},
+  UMarca in 'Modelo\Persistencia\UMarca.pas',
+  URepositorioMarca in 'Modelo\Persistencia\URepositorioMarca.pas',
+  URegraCRUDMarca in 'Modelo\Regra\URegraCRUDMarca.pas';
 
 {$R *.res}
 

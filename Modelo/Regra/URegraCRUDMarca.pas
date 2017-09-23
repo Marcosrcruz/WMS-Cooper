@@ -39,7 +39,7 @@ procedure TRegraCRUDMarca.ValidaInsercao(const coENTIDADE: TENTIDADE);
 begin
   inherited;
   if Trim(TMarca(coENTIDADE).NOME) = EmptyStr Then
-    raise EValidacaoNegocio.Create(STR_MARCA_DESCRICAO_NAO_INFORMADA);
+    raise EValidacaoNegocio.Create(STR_MARCA_NOME_NAO_INFORMADA);
 end;
 
 end.

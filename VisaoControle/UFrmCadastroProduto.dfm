@@ -268,92 +268,92 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       ParentFont = False
       TabOrder = 6
     end
+    object edMarca: TEdit
+      Left = 144
+      Top = 267
+      Width = 121
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 7
+      OnExit = edMarcaExit
+    end
+    object btnLocalizarMarca: TButton
+      Left = 267
+      Top = 268
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+      TabStop = False
+      OnClick = btnLocalizarMarcaClick
+    end
+    object edGrupoProduto: TEdit
+      Left = 144
+      Top = 107
+      Width = 121
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 9
+      OnExit = edGrupoProdutoExit
+    end
+    object btnLocalizarGrupoProduto: TButton
+      Left = 267
+      Top = 108
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      TabStop = False
+      OnClick = btnLocalizarGrupoProdutoClick
+    end
   end
-  object edGrupoProduto: TEdit [4]
-    Left = 144
+  object stNomeGrupoProduto: TStaticText [4]
+    Left = 303
     Top = 193
-    Width = 121
-    Height = 21
-    Color = clInfoBk
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
+    Width = 217
+    Height = 19
+    AutoSize = False
+    BorderStyle = sbsSingle
+    Color = clGray
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    NumbersOnly = True
+    ParentColor = False
     ParentFont = False
     TabOrder = 4
-    OnExit = edGrupoProdutoExit
-  end
-  object btnLocalizarGrupoProduto: TButton [5]
-    Left = 267
-    Top = 194
-    Width = 30
-    Height = 19
-    Cursor = crHandPoint
-    Caption = '...'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 5
-    TabStop = False
-    OnClick = btnLocalizarGrupoProdutoClick
-  end
-  object stNomeGrupoProduto: TStaticText [6]
-    Left = 303
-    Top = 193
-    Width = 217
-    Height = 19
-    AutoSize = False
-    BorderStyle = sbsSingle
-    Color = clGray
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentColor = False
-    ParentFont = False
-    TabOrder = 6
     Transparent = False
   end
-  object edMarca: TEdit [7]
-    Left = 144
-    Top = 353
-    Width = 121
-    Height = 21
-    Color = clInfoBk
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    NumbersOnly = True
-    ParentFont = False
-    TabOrder = 7
-    OnExit = edMarcaExit
-  end
-  object btnLocalizarMarca: TButton [8]
-    Left = 267
-    Top = 354
-    Width = 30
-    Height = 19
-    Cursor = crHandPoint
-    Caption = '...'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 8
-    TabStop = False
-    OnClick = btnLocalizarMarcaClick
-  end
-  object stNomeMarca: TStaticText [9]
+  object stNomeMarca: TStaticText [5]
     Left = 303
     Top = 353
     Width = 217
@@ -368,7 +368,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
     Font.Style = []
     ParentColor = False
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 5
     Transparent = False
   end
 end

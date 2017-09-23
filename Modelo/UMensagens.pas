@@ -40,7 +40,7 @@ resourcestring
   STR_CIDADE_ESTADO_NAO_INFORMADO = 'O Estado é obrigatório';
 
   //Marca
-  STR_MARCA_DESCRICAO_NAO_INFORMADA = 'A Descrição é obrigatória.';
+  STR_MARCA_NOME_NAO_INFORMADA = 'O Nome é obrigatório.';
 
   //Deposito
   STR_DEPOSITO_DESCRICAO_NAO_INFORMADO = 'Descrição do depósito é obrigatório.';

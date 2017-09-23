@@ -212,6 +212,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       LabelPosition = lpLeft
       MaxLength = 60
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 4
     end
@@ -237,6 +238,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       LabelPosition = lpLeft
       MaxLength = 60
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 5
     end
@@ -262,6 +264,7 @@ inherited FrmCadastroProduto: TFrmCadastroProduto
       Font.Style = []
       LabelPosition = lpLeft
       MaxLength = 60
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 6
     end

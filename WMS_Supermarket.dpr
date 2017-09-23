@@ -72,7 +72,8 @@ uses
   UFrmLogin in 'VisaoControle\UFrmLogin.pas' {FrmLogin},
   UMarca in 'Modelo\Persistencia\UMarca.pas',
   URepositorioMarca in 'Modelo\Persistencia\URepositorioMarca.pas',
-  URegraCRUDMarca in 'Modelo\Regra\URegraCRUDMarca.pas';
+  URegraCRUDMarca in 'Modelo\Regra\URegraCRUDMarca.pas',
+  UFrmCadastroMarca in 'VisaoControle\UFrmCadastroMarca.pas' {FrmCadastroMarca};
 
 {$R *.res}
 

@@ -62,6 +62,10 @@ object FrmPrincipal: TFrmPrincipal
       end
       object MiProdutos: TMenuItem
         Caption = 'P&rodutos'
+        object MiProduto: TMenuItem
+          Caption = 'P&roduto'
+          OnClick = MiProdutoClick
+        end
         object MiFamiliaProduto: TMenuItem
           Caption = '&Fam'#237'lia de Produto'
           OnClick = MiFamiliaProdutoClick
@@ -70,9 +74,9 @@ object FrmPrincipal: TFrmPrincipal
           Caption = '&Grupo de Produto'
           OnClick = MiGrupoProdutoClick
         end
-        object MiProduto: TMenuItem
-          Caption = 'P&roduto'
-          OnClick = MiProdutoClick
+        object miMarca: TMenuItem
+          Caption = 'Marca'
+          OnClick = miMarcaClick
         end
       end
       object MiUnidadeMedida: TMenuItem

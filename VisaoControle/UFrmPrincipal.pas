@@ -38,6 +38,7 @@ type
     MiSair: TMenuItem;
     miLogoff: TMenuItem;
     EncerrarAplicao1: TMenuItem;
+    miMarca: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure MiUsuariosClick(Sender: TObject);
     procedure miLogoffClick(Sender: TObject);
     procedure EncerrarAplicao1Click(Sender: TObject);
+    procedure miMarcaClick(Sender: TObject);
   private
     { Private declaration }
     procedure AtualizaUsuarioLogado;
@@ -79,6 +81,7 @@ uses
   , UFrmCadastroFilial
   , UFrmCadastroDeposito
   , UFrmCadastroUsuario
+  , UFrmCadastroMarca
   , UUsuarioLogado
   , UUtilitarios
   , UFrmLogin
@@ -128,6 +131,11 @@ begin
     end
   else
     Close;
+end;
+
+procedure TFrmPrincipal.miMarcaClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroMarca, FrmCadastroMarca);
 end;
 
 procedure TFrmPrincipal.MiMatrizClick(Sender: TObject);

@@ -29,9 +29,7 @@ object dmEntra21: TdmEntra21
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      
-        'Database=C:\Users\Mateus Martins\Documents\Projetos Delphi\WMS-C' +
-        'ooper\DB\SUPERMARKET.FDB'
+      'Database=T:\Documentos\WMS-Cooper\DB\SUPERMARKET.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'

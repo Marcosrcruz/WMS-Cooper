@@ -73,7 +73,15 @@ uses
   UMarca in 'Modelo\Persistencia\UMarca.pas',
   URepositorioMarca in 'Modelo\Persistencia\URepositorioMarca.pas',
   URegraCRUDMarca in 'Modelo\Regra\URegraCRUDMarca.pas',
-  UFrmCadastroMarca in 'VisaoControle\UFrmCadastroMarca.pas' {FrmCadastroMarca};
+  UFrmCadastroMarca in 'VisaoControle\UFrmCadastroMarca.pas' {FrmCadastroMarca},
+  UStatus in 'Modelo\Persistencia\UStatus.pas',
+  URepositorioStatus in 'Modelo\Persistencia\URepositorioStatus.pas',
+  URegraCRUDStatus in 'Modelo\Regra\URegraCRUDStatus.pas',
+  UTipoMovimentacao in 'Modelo\Persistencia\UTipoMovimentacao.pas',
+  URepositorioTipoMovimentacao in 'Modelo\Persistencia\URepositorioTipoMovimentacao.pas',
+  URegraCRUDTipoMovimentacao in 'Modelo\Regra\URegraCRUDTipoMovimentacao.pas',
+  URequisicaoEstoque in 'Modelo\Persistencia\URequisicaoEstoque.pas',
+  URepositorioRequisicaoEstoque in 'Modelo\Persistencia\URepositorioRequisicaoEstoque.pas';
 
 {$R *.res}
 

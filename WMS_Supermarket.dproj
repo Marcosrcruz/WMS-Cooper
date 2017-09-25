@@ -173,6 +173,14 @@
 				<Form>FrmCadastroMarca</Form>
 				<FormType>dfm</FormType>
 			</DCCReference>
+			<DCCReference Include="Modelo\Persistencia\UStatus.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioStatus.pas"/>
+			<DCCReference Include="Modelo\Regra\URegraCRUDStatus.pas"/>
+			<DCCReference Include="Modelo\Persistencia\UTipoMovimentacao.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioTipoMovimentacao.pas"/>
+			<DCCReference Include="Modelo\Regra\URegraCRUDTipoMovimentacao.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URequisicaoEstoque.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioRequisicaoEstoque.pas"/>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

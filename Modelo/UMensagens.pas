@@ -65,6 +65,11 @@ resourcestring
   STR_EMPRESA_CNPJ_NAO_INFORMMADO = 'Informe um CNPJ válido.';
   STR_EMPRESA_TELEFONE_NAO_INFORMADO = 'O telefone é obrigatório.';
 
+  //Status
+  STR_STATUS_NOME_NAO_INFORMADO = 'Informe o nome do Status';
+
+  //Tipo Movimentacao
+  STR_TIPO_MOVIMENTACAO_NAO_INFORMADO = 'Informe o tipo de Movimentação';
 
 implementation
 

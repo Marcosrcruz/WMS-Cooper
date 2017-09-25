@@ -61,7 +61,7 @@
 			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
 		</PropertyGroup>
 		<ItemGroup>
-			<DelphiCompile Include="$(MainSource)">
+			<DelphiCompile Include="WMS_Supermarket.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
 			<DCCReference Include="VisaoControle\UFrmPrincipal.pas">
@@ -163,15 +163,15 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioPapelPermissao.pas"/>
 			<DCCReference Include="Modelo\UUsuarioLogado.pas"/>
 			<DCCReference Include="VisaoControle\UFrmLogin.pas">
-				<Form>FrmLogin</Form>
 				<FormType>dfm</FormType>
+				<Form>FrmLogin</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\UMarca.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioMarca.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDMarca.pas"/>
 			<DCCReference Include="VisaoControle\UFrmCadastroMarca.pas">
-				<Form>FrmCadastroMarca</Form>
 				<FormType>dfm</FormType>
+				<Form>FrmCadastroMarca</Form>
 			</DCCReference>
 			<DCCReference Include="Modelo\Persistencia\UStatus.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioStatus.pas"/>
@@ -238,5 +238,4 @@
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
 		</ProjectExtensions>
-		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
 	</Project>

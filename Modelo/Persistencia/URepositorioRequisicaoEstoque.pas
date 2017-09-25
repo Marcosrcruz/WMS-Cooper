@@ -31,19 +31,19 @@ type
     FRepositorioDeposito         : TDEPOSITO;
     FRepositorioUsuario          : TUSUARIO;
   public
-    constructor Create;
+    (*constructor Create;
     destructor Destroy; override;
 
     procedure AtribuiDBParaEntidade (const coRequisicaoEstoque: TREQUISICAOESTOQUE); override;
     procedure AtribuiEntidadeParaDB (const coRequisicaoEstoque: TREQUISICAOESTOQUE; override;
-                                     const coSQLQuery: TSQLQuery); override;
+                                     const coSQLQuery: TSQLQuery); override;*)
 
   end;
 
 
 implementation
 
-uses
+(*uses
    UDM
   ,SysUtils
   ;
@@ -85,6 +85,6 @@ destructor TRepositorioRequisicaoEstoque.Destroy;
 begin
 
   inherited;
-end;
+end; *)
 
 end.

@@ -43,7 +43,7 @@ object dmEntra21: TdmEntra21
       'BlobSize=-1'
       'ErrorResourceFile='
       'RoleName=RoleName'
-      'ServerCharSet=UTF-8'
+      'ServerCharSet=UTF8'
       'Trim Char=False')
     VendorLib = 'fbclient.dll'
     Left = 32

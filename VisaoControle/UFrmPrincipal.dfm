@@ -78,14 +78,18 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Marca'
           OnClick = miMarcaClick
         end
-      end
-      object MiUnidadeMedida: TMenuItem
-        Caption = '&Unidade de Medida'
-        OnClick = MiUnidadeMedidaClick
+        object MiUnidadeMedida: TMenuItem
+          Caption = '&Unidade de Medida'
+          OnClick = MiUnidadeMedidaClick
+        end
       end
       object MiUsuarios: TMenuItem
         Caption = 'U&su'#225'rios'
         OnClick = MiUsuariosClick
+      end
+      object miStatusRequisio: TMenuItem
+        Caption = 'Status Requisi'#231#227'o'
+        OnClick = miStatusRequisioClick
       end
     end
     object MiEstoque: TMenuItem

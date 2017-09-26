@@ -16,7 +16,7 @@ end;
 
 const
   TBL_STATUS                = 'STATUS';
-  FLD_STATUS_NOME           = 'NOME';
+  FLD_STATUS_NOME           = 'NOME_STATUS';
 
   VW_STATUS                 = 'STATUS';
   VW_STATUS_NOME_STATUS     = 'NOME';

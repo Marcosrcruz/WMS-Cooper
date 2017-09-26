@@ -39,6 +39,7 @@ type
     miLogoff: TMenuItem;
     EncerrarAplicao1: TMenuItem;
     miMarca: TMenuItem;
+    miStatusRequisio: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -54,6 +55,7 @@ type
     procedure miLogoffClick(Sender: TObject);
     procedure EncerrarAplicao1Click(Sender: TObject);
     procedure miMarcaClick(Sender: TObject);
+    procedure miStatusRequisioClick(Sender: TObject);
   private
     { Private declaration }
     procedure AtualizaUsuarioLogado;
@@ -68,23 +70,24 @@ var
 implementation
 
 uses
-    UDM
-  , DB
-  , UFrmCadastroPais
-  , UFrmCadastroEstado
-  , UFrmCadastroCidade
+    UFrmCadastroStatusRequisicao
   , UFrmCadastroFamiliaProduto
-  , UFrmCadastroGrupoProduto
-  , UFrmCadastroProduto
-  , UCadastroUnidadeMedida
   , UFrmCadastroEmpresaMatriz
-  , UFrmCadastroFilial
+  , UFrmCadastroGrupoProduto
+  , UCadastroUnidadeMedida
   , UFrmCadastroDeposito
   , UFrmCadastroUsuario
+  , UFrmCadastroProduto
+  , UFrmCadastroCidade
+  , UFrmCadastroFilial
+  , UFrmCadastroEstado
   , UFrmCadastroMarca
+  , UFrmCadastroPais
   , UUsuarioLogado
   , UUtilitarios
   , UFrmLogin
+  , UDM
+  , DB
   ;
 
 {$R *.dfm}
@@ -151,6 +154,11 @@ end;
 procedure TFrmPrincipal.MiProdutoClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroProduto, FrmCadastroProduto);
+end;
+
+procedure TFrmPrincipal.miStatusRequisioClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroStatusRequisicao, FrmCadastroStatusRequisicao);
 end;
 
 procedure TFrmPrincipal.MiUnidadeMedidaClick(Sender: TObject);

@@ -81,7 +81,8 @@ uses
   URepositorioTipoMovimentacao in 'Modelo\Persistencia\URepositorioTipoMovimentacao.pas',
   URegraCRUDTipoMovimentacao in 'Modelo\Regra\URegraCRUDTipoMovimentacao.pas',
   URequisicaoEstoque in 'Modelo\Persistencia\URequisicaoEstoque.pas',
-  URepositorioRequisicaoEstoque in 'Modelo\Persistencia\URepositorioRequisicaoEstoque.pas';
+  URepositorioRequisicaoEstoque in 'Modelo\Persistencia\URepositorioRequisicaoEstoque.pas',
+  UFrmCadastroStatusRequisicao in 'VisaoControle\UFrmCadastroStatusRequisicao.pas' {FrmCadastroStatusRequisicao};
 
 {$R *.res}
 

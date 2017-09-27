@@ -131,9 +131,6 @@
 			<DCCReference Include="VisaoControle\UFrmCadastroGrupoProduto.pas">
 				<Form>FrmCadastroGrupoProduto</Form>
 			</DCCReference>
-			<DCCReference Include="Modelo\Persistencia\UMovimentacaoEstoque.pas"/>
-			<DCCReference Include="Modelo\Persistencia\URepositorioMovimentacaoEstoque.pas"/>
-			<DCCReference Include="Modelo\Regra\URegraCRUDMovimentacaoEstoque.pas"/>
 			<DCCReference Include="Modelo\Persistencia\UPessoa.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioPessoa.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDPessoa.pas"/>
@@ -183,6 +180,9 @@
 			<DCCReference Include="Modelo\Persistencia\URepositorioRequisicaoEstoque.pas"/>
 			<DCCReference Include="VisaoControle\UFrmCadastroStatusRequisicao.pas">
 				<Form>FrmCadastroStatusRequisicao</Form>
+			</DCCReference>
+			<DCCReference Include="VisaoControle\UFrmCadastroTipoMovimentacao.pas">
+				<Form>FrmCadastroTipoMovimentacao</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>

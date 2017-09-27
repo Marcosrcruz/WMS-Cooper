@@ -40,6 +40,7 @@ type
     EncerrarAplicao1: TMenuItem;
     miMarca: TMenuItem;
     miStatusRequisio: TMenuItem;
+    miTipoMovimentacao: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -56,6 +57,7 @@ type
     procedure EncerrarAplicao1Click(Sender: TObject);
     procedure miMarcaClick(Sender: TObject);
     procedure miStatusRequisioClick(Sender: TObject);
+    procedure miTipoMovimentacaoClick(Sender: TObject);
   private
     { Private declaration }
     procedure AtualizaUsuarioLogado;
@@ -74,6 +76,7 @@ uses
   , UFrmCadastroFamiliaProduto
   , UFrmCadastroEmpresaMatriz
   , UFrmCadastroGrupoProduto
+  , UFrmCadastroTipoMovimentacao
   , UCadastroUnidadeMedida
   , UFrmCadastroDeposito
   , UFrmCadastroUsuario
@@ -159,6 +162,11 @@ end;
 procedure TFrmPrincipal.miStatusRequisioClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroStatusRequisicao, FrmCadastroStatusRequisicao);
+end;
+
+procedure TFrmPrincipal.miTipoMovimentacaoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroTipoMovimentacao, FrmCadastroTipoMovimentacao);
 end;
 
 procedure TFrmPrincipal.MiUnidadeMedidaClick(Sender: TObject);

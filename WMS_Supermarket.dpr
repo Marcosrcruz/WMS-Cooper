@@ -46,9 +46,6 @@ uses
   URepositorioGrupoProduto in 'Modelo\Persistencia\URepositorioGrupoProduto.pas',
   URegraCRUDGrupoProduto in 'Modelo\Regra\URegraCRUDGrupoProduto.pas',
   UFrmCadastroGrupoProduto in 'VisaoControle\UFrmCadastroGrupoProduto.pas' {FrmCadastroGrupoProduto},
-  UMovimentacaoEstoque in 'Modelo\Persistencia\UMovimentacaoEstoque.pas',
-  URepositorioMovimentacaoEstoque in 'Modelo\Persistencia\URepositorioMovimentacaoEstoque.pas',
-  URegraCRUDMovimentacaoEstoque in 'Modelo\Regra\URegraCRUDMovimentacaoEstoque.pas',
   UPessoa in 'Modelo\Persistencia\UPessoa.pas',
   URepositorioPessoa in 'Modelo\Persistencia\URepositorioPessoa.pas',
   URegraCRUDPessoa in 'Modelo\Regra\URegraCRUDPessoa.pas',
@@ -82,7 +79,8 @@ uses
   URegraCRUDTipoMovimentacao in 'Modelo\Regra\URegraCRUDTipoMovimentacao.pas',
   URequisicaoEstoque in 'Modelo\Persistencia\URequisicaoEstoque.pas',
   URepositorioRequisicaoEstoque in 'Modelo\Persistencia\URepositorioRequisicaoEstoque.pas',
-  UFrmCadastroStatusRequisicao in 'VisaoControle\UFrmCadastroStatusRequisicao.pas' {FrmCadastroStatusRequisicao};
+  UFrmCadastroStatusRequisicao in 'VisaoControle\UFrmCadastroStatusRequisicao.pas' {FrmCadastroStatusRequisicao},
+  UFrmCadastroTipoMovimentacao in 'VisaoControle\UFrmCadastroTipoMovimentacao.pas' {FrmCadastroTipoMovimentacao};
 
 {$R *.res}
 

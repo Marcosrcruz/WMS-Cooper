@@ -44,7 +44,7 @@ procedure TRegraCrudTipoMovimentacao.ValidaInsercao(
   const coENTIDADE: TENTIDADE);
 begin
   inherited;
-  if Trim (TTIPOMOVIMENTACAO(coENTIDADE).TIPO_MOVIMENTACAO) = EmptyStr then
+  if Trim (TTIPOMOVIMENTACAO(coENTIDADE).FNOME) = EmptyStr then
      raise EValidacaoNegocio.Create(STR_TIPO_MOVIMENTACAO_NAO_INFORMADO);
 
 

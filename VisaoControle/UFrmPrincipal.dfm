@@ -91,6 +91,10 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Status Requisi'#231#227'o'
         OnClick = miStatusRequisioClick
       end
+      object miTipoMovimentacao: TMenuItem
+        Caption = 'Tipo Movimenta'#231#227'o'
+        OnClick = miTipoMovimentacaoClick
+      end
     end
     object MiEstoque: TMenuItem
       Caption = 'E&stoque'

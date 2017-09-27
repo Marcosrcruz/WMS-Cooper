@@ -35,7 +35,7 @@ begin
   inherited;
   with FSQLSelect do
   begin
-     coTipoMovimentacao.TIPO_MOVIMENTACAO := FieldByName(FLD_TIPO_MOVIMENTACAO).AsString;
+     coTipoMovimentacao.FNOME := FieldByName(FLD_TIPO_MOVIMENTACAO).AsString;
   end;
 end;
 
@@ -45,7 +45,7 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParambyName(FLD_TIPO_MOVIMENTACAO).AsString := coTipoMovimentacao.TIPO_MOVIMENTACAO;
+    ParambyName(FLD_TIPO_MOVIMENTACAO).AsString := coTipoMovimentacao.FNOME;
   end;
 end;
 

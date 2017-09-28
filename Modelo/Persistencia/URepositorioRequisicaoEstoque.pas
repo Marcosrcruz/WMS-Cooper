@@ -22,7 +22,7 @@ uses
   ;
 
 type
-  TRepositorioRequisicaoEstoque = class (TRepositorioDB<TREQUISICAOESTOQUE>)
+  TRepositorioRequisicaoEstoque = class(TRepositorioDB<TREQUISICAOESTOQUE>)
   private
     FRepositorioTipoMovimentacao : TRepositorioTipoMovimentacao;
     FReposotorioStatus           : TRepositorioStatus;

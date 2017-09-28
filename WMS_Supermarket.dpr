@@ -80,7 +80,10 @@ uses
   URequisicaoEstoque in 'Modelo\Persistencia\URequisicaoEstoque.pas',
   URepositorioRequisicaoEstoque in 'Modelo\Persistencia\URepositorioRequisicaoEstoque.pas',
   UFrmCadastroStatusRequisicao in 'VisaoControle\UFrmCadastroStatusRequisicao.pas' {FrmCadastroStatusRequisicao},
-  UFrmCadastroTipoMovimentacao in 'VisaoControle\UFrmCadastroTipoMovimentacao.pas' {FrmCadastroTipoMovimentacao};
+  UFrmCadastroTipoMovimentacao in 'VisaoControle\UFrmCadastroTipoMovimentacao.pas' {FrmCadastroTipoMovimentacao},
+  UMovimentacao in 'Modelo\Persistencia\UMovimentacao.pas',
+  URepositorioMovimentacao in 'Modelo\Persistencia\URepositorioMovimentacao.pas',
+  URegraCRUDMovimentacao in 'Modelo\Regra\URegraCRUDMovimentacao.pas';
 
 {$R *.res}
 

@@ -17,9 +17,6 @@ type
 
 implementation
 
-{ TRegraCRUDEstado }
-
-
 { TRegraCRUDProduto }
 
 constructor TRegraCRUDProduto.Create;

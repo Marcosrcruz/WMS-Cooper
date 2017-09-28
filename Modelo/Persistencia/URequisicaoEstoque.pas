@@ -10,6 +10,7 @@ uses
   ,UProduto
   ,UDeposito
   ,UUsuario
+  ,ULote
   ;
 type
   TREQUISICAOESTOQUE = class (TENTIDADE)
@@ -27,8 +28,7 @@ type
     VALOR_TOTAL        : double;
     DEPOSITO_ORIGEM    : TDEPOSITO;
     DEPOSITO_DESTINO   : TDEPOSITO;
-    LOTE               : string;
-    LOTE_VALIDADE      : TDateTime;
+    LOTE               : TLOTE;
     USUARIO            : TUSUARIO;
     DATA_INCLUSAO      : TDateTime;
 
@@ -54,8 +54,8 @@ end;
      FLD_REQUISICAO_ESTOQUE_VALOR_TOTAL                = 'VALOR TOTAL';
      FLD_REQUISICAO_ESTOQUE_DEPOSITO_ORIGEM            = 'ID_DEPOSITO';
      FLD_REQUISICAO_ESTOQUE_DEPOSITO_DESTINO           = 'ID_DEPOSITO';
-     FLD_REQUISICAO_ESTOQUE_LOTE                       = 'LOTE';
-     FLD_REQUISICAO_ESTOQUE_LOTE_VALIDADE              = 'VALIDADE DO LOTE';
+     FLD_REQUISICAO_ESTOQUE_LOTE                       = 'ID_LOTE';
+     FLD_REQUISICAO_ESTOQUE_USUARIO                    = 'ID_USUARIO';
      FLD_REQUISICAO_ESTOQUE_DATA_INCLUSAO              = 'DATA DE INCLUSAO';
 
      VW_REQUISICAO_ESTOQUE                             = 'VW_REQUISICAO_ESTOQUE';
@@ -67,6 +67,10 @@ end;
      VW_REQUISICAO_ESTOQUE_DEPOSITO_ORIGEM             = 'DEPOSITO DE ORGIEM';
      VW_REQUISICAO_ESTOQUE_DEPOSITO_DESTINO            = 'DEPOSITO DE DESTINO';
      VW_REQUISICAO_ESTOQUE_USUARIO                     = 'USUARIO';
+     VW_REQUISICAO_ESTOQUE_LOTE                        = 'LOTE';
+
+  resourcestring
+     STR_REQUISICAO_ESTOQUE = 'REQUISIÇÃO ESTOQUE';
 
 implementation
 
@@ -87,6 +91,7 @@ begin
    DEPOSITO_ORIGEM   := TDEPOSITO.Create;
    DEPOSITO_DESTINO  := TDEPOSITO.Create;
    USUARIO           := TUSUARIO.Create;
+   LOTE              := TLOTE.Create;
 
 end;
 
@@ -99,6 +104,7 @@ begin
    freeAndNil(DEPOSITO_ORIGEM);
    freeAndNil(DEPOSITO_DESTINO);
    freeAndNil(USUARIO);
+   freeAndNil(LOTE);
   inherited;
 end;
 

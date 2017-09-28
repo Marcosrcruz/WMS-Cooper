@@ -187,6 +187,10 @@
 			<DCCReference Include="Modelo\Persistencia\UMovimentacao.pas"/>
 			<DCCReference Include="Modelo\Persistencia\URepositorioMovimentacao.pas"/>
 			<DCCReference Include="Modelo\Regra\URegraCRUDMovimentacao.pas"/>
+			<DCCReference Include="Modelo\Persistencia\ULote.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioLote.pas"/>
+			<DCCReference Include="Modelo\Regra\URegraCRUDLote.pas"/>
+			<DCCReference Include="Modelo\Regra\URegraCRUDRequisicaoEstoque.pas"/>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

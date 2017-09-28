@@ -83,7 +83,11 @@ uses
   UFrmCadastroTipoMovimentacao in 'VisaoControle\UFrmCadastroTipoMovimentacao.pas' {FrmCadastroTipoMovimentacao},
   UMovimentacao in 'Modelo\Persistencia\UMovimentacao.pas',
   URepositorioMovimentacao in 'Modelo\Persistencia\URepositorioMovimentacao.pas',
-  URegraCRUDMovimentacao in 'Modelo\Regra\URegraCRUDMovimentacao.pas';
+  URegraCRUDMovimentacao in 'Modelo\Regra\URegraCRUDMovimentacao.pas',
+  ULote in 'Modelo\Persistencia\ULote.pas',
+  URepositorioLote in 'Modelo\Persistencia\URepositorioLote.pas',
+  URegraCRUDLote in 'Modelo\Regra\URegraCRUDLote.pas',
+  URegraCRUDRequisicaoEstoque in 'Modelo\Regra\URegraCRUDRequisicaoEstoque.pas';
 
 {$R *.res}
 

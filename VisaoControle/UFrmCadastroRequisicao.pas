@@ -187,7 +187,7 @@ end;
 procedure TFrmCadastroRequisicao.PreencheEntidade;
 begin
   inherited;
-  FREQUISICAO.TIPO_MOVIMENTACAO :=
+
 end;
 
 procedure TFrmCadastroRequisicao.PreencheFormulario;

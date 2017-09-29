@@ -88,7 +88,8 @@ uses
   URepositorioLote in 'Modelo\Persistencia\URepositorioLote.pas',
   URegraCRUDLote in 'Modelo\Regra\URegraCRUDLote.pas',
   URegraCRUDRequisicaoEstoque in 'Modelo\Regra\URegraCRUDRequisicaoEstoque.pas',
-  UFrmCadastroRequisicao in 'VisaoControle\UFrmCadastroRequisicao.pas' {FrmCadastroRequisicao};
+  UFrmCadastroRequisicao in 'VisaoControle\UFrmCadastroRequisicao.pas' {FrmCadastroRequisicao},
+  UFrmCadastroLote in 'VisaoControle\UFrmCadastroLote.pas' {FrmCadastroLote};
 
 {$R *.res}
 
@@ -96,7 +97,7 @@ begin
   {$DEFINE DESENV}
   Application.Initialize;
   Application.CreateForm(TdmEntra21, dmEntra21);
-  Application.CreateForm(TFrmCadastroRequisicao, FrmCadastroRequisicao);
+  Application.CreateForm(TFrmCadastroLote, FrmCadastroLote);
   {$IFDEF PROD}
   FrmLogin := TFrmLogin.Create(nil);
   if FrmLogin.ShowModal = mrYes then

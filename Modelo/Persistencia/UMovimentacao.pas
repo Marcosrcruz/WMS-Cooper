@@ -13,15 +13,12 @@ uses
   ;
 
   type
-    TTipoOperacao = (toSaida
-                   , toEntrada);
 
     TSituacao = (sEstornado
                , sConfirmado);
 
     TMOVIMETNACAO = class(TENTIDADE)
     public
-      OPERACAO         : TTipoOperacao;
       DATA             : TDateTime;
       QUANTIDADE       : Double;
       TIPOMOVIMENTACAO : TTIPOMOVIMENTACAO;
@@ -39,7 +36,6 @@ uses
 const
   TBL_MOVIMENTACAO            = 'MOVIMENTAÇÃO';
   FLD_MOVIMENTACAO_TIPO       = 'ID_TIPO_MOVIMENTACAO';
-  FLD_MOVIMENTACAO_OPERACAO   = 'OPERACAO';
   FLD_MOVIMENTACAO_PRODUTO    = 'ID_PRODUTO';
   FLD_MOVIMENTACAO_STATUS     = 'ID_STATUS_MOVIMENTO';
   FLD_MOVIMENTACAO_DEPOSITO   = 'ID_DEPOSITO';

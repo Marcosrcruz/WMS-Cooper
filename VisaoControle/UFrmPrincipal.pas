@@ -41,6 +41,7 @@ type
     miMarca: TMenuItem;
     miStatusRequisio: TMenuItem;
     miTipoMovimentacao: TMenuItem;
+    miRequisio: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -58,6 +59,7 @@ type
     procedure miMarcaClick(Sender: TObject);
     procedure miStatusRequisioClick(Sender: TObject);
     procedure miTipoMovimentacaoClick(Sender: TObject);
+    procedure miRequisioClick(Sender: TObject);
   private
     { Private declaration }
     procedure AtualizaUsuarioLogado;
@@ -78,6 +80,7 @@ uses
   , UFrmCadastroGrupoProduto
   , UFrmCadastroTipoMovimentacao
   , UCadastroUnidadeMedida
+  , UFrmCadastroRequisicao
   , UFrmCadastroDeposito
   , UFrmCadastroUsuario
   , UFrmCadastroProduto
@@ -157,6 +160,11 @@ end;
 procedure TFrmPrincipal.MiProdutoClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmCadastroProduto, FrmCadastroProduto);
+end;
+
+procedure TFrmPrincipal.miRequisioClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroRequisicao, FrmCadastroRequisicao);
 end;
 
 procedure TFrmPrincipal.miStatusRequisioClick(Sender: TObject);

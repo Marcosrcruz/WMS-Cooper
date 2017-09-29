@@ -97,7 +97,6 @@ begin
   {$DEFINE DESENV}
   Application.Initialize;
   Application.CreateForm(TdmEntra21, dmEntra21);
-  Application.CreateForm(TFrmCadastroLote, FrmCadastroLote);
   {$IFDEF PROD}
   FrmLogin := TFrmLogin.Create(nil);
   if FrmLogin.ShowModal = mrYes then

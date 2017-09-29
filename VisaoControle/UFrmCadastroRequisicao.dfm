@@ -2,15 +2,12 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   Caption = 'Cadastro Requisi'#231#227'o'
   ClientHeight = 544
   ClientWidth = 875
-  ExplicitTop = -8
   ExplicitWidth = 891
   ExplicitHeight = 583
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlCabecalho: TPanel
     Width = 875
-    ExplicitLeft = 8
-    ExplicitTop = -6
     ExplicitWidth = 875
     inherited lbCabecalho: TLabel
       Width = 229
@@ -20,28 +17,28 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   end
   inherited gbLocalizar: TGroupBox
     Width = 875
-    ExplicitWidth = 120
+    ExplicitWidth = 875
   end
   inherited pnlBotoes: TPanel
     Top = 503
     Width = 875
-    ExplicitTop = -41
-    ExplicitWidth = 120
+    ExplicitTop = 503
+    ExplicitWidth = 875
     inherited btnLimpar: TBitBtn
       Left = 640
-      ExplicitLeft = -115
+      ExplicitLeft = 640
     end
     inherited btnExcluir: TBitBtn
       Left = 523
-      ExplicitLeft = -232
+      ExplicitLeft = 523
     end
     inherited btnGravar: TBitBtn
       Left = 406
-      ExplicitLeft = -349
+      ExplicitLeft = 406
     end
     inherited btnSair: TBitBtn
       Left = 757
-      ExplicitLeft = 2
+      ExplicitLeft = 757
     end
   end
   object gbInformacoes: TGroupBox [3]
@@ -58,10 +55,6 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = 85
-    ExplicitTop = 120
-    ExplicitWidth = 750
-    ExplicitHeight = 281
     object lbCodigoPais: TLabel
       Left = 46
       Top = 36
@@ -146,9 +139,79 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       Font.Style = []
       ParentFont = False
     end
+    object Label6: TLabel
+      Left = 19
+      Top = 285
+      Width = 79
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Dep'#243'sito Origem'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 17
+      Top = 312
+      Width = 81
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Dep'#243'sito Destino'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Lote: TLabel
+      Left = 77
+      Top = 195
+      Width = 21
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Lote'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 38
+      Top = 360
+      Width = 60
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Alterado por'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 268
+      Top = 360
+      Width = 14
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'em'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
     object edNumDocumento: TLabeledEdit
       Left = 104
-      Top = 176
+      Top = 166
       Width = 121
       Height = 21
       Color = clInfoBk
@@ -411,6 +474,197 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentColor = False
       ParentFont = False
       TabOrder = 14
+      Transparent = False
+    end
+    object edDepositoOrigem: TEdit
+      Left = 104
+      Top = 283
+      Width = 121
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 15
+      OnExit = edTipoMovimentoExit
+    end
+    object btnLocalizarDepositoOrigem: TButton
+      Left = 227
+      Top = 283
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 16
+      TabStop = False
+      OnClick = btnLocalizarTipoMovimentoClick
+    end
+    object stNomeDepositoOrigem: TStaticText
+      Left = 263
+      Top = 285
+      Width = 154
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Caption = 'stNomeTipoMovimento'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 17
+      Transparent = False
+    end
+    object edDepositoDestino: TEdit
+      Left = 104
+      Top = 310
+      Width = 121
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 18
+      OnExit = edTipoMovimentoExit
+    end
+    object btnLocalizarDepositoDestino: TButton
+      Left = 227
+      Top = 310
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 19
+      TabStop = False
+      OnClick = btnLocalizarTipoMovimentoClick
+    end
+    object stNomeDepositoDestino: TStaticText
+      Left = 263
+      Top = 312
+      Width = 154
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Caption = 'stNomeTipoMovimento'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 20
+      Transparent = False
+    end
+    object edLote: TEdit
+      Left = 104
+      Top = 193
+      Width = 121
+      Height = 21
+      Color = clInfoBk
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 21
+      OnExit = edTipoMovimentoExit
+    end
+    object btnLocalizarLote: TButton
+      Left = 227
+      Top = 193
+      Width = 30
+      Height = 19
+      Cursor = crHandPoint
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 22
+      TabStop = False
+      OnClick = btnLocalizarTipoMovimentoClick
+    end
+    object stLote: TStaticText
+      Left = 263
+      Top = 195
+      Width = 154
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 23
+      Transparent = False
+    end
+    object stNomeUsuario: TStaticText
+      Left = 104
+      Top = 360
+      Width = 154
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 24
+      Transparent = False
+    end
+    object stDataModificacao: TStaticText
+      Left = 288
+      Top = 360
+      Width = 129
+      Height = 19
+      AutoSize = False
+      BorderStyle = sbsSingle
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 25
       Transparent = False
     end
   end

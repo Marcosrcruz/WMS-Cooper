@@ -8,7 +8,14 @@ uses
   , URequisicaoEstoque
   , UUtilitarios
   , URegraCRUDRequisicaoEstoque
-  , URegraCRUDTipoMovimentacao, Mask
+  , URegraCRUDTipoMovimentacao
+  , Mask
+  , URegraCRUDStatus
+  , URegraCRUDEmpresaMatriz
+  , URegraCRUDProduto
+  , URegraCRUDDeposito
+  , URegraCRUDLote
+  , URegraCRUDUsuario
   ;
 
 type
@@ -37,15 +44,42 @@ type
     edProduto: TEdit;
     btnLocalizarProduto: TButton;
     stNomeProduto: TStaticText;
+    edDepositoOrigem: TEdit;
+    Label6: TLabel;
+    btnLocalizarDepositoOrigem: TButton;
+    stNomeDepositoOrigem: TStaticText;
+    edDepositoDestino: TEdit;
+    Label7: TLabel;
+    btnLocalizarDepositoDestino: TButton;
+    stNomeDepositoDestino: TStaticText;
+    edLote: TEdit;
+    Lote: TLabel;
+    btnLocalizarLote: TButton;
+    stLote: TStaticText;
+    Label8: TLabel;
+    stNomeUsuario: TStaticText;
+    Label9: TLabel;
+    stDataModificacao: TStaticText;
     procedure edTipoMovimentoExit(Sender: TObject);
     procedure btnLocalizarTipoMovimentoClick(Sender: TObject);
   protected
     FREQUISICAO: TREQUISICAOESTOQUE;
 
-    FRegraCRUDTipoMovimento: TRegraCrudTipoMovimentacao;
-    FregraCRUDRequisicao: TRegraCrudRequisicaoEstoque;
+    FRegraCRUDTipoMovimento    : TRegraCrudTipoMovimentacao;
+    FregraCRUDRequisicao       : TRegraCrudRequisicaoEstoque;
+    FregraCRUDStatus           : TRegraCrudStatus;
+    FregraCRUDEmpresa          : TregraCRUDEEmpresaMatriz;
+    FregraCRUDProduto          : TRegraCRUDProduto;
+    FregraCRUDDepositoDestino  : TregraCRUDDEPOSITO;
+    FregraCRUDUsuario          : TRegraCRUDUsuario;
+
   public
-    { Public declarations }
+    procedure Inicializa; override;
+    procedure Finaliza; override;
+    procedure PreencheEntidade; override;
+    procedure PreencheFormulario; override;
+    procedure PosicionaCursorPrimeiroCampo; override;
+    procedure HabilitaCampos(const ceTipoOperacaoUsuario: TTipoOperacaoUsuario); override;
   end;
 
 var
@@ -60,6 +94,12 @@ uses
   , UEntidade
   , UFrmPesquisa
   , UTipoMovimentacao
+  , UStatus
+  , UEmpresaMatriz
+  , UProduto
+  , UDeposito
+  , ULote
+  , UUSuario
   , UDialogo
   ;
 
@@ -96,6 +136,64 @@ begin
           edTipoMovimento.SetFocus;
         end;
     end;
+end;
+
+procedure TFrmCadastroRequisicao.Finaliza;
+begin
+  inherited;
+  FreeAndNil(FRegraCRUDTipoMovimento);
+  FreeAndNil(FregraCRUDStatus);
+  FreeAndNil(FregraCRUDEmpresa);
+  FreeAndNil(FregraCRUDProduto);
+  FreeAndNil(FregraCRUDDepositoDestino);
+  FreeAndNil(FregraCRUDUsuario);
+
+end;
+
+procedure TFrmCadastroRequisicao.HabilitaCampos(
+  const ceTipoOperacaoUsuario: TTipoOperacaoUsuario);
+begin
+  inherited;
+  gbInformacoes.Enabled := FTipoOperacaoUsuario In [touInsercao, touAtualizacao];
+end;
+
+procedure TFrmCadastroRequisicao.Inicializa;
+begin
+  inherited;
+  DefineEntidade(@FREQUISICAO, TREQUISICAOESTOQUE);
+  DefineRegraCRUD(@FregraCRUDRequisicao, TRegraCrudRequisicaoEstoque);
+
+  AdicionaOpcaoPesquisa(TOpcaoPesquisa
+    .Create
+    .AdicionaFiltro(FLD_REQUISICAO_ESTOQUE_NUMERO_DOCUMENTO)
+    .DefineNomeCampoRetorno(FLD_ENTIDADE_ID)
+    .DefineNomePesquisa(STR_REQUISICAO_ESTOQUE)
+    .DefineVisao(TBL_REQUISICAO_ESTOQUE));
+
+  FRegraCRUDTipoMovimento   := TRegraCrudTipoMovimentacao.Create;
+  FregraCRUDStatus          := TRegraCrudStatus.Create;
+  FregraCRUDEmpresa         := TregraCRUDEEmpresaMatriz.Create;
+  FregraCRUDProduto         := TRegraCRUDProduto.Create;
+  FregraCRUDDepositoDestino := TregraCRUDDEPOSITO.Create;
+  FregraCRUDUsuario         := TRegraCRUDUsuario.Create;
+end;
+
+procedure TFrmCadastroRequisicao.PosicionaCursorPrimeiroCampo;
+begin
+  inherited;
+  edTipoMovimento.SetFocus;
+end;
+
+procedure TFrmCadastroRequisicao.PreencheEntidade;
+begin
+  inherited;
+  FREQUISICAO.TIPO_MOVIMENTACAO :=
+end;
+
+procedure TFrmCadastroRequisicao.PreencheFormulario;
+begin
+  inherited;
+
 end;
 
 end.

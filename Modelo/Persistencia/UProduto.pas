@@ -37,7 +37,7 @@ type
 
     VW_PRODUTO           = 'VW_PRODUTO';
     VW_PRODUTO_ID        = 'COD';
-    VW_PRODUTO_CODIGO    = 'CODIGO';
+    VW_PRODUTO_DESCRICAO = 'DESCRICAO';
 
   resourcestring
     STR_PRODUTO       = 'Produto';

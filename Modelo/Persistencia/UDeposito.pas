@@ -22,6 +22,11 @@ end;
    FLD_DEPOSITO_DESCRICAO     =    'DESCRICAO';
    FLD_DEPOSITO_EMPRESA_ID    =    'ID_EMPRESA';
 
+   VW_DEPOSITO                = 'VW_DEPOSITO';
+   VW_DEPOSITO_ID             = 'COD';
+   VW_DEPOSITO_DESCRICAO      = 'NOME';
+   VW_DEPOSITO_EMPRESA        = 'EMPRESA';
+
    resourcestring
      STR_DEPOSITO             =    'Deposito';
 

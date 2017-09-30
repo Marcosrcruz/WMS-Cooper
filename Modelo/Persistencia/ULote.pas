@@ -20,13 +20,13 @@ end;
 
   const
     TBL_LOTE            =   'LOTE';
-    FLD_LOTE_CODIGO     =   'CODIGO DO LOTE';
-    FLD_LOTE_VALIDADE   =   'VALIDADE DO LOTE';
-    FLD_LOTE_EMPRESA    =   'EMPRESA DO LOTE';
+    FLD_LOTE_CODIGO     =   'LOTE';
+    FLD_LOTE_VALIDADE   =   'VALIDADE';
+    FLD_LOTE_EMPRESA    =   'ID_EMPRESA';
 
     VW_LOTE             =   'VW_LOTE';
-    VW_LOTE_ID          =   'CODIGO';
-    VW_LOTE_DESCRICAO   =   'CODIGO DO LOTE';
+    VW_LOTE_ID          =   'COD';
+    VW_LOTE_DESCRICAO   =   'LOTE';
     VW_LOTE_EMPRESA     =   'EMPRESA';
 
 

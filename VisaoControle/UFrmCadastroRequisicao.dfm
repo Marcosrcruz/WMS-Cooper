@@ -2,6 +2,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   Caption = 'Cadastro Requisi'#231#227'o'
   ClientHeight = 544
   ClientWidth = 875
+  ExplicitTop = -46
   ExplicitWidth = 891
   ExplicitHeight = 583
   PixelsPerInch = 96
@@ -139,7 +140,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       Font.Style = []
       ParentFont = False
     end
-    object Label6: TLabel
+    object lblDepositoOrigem: TLabel
       Left = 19
       Top = 285
       Width = 79
@@ -152,6 +153,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      Visible = False
     end
     object Label7: TLabel
       Left = 17
@@ -289,22 +291,22 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
     object edDataEmissao: TMaskEdit
       Left = 104
       Top = 112
-      Width = 81
+      Width = 77
       Height = 21
-      EditMask = '!99/99/00;1;_'
-      MaxLength = 8
+      EditMask = '!99/99/9999;1;_'
+      MaxLength = 10
       TabOrder = 4
-      Text = '  /  /  '
+      Text = '  /  /    '
     end
     object edDataEntrada: TMaskEdit
       Left = 272
       Top = 112
-      Width = 81
+      Width = 79
       Height = 21
-      EditMask = '!99/99/00;1;_'
-      MaxLength = 8
+      EditMask = '!99/99/9999;1;_'
+      MaxLength = 10
       TabOrder = 5
-      Text = '  /  /  '
+      Text = '  /  /    '
     end
     object GroupBox1: TGroupBox
       Left = 696
@@ -318,7 +320,6 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
         Top = 24
         Width = 121
         Height = 41
-        Caption = 'Status'
         TabOrder = 0
       end
     end
@@ -336,7 +337,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       NumbersOnly = True
       ParentFont = False
       TabOrder = 7
-      OnExit = edTipoMovimentoExit
+      OnExit = edFornecedorExit
     end
     object btnLocalizarFornecedor: TButton
       Left = 227
@@ -353,7 +354,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 8
       TabStop = False
-      OnClick = btnLocalizarTipoMovimentoClick
+      OnClick = btnLocalizarFornecedorClick
     end
     object stNomeFornecedor: TStaticText
       Left = 260
@@ -438,7 +439,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       NumbersOnly = True
       ParentFont = False
       TabOrder = 12
-      OnExit = edTipoMovimentoExit
+      OnExit = edProdutoExit
     end
     object btnLocalizarProduto: TButton
       Left = 227
@@ -455,7 +456,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 13
       TabStop = False
-      OnClick = btnLocalizarTipoMovimentoClick
+      OnClick = btnLocalizarProdutoClick
     end
     object stNomeProduto: TStaticText
       Left = 263
@@ -490,7 +491,8 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       NumbersOnly = True
       ParentFont = False
       TabOrder = 15
-      OnExit = edTipoMovimentoExit
+      Visible = False
+      OnExit = edDepositoOrigemExit
     end
     object btnLocalizarDepositoOrigem: TButton
       Left = 227
@@ -507,7 +509,8 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 16
       TabStop = False
-      OnClick = btnLocalizarTipoMovimentoClick
+      Visible = False
+      OnClick = btnLocalizarDepositoOrigemClick
     end
     object stNomeDepositoOrigem: TStaticText
       Left = 263
@@ -527,6 +530,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 17
       Transparent = False
+      Visible = False
     end
     object edDepositoDestino: TEdit
       Left = 104
@@ -542,7 +546,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       NumbersOnly = True
       ParentFont = False
       TabOrder = 18
-      OnExit = edTipoMovimentoExit
+      OnExit = edDepositoDestinoExit
     end
     object btnLocalizarDepositoDestino: TButton
       Left = 227
@@ -559,7 +563,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 19
       TabStop = False
-      OnClick = btnLocalizarTipoMovimentoClick
+      OnClick = btnLocalizarDepositoDestinoClick
     end
     object stNomeDepositoDestino: TStaticText
       Left = 263
@@ -594,11 +598,11 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       NumbersOnly = True
       ParentFont = False
       TabOrder = 21
-      OnExit = edTipoMovimentoExit
+      OnExit = edLoteExit
     end
     object btnLocalizarLote: TButton
       Left = 227
-      Top = 193
+      Top = 195
       Width = 30
       Height = 19
       Cursor = crHandPoint
@@ -611,7 +615,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ParentFont = False
       TabOrder = 22
       TabStop = False
-      OnClick = btnLocalizarTipoMovimentoClick
+      OnClick = btnLocalizarLoteClick
     end
     object stLote: TStaticText
       Left = 263
@@ -671,11 +675,11 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   object edDataCancelamento: TMaskEdit [4]
     Left = 104
     Top = 225
-    Width = 81
+    Width = 79
     Height = 21
-    EditMask = '!99/99/00;1;_'
-    MaxLength = 8
+    EditMask = '!99/99/9999;1;_'
+    MaxLength = 10
     TabOrder = 4
-    Text = '  /  /  '
+    Text = '  /  /    '
   end
 end

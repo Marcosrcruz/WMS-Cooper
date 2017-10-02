@@ -2,7 +2,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   Caption = 'Cadastro Requisi'#231#227'o'
   ClientHeight = 544
   ClientWidth = 875
-  ExplicitTop = -46
+  ExplicitTop = -66
   ExplicitWidth = 891
   ExplicitHeight = 583
   PixelsPerInch = 96
@@ -34,8 +34,10 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       ExplicitLeft = 523
     end
     inherited btnGravar: TBitBtn
-      Left = 406
-      ExplicitLeft = 406
+      Left = 402
+      Top = 6
+      ExplicitLeft = 402
+      ExplicitTop = 6
     end
     inherited btnSair: TBitBtn
       Left = 757

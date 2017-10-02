@@ -19,8 +19,8 @@ const
   FLD_STATUS_NOME           = 'NOME_STATUS';
 
   VW_STATUS                 = 'STATUS';
-  VW_STATUS_NOME_STATUS     = 'NOME';
-  VW_STATUS_ID              = 'CODIGO';
+  VW_STATUS_NOME_STATUS     = 'NOME_STATUS';
+  VW_STATUS_ID              = 'COD';
 
   resourcestring
     STR_STATUS              = 'STATUS';

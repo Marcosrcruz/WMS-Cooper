@@ -1,10 +1,3 @@
-{
-  @author: Felipe Silvino Pereira
-  @date: 01/08/2017
-  @description: Formulario base para geração de CRUDs utilizando as validações
-                que forem fornecedidas por uma classe filha de TRegraCRUD.
-}
-
 unit UFrmCRUD;
 
 interface

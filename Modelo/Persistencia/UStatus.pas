@@ -20,7 +20,7 @@ const
 
   VW_STATUS                 = 'STATUS';
   VW_STATUS_NOME_STATUS     = 'NOME_STATUS';
-  VW_STATUS_ID              = 'COD';
+  VW_STATUS_ID              = 'ID';
 
   resourcestring
     STR_STATUS              = 'STATUS';

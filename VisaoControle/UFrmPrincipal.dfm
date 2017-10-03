@@ -95,18 +95,12 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Tipo Movimenta'#231#227'o'
         OnClick = miTipoMovimentacaoClick
       end
+    end
+    object MiEstoque: TMenuItem
+      Caption = '&Movimenta'#231#245'es'
       object miRequisio: TMenuItem
         Caption = 'Requisi'#231#227'o'
         OnClick = miRequisioClick
-      end
-    end
-    object MiEstoque: TMenuItem
-      Caption = 'E&stoque'
-      object MiMovimentacaoEntrada: TMenuItem
-        Caption = '&Entrada'
-      end
-      object MiMovimentacaoSaida: TMenuItem
-        Caption = '&Sa'#237'da'
       end
     end
     object MiRelatorios: TMenuItem
@@ -120,14 +114,8 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Por &Dep'#243'sito'
         end
         object MiMovimentacaoLote: TMenuItem
-          Caption = 'Por &Lote'
+          Caption = 'Por &Lote \ Validade'
         end
-        object MiMovimentacaoValidade: TMenuItem
-          Caption = 'Por &Validade'
-        end
-      end
-      object MiRequisicoes: TMenuItem
-        Caption = '&Requisi'#231#245'es'
       end
     end
     object MiSair: TMenuItem

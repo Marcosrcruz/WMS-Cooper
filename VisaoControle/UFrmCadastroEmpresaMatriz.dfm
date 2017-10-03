@@ -10,9 +10,9 @@
     Width = 979
     ExplicitWidth = 979
     inherited lbCabecalho: TLabel
-      Width = 203
-      Caption = 'CADASTRO DE EMPRESA'
-      ExplicitWidth = 203
+      Width = 121
+      Caption = ''
+      ExplicitWidth = 121
     end
   end
   inherited gbLocalizar: TGroupBox

@@ -26,15 +26,11 @@ type
     MiUnidadeMedida: TMenuItem;
     MiUsuarios: TMenuItem;
     MiEstoque: TMenuItem;
-    MiMovimentacaoEntrada: TMenuItem;
-    MiMovimentacaoSaida: TMenuItem;
     MiRelatorios: TMenuItem;
     MiMovimentacoes: TMenuItem;
     MiMovimentacaoPorDataEntrada: TMenuItem;
     MiMovimentacaoPorDeposito: TMenuItem;
     MiMovimentacaoLote: TMenuItem;
-    MiMovimentacaoValidade: TMenuItem;
-    MiRequisicoes: TMenuItem;
     MiSair: TMenuItem;
     miLogoff: TMenuItem;
     EncerrarAplicao1: TMenuItem;

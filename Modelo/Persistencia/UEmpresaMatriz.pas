@@ -47,7 +47,7 @@ type
 
     resourcestring
 
-    STR_EMPRESAMATRIZ        = 'Cadastro Matriz';
+    STR_EMPRESAMATRIZ        = 'Empresa';
 
 implementation
 

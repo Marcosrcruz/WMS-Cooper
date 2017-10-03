@@ -31,7 +31,7 @@ type
     Label2: TLabel;
     edDataEntrada: TMaskEdit;
     edDataCancelamento: TMaskEdit;
-    Label3: TLabel;
+    lblDataCancel: TLabel;
     GroupBox1: TGroupBox;
     pnlStatus: TPanel;
     Label4: TLabel;
@@ -416,24 +416,24 @@ end;
 procedure TFrmCadastroRequisicao.PreencheFormulario;
 begin
   inherited;
-  edTipoMovimento.Text := IntToStr(FREQUISICAO.TIPO_MOVIMENTACAO.ID);
-  stNomeTipoMovimento.Caption := FREQUISICAO.TIPO_MOVIMENTACAO.FNOME;
-  edFornecedor.Text := IntToStr(FREQUISICAO.EMPRESA.ID);
-  stNomeFornecedor.Caption := FREQUISICAO.EMPRESA.NOME;
-  edDataEmissao.Text := DateToStr(FREQUISICAO.DATA_EMISSAO);
-  edDataEntrada.Text := DateToStr(FREQUISICAO.DATA_ENTRADA);
-  stDataModificacao.Caption := DateToStr(FREQUISICAO.DATA_INCLUSAO);
-  edNumDocumento.Text := IntToStr(FREQUISICAO.NUMERO_DOCUMENTO);
-  edLote.Text := IntToStr(FREQUISICAO.LOTE.ID);
-  stLote.Caption := FREQUISICAO.LOTE.LOTE;
-  edProduto.Text := IntToStr(FREQUISICAO.PRODUTO.ID);
-  stNomeProduto.Caption := FREQUISICAO.PRODUTO.DESCRICAO;
-  edQuantidade.Text := FloatToStr(FREQUISICAO.QUANTIDADE);
-  edValorUnitario.Text := FloatToStr(FREQUISICAO.CUSTO_UNITARIO);
-  edDepositoDestino.Text := IntToStr(FREQUISICAO.DEPOSITO_DESTINO.ID);
+  edTipoMovimento.Text          := IntToStr(FREQUISICAO.TIPO_MOVIMENTACAO.ID);
+  stNomeTipoMovimento.Caption   := FREQUISICAO.TIPO_MOVIMENTACAO.FNOME;
+  edFornecedor.Text             := IntToStr(FREQUISICAO.EMPRESA.ID);
+  stNomeFornecedor.Caption      := FREQUISICAO.EMPRESA.NOME;
+  edDataEmissao.Text            := DateToStr(FREQUISICAO.DATA_EMISSAO);
+  edDataEntrada.Text            := DateToStr(FREQUISICAO.DATA_ENTRADA);
+  stDataModificacao.Caption     := DateToStr(FREQUISICAO.DATA_INCLUSAO);
+  edNumDocumento.Text           := IntToStr(FREQUISICAO.NUMERO_DOCUMENTO);
+  edLote.Text                   := IntToStr(FREQUISICAO.LOTE.ID);
+  stLote.Caption                := FREQUISICAO.LOTE.LOTE;
+  edProduto.Text                := IntToStr(FREQUISICAO.PRODUTO.ID);
+  stNomeProduto.Caption         := FREQUISICAO.PRODUTO.DESCRICAO;
+  edQuantidade.Text             := FloatToStr(FREQUISICAO.QUANTIDADE);
+  edValorUnitario.Text          := FloatToStr(FREQUISICAO.CUSTO_UNITARIO);
+  edDepositoDestino.Text        := IntToStr(FREQUISICAO.DEPOSITO_DESTINO.ID);
   stNomeDepositoDestino.Caption := FREQUISICAO.DEPOSITO_DESTINO.DESCRICAO;
-  stNomeUsuario.Caption := FREQUISICAO.USUARIO.LOGIN;
-  pnlStatus.Caption := FREQUISICAO.STATUS.NOME;
+  stNomeUsuario.Caption         := FREQUISICAO.USUARIO.LOGIN;
+  pnlStatus.Caption             := FREQUISICAO.STATUS.NOME;
 
   if FREQUISICAO.DEPOSITO_ORIGEM.ID > 0 then
     begin
@@ -445,6 +445,10 @@ begin
     edDataCancelamento.Text := DateToStr(FREQUISICAO.DATA_CANCELAMENTO);
 
   SetaVisibilidadeDepositoOrigem;
+
+  lblDataCancel.Visible := FREQUISICAO.STATUS.ID = 3;
+  edDataCancelamento.Visible := FREQUISICAO.STATUS.ID = 3;
+
 end;
 
 procedure TFrmCadastroRequisicao.SetaVisibilidadeDepositoOrigem;

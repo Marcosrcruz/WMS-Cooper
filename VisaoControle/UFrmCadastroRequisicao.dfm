@@ -2,7 +2,6 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
   Caption = 'Cadastro Requisi'#231#227'o'
   ClientHeight = 544
   ClientWidth = 875
-  ExplicitTop = -66
   ExplicitWidth = 891
   ExplicitHeight = 583
   PixelsPerInch = 96
@@ -100,7 +99,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       Font.Style = []
       ParentFont = False
     end
-    object Label3: TLabel
+    object lblDataCancel: TLabel
       Left = 4
       Top = 145
       Width = 94
@@ -113,6 +112,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      Visible = False
     end
     object Label4: TLabel
       Left = 43
@@ -683,5 +683,6 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
     MaxLength = 10
     TabOrder = 4
     Text = '  /  /    '
+    Visible = False
   end
 end

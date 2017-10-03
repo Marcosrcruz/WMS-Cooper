@@ -681,6 +681,7 @@ inherited FrmCadastroRequisicao: TFrmCadastroRequisicao
     Height = 21
     EditMask = '!99/99/9999;1;_'
     MaxLength = 10
+    ReadOnly = True
     TabOrder = 4
     Text = '  /  /    '
     Visible = False

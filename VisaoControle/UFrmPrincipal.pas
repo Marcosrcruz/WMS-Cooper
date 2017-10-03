@@ -29,7 +29,6 @@ type
     MiRelatorios: TMenuItem;
     MiMovimentacoes: TMenuItem;
     MiMovimentacaoPorDataEntrada: TMenuItem;
-    MiMovimentacaoPorDeposito: TMenuItem;
     MiMovimentacaoLote: TMenuItem;
     MiSair: TMenuItem;
     miLogoff: TMenuItem;

@@ -108,10 +108,7 @@ object FrmPrincipal: TFrmPrincipal
       object MiMovimentacoes: TMenuItem
         Caption = '&Movimenta'#231#245'es'
         object MiMovimentacaoPorDataEntrada: TMenuItem
-          Caption = '&Por Data de Entrada'
-        end
-        object MiMovimentacaoPorDeposito: TMenuItem
-          Caption = 'Por &Dep'#243'sito'
+          Caption = '&Por Per'#237'odo'
         end
         object MiMovimentacaoLote: TMenuItem
           Caption = 'Por &Lote \ Validade'

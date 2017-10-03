@@ -82,6 +82,10 @@ object FrmPrincipal: TFrmPrincipal
           Caption = '&Unidade de Medida'
           OnClick = MiUnidadeMedidaClick
         end
+        object miLote: TMenuItem
+          Caption = 'Lote'
+          OnClick = miLoteClick
+        end
       end
       object MiUsuarios: TMenuItem
         Caption = 'U&su'#225'rios'

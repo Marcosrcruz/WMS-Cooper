@@ -37,6 +37,7 @@ type
     miStatusRequisio: TMenuItem;
     miTipoMovimentacao: TMenuItem;
     miRequisio: TMenuItem;
+    miLote: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure MiEstadoClick(Sender: TObject);
     procedure MiPaisClick(Sender: TObject);
@@ -55,6 +56,7 @@ type
     procedure miStatusRequisioClick(Sender: TObject);
     procedure miTipoMovimentacaoClick(Sender: TObject);
     procedure miRequisioClick(Sender: TObject);
+    procedure miLoteClick(Sender: TObject);
   private
     { Private declaration }
     procedure AtualizaUsuarioLogado;
@@ -83,6 +85,7 @@ uses
   , UFrmCadastroFilial
   , UFrmCadastroEstado
   , UFrmCadastroMarca
+  , UFrmCadastroLote
   , UFrmCadastroPais
   , UUsuarioLogado
   , UUtilitarios
@@ -135,6 +138,11 @@ begin
     end
   else
     Close;
+end;
+
+procedure TFrmPrincipal.miLoteClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroLote, FrmCadastroLote);
 end;
 
 procedure TFrmPrincipal.miMarcaClick(Sender: TObject);
